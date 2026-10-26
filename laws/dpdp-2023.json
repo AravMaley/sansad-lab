@@ -1,0 +1,92 @@
+{
+  "id": "dpdp-2023",
+  "order": 4,
+  "title": "Data Protection",
+  "year": 2023,
+  "kicker": "The Digital Personal Data Protection Act, 2023",
+  "summary": "India’s first general law on digital personal data. Companies and government bodies must usually get clear consent before using your data, keep it safe and report breaches. You get rights to access, correct and erase it. The government can exempt its own agencies, and the Act narrows what the Right to Information Act can reveal about people.",
+  "provisions": [
+    "Consent needed to process personal data, with some “legitimate uses” allowed without it.",
+    "Rights to access, correct and erase data, and to withdraw consent.",
+    "No tracking, behavioural monitoring or targeted ads aimed at children.",
+    "A Data Protection Board decides complaints and imposes penalties.",
+    "The government can exempt its agencies, and Section 44(3) amends the RTI Act’s personal-information exemption."
+  ],
+  "votes": [
+    {
+      "house": "Lok Sabha",
+      "date": "2023-08-07",
+      "method": "voice",
+      "note": "Passed by voice vote; no division was recorded.",
+      "source": "https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023"
+    },
+    {
+      "house": "Rajya Sabha",
+      "date": "2023-08-09",
+      "method": "voice",
+      "note": "Passed by voice vote after the opposition walked out over Manipur.",
+      "source": "https://www.thenewsminute.com/news/digital-personal-data-protection-bill-2023-passed-rajya-sabha-180849"
+    }
+  ],
+  "committee": {
+    "referred": false,
+    "note": "The 2023 Bill went to no committee. Its 2019 predecessor spent two years with a Joint Parliamentary Committee, then was withdrawn in August 2022.",
+    "source": "https://privacymatters.dlapiper.com/2022/08/india-government-withdraws-long-awaited-personal-data-protection-bill/"
+  },
+  "arguments_for": [
+    {
+      "text": "India finally gets a data protection law with enforceable rights and a dedicated Board.",
+      "by": "Ministry of Electronics and IT",
+      "source": "https://newsonair.gov.in/rajya-sabha-passes-digital-personal-data-protection-bill-2023"
+    },
+    {
+      "text": "Replacing the sprawling 2019 bill with a leaner law was a “pragmatic move”.",
+      "by": "Carnegie India",
+      "source": "https://carnegieindia.org/2022/08/22/withdrawal-of-proposed-data-protection-law-is-pragmatic-move-pub-87710"
+    },
+    {
+      "text": "Phased rules give businesses 12–18 months to build consent systems.",
+      "by": "Industry experts",
+      "source": "https://www.deccanherald.com/amp/story/india%2Fcentre-notifies-dpdp-rules-implementation-planned-in-phases-spread-over-12-18-months-3798465"
+    }
+  ],
+  "arguments_against": [
+    {
+      "text": "Section 44(3) guts the RTI Act by removing the public-interest override, blocking access to records like officials’ assets.",
+      "by": "RTI activists (Venkatesh Nayak, NCPRI)",
+      "source": "https://www.livelaw.in/amp/top-stories/supreme-court-refers-pleas-challenging-dpdp-act-amendment-to-rti-act-to-larger-bench-523266"
+    },
+    {
+      "text": "No exemption for journalism chills press freedom.",
+      "by": "The Reporters Collective and other petitioners",
+      "source": "https://www.internetfreedom.in/supreme-court-issues-notice-on-constitutional-challenge-to-the-digital-personal-data-protection-act-2023-and-the-digital-personal-data-protection-rules-2025/"
+    },
+    {
+      "text": "Broad exemptions for government agencies risk an “Orwellian State”.",
+      "by": "Justice B.N. Srikrishna (on the 2019 bill)",
+      "source": "https://ppdecsnew.business-standard.com/amp/article/current-affairs/new-data-protection-bill-must-consider-all-criticism-justice-srikrishna-122080400716_1.html"
+    }
+  ],
+  "timeline": [
+    { "date": "2022-08-03", "text": "Government withdraws the 2019 Personal Data Protection Bill after the Joint Committee’s report.", "source": "https://privacymatters.dlapiper.com/2022/08/india-government-withdraws-long-awaited-personal-data-protection-bill/" },
+    { "date": "2023-08-03", "text": "New bill introduced in Lok Sabha.", "source": "https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023" },
+    { "date": "2023-08-07", "text": "Lok Sabha passes it by voice vote.", "source": "https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023" },
+    { "date": "2023-08-09", "text": "Rajya Sabha passes it by voice vote.", "source": "https://www.thenewsminute.com/news/digital-personal-data-protection-bill-2023-passed-rajya-sabha-180849" },
+    { "date": "2023-08-11", "text": "Presidential assent.", "source": "https://www.barandbench.com/news/president-grants-assent-to-digital-personal-data-protection-bill-2023" },
+    { "date": "2025-11-14", "text": "Rules notified in phases; the Data Protection Board starts at once.", "source": "https://it.delhi.gov.in/sites/default/files/IT/generic_multiple_files/dpdp_om.pdf" },
+    { "date": "2026-02-16", "text": "Supreme Court issues notice on challenges and refers them to a larger bench, with no stay.", "source": "https://www.livelaw.in/amp/top-stories/supreme-court-refers-pleas-challenging-dpdp-act-amendment-to-rti-act-to-larger-bench-523266" }
+  ],
+  "outcome": "Passed",
+  "status": {
+    "text": "Partly in force. Consent-manager rules start in November 2026 and the core obligations in May 2027. Challenges are pending before a larger Supreme Court bench.",
+    "as_of": "2026-10",
+    "source": "https://www.deccanherald.com/amp/story/india%2Fcentre-notifies-dpdp-rules-implementation-planned-in-phases-spread-over-12-18-months-3798465"
+  },
+  "reflection": {
+    "aye": "You voted yes — but on a voice vote, nobody knows who did. No MP’s individual vote on this law was recorded.",
+    "no": "You shouted “No”. On a voice vote the Chair judges which side is louder; unless someone demands a division, your vote leaves no record.",
+    "committee": "You wanted a committee. The previous version spent two years with one and was then withdrawn; this one went straight to the floor.",
+    "abstain": "You stayed out — as much of the opposition did, having walked out over Manipur."
+  },
+  "question": "A law on your personal data passed without a single recorded vote. Should major laws always require a division?"
+}

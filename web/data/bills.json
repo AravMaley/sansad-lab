@@ -1,0 +1,508 @@
+{
+  "bills": [
+    {
+      "id": "farm-laws-2020",
+      "order": 1,
+      "title": "The Farm Laws",
+      "year": 2020,
+      "kicker": "Three Acts on how farm produce is sold, contracted and stored",
+      "summary": "Three laws let farmers sell outside government-regulated APMC mandis without state market fees, set up a framework for contract farming, and removed most stock limits on food staples. They began as ordinances in June 2020 and were passed in September. After a year of protests, Parliament repealed them in November 2021.",
+      "provisions": [
+        "Trade outside APMC yards (farm gates, warehouses, cold storages and e-trading platforms) with no state market fee or cess.",
+        "Pre-sowing contracts between farmers and buyers for one season to five years, with the price stated up front. Disputes go to the SDM, with appeal to the Collector.",
+        "Cereals, pulses, oilseeds, onions and potatoes regulated only in extraordinary circumstances. Stock limits apply only after a 100% price rise (horticulture) or 50% (non-perishables)."
+      ],
+      "votes": [
+        {
+          "house": "Lok Sabha",
+          "date": "2020-09-17",
+          "method": "unrecorded",
+          "note": "Passed 15 Sep (Essential Commodities) and 17 Sep (the other two). We found no recorded division count.",
+          "source": "https://prsindia.org/billtrack/the-farmers-produce-trade-and-commerce-promotion-and-facilitation-bill-2020"
+        },
+        {
+          "house": "Rajya Sabha",
+          "date": "2020-09-20",
+          "method": "voice",
+          "note": "Passed by voice vote amid chaos. Opposition MPs say the Deputy Chairman refused their demand for a division (a recorded vote). The third bill passed on 22 Sep while most of the opposition boycotted.",
+          "source": "https://livelaw.in/top-stories/farmers-bills-chaos-rajya-sabha-suspends-8-opposition-mps-163240"
+        }
+      ],
+      "committee": {
+        "referred": false,
+        "note": "None of the three bills went to a parliamentary committee. Rajya Sabha did not adopt motions to send them to a Select Committee.",
+        "source": "https://prsindia.org/media/media-updates/monsoon-session-day-7-september-20-2020"
+      },
+      "arguments_for": [
+        {
+          "text": "“One nation, one market”: farmers gain the freedom to sell to any buyer, anywhere, without mandi fees.",
+          "by": "Union government",
+          "source": "https://www.iasparliament.com/current-affairs/farm-reform-laws-concerns"
+        },
+        {
+          "text": "MSP and the mandi system will continue; the government offered a written assurance and said MSP procurement hit record levels.",
+          "by": "Agriculture Minister Narendra Singh Tomar",
+          "source": "https://www.deccanherald.com/india/dont-fall-prey-to-lies-of-opposition-on-new-farm-laws-agri-min-tomar-in-open-letter-to-farmers-928490.html"
+        },
+        {
+          "text": "Mandis are scarce: each one serves 496 sq km against a recommended 80 sq km, and 86% of landholdings are small or marginal. Competition could make APMCs more efficient.",
+          "by": "PRS Legislative Research (analysis)",
+          "source": "https://prsindia.org/billtrack/the-farmers-produce-trade-and-commerce-promotion-and-facilitation-bill-2020"
+        }
+      ],
+      "arguments_against": [
+        {
+          "text": "Private buyers outside mandis have no duty to pay MSP. Farmers answered with “one nation, one MSP”.",
+          "by": "Samyukt Kisan Morcha; Sharad Pawar (NCP)",
+          "source": "https://www.nationalheraldindia.com/national/agriculture-minister-not-giving-correct-facts-on-farm-bills-pawar-counters-tomar"
+        },
+        {
+          "text": "Agriculture and markets are state subjects, so the Centre overrode the states.",
+          "by": "Opposition parties; Jairam Ramesh (INC)",
+          "source": "https://www.huffingtonpost.in/entry/govt-bill-rajya-sabha-opposition-boycott_in_5f69adc7c5b655acbc6f5303"
+        },
+        {
+          "text": "Deregulation alone may not bring buyers: Bihar scrapped its APMC Act in 2006 and private investment did not follow.",
+          "by": "PRS Legislative Research (analysis)",
+          "source": "https://prsindia.org/billtrack/the-essential-commodities-amendment-bill-2020"
+        },
+        {
+          "text": "The process was rushed: ordinances first, no committee scrutiny, and a voice vote in the Rajya Sabha.",
+          "by": "Opposition MPs",
+          "source": "https://www.theweek.in/wire-updates/national/2020/09/20/par13-rs-farm-bills-pass.html"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2020-06-05",
+          "text": "Three ordinances promulgated during the COVID-19 lockdown.",
+          "source": "https://prsindia.org/billtrack/the-essential-commodities-amendment-bill-2020"
+        },
+        {
+          "date": "2020-09-14",
+          "text": "Bills introduced in Lok Sabha.",
+          "source": "https://prsindia.org/billtrack/the-farmers-produce-trade-and-commerce-promotion-and-facilitation-bill-2020"
+        },
+        {
+          "date": "2020-09-20",
+          "text": "Rajya Sabha passes two bills by voice vote; demand for a division refused.",
+          "source": "https://livelaw.in/top-stories/farmers-bills-chaos-rajya-sabha-suspends-8-opposition-mps-163240"
+        },
+        {
+          "date": "2020-09-21",
+          "text": "Eight Rajya Sabha MPs suspended.",
+          "source": "https://thewire.in/politics/rajya-sabha-eight-opposition-members-including-derek-obrien-suspended"
+        },
+        {
+          "date": "2020-09-27",
+          "text": "Laws gazetted after presidential assent.",
+          "source": "https://www.tribuneindia.com/news/nation/president-kovind-gives-assent-to-3-contentious-farm-bills-147445"
+        },
+        {
+          "date": "2020-11-26",
+          "text": "“Delhi Chalo” march begins; farmers camp at Delhi’s borders for about a year.",
+          "source": "https://www.downtoearth.org.in/agriculture/delhi-chalo-amid-police-face-off-farmers-keep-up-the-march-74413"
+        },
+        {
+          "date": "2021-01-12",
+          "text": "Supreme Court stays all three laws and appoints an expert committee.",
+          "source": "https://theleaflet.in/sc-stays-implementation-of-3-farm-laws-forms-committee"
+        },
+        {
+          "date": "2021-11-19",
+          "text": "PM Modi announces repeal: “we couldn’t convince a section of farmers.”",
+          "source": "https://www.npr.org/2021/11/19/1057127412/india-will-repeal-controversial-farm-laws-that-led-to-massive-protests"
+        },
+        {
+          "date": "2021-11-29",
+          "text": "Both Houses pass the Farm Laws Repeal Bill without debate.",
+          "source": "https://www.tribuneindia.com/news/nation/no-debate-parliament-passes-bill-to-repeal-farm-laws-will-answer-all-queries-says-pm-modi-344295"
+        },
+        {
+          "date": "2021-12-09",
+          "text": "Samyukt Kisan Morcha suspends the protest. It reports about 700 farmer deaths; the government says it has no record.",
+          "source": "https://www.downtoearth.org.in/agriculture/samyukt-kisan-morcha-suspends-farm-protests-after-letter-from-centre-80625"
+        },
+        {
+          "date": "2024-02-13",
+          "text": "A new march for a legal MSP guarantee is stopped at the Punjab–Haryana border.",
+          "source": "https://businesstoday.in/india/story/farmers-protest-farmers-break-barricades-at-shambhu-border-cops-fire-tear-gas-417303-2024-02-13"
+        }
+      ],
+      "outcome": "Repealed",
+      "status": {
+        "text": "Repealed in November 2021. A legal guarantee for MSP, the farmers’ central demand, is still unresolved.",
+        "as_of": "2026-10",
+        "source": "https://www.barandbench.com/news/farm-laws-repeal-act-2021-gets-presidential-assent"
+      },
+      "reflection": {
+        "aye": "You backed the reform. The laws passed, but they lasted 14 months: the Supreme Court suspended them and Parliament repealed them.",
+        "no": "You voted against. In practice, the Rajya Sabha never counted the votes, so a “No” on 20 September was never recorded.",
+        "committee": "You asked for a committee. That was the opposition’s demand on the floor, and it was refused. Even the RSS-affiliated Bharatiya Kisan Sangh wanted committee scrutiny.",
+        "abstain": "You stayed out. Many opposition MPs walked out or boycotted on 22 September, and the third bill passed with almost no debate."
+      },
+      "question": "Passed without a recorded vote, repealed without a debate. How much scrutiny should a law that affects millions of farmers get?"
+    },
+    {
+      "id": "womens-reservation-2023",
+      "order": 2,
+      "title": "Women’s Reservation",
+      "year": 2023,
+      "kicker": "The Constitution (106th Amendment) Act — Nari Shakti Vandan Adhiniyam",
+      "summary": "Reserves one-third of seats in the Lok Sabha, state assemblies and the Delhi assembly for women, including within seats already reserved for SCs and STs. It applies only after the next census is published and constituencies are redrawn, and lasts 15 years unless Parliament extends it.",
+      "provisions": [
+        "One-third of seats reserved for women in the Lok Sabha, state assemblies and the Delhi assembly.",
+        "One-third of SC/ST-reserved seats also reserved for women.",
+        "Takes effect only after the first census after commencement and the delimitation based on it.",
+        "Lasts 15 years, extendable by Parliament. Reserved seats rotate after each delimitation."
+      ],
+      "votes": [
+        {
+          "house": "Lok Sabha",
+          "date": "2023-09-20",
+          "method": "division",
+          "ayes": 454,
+          "noes": 2,
+          "note": "Both Noes were AIMIM MPs. As a constitutional amendment it needed a two-thirds majority of members present and voting.",
+          "source": "https://www.deccanherald.com/amp/story/india%2Fhistoric-womens-reservation-bill-clears-parliament-hurdle-2696190"
+        },
+        {
+          "house": "Rajya Sabha",
+          "date": "2023-09-21",
+          "method": "division",
+          "ayes": 214,
+          "noes": 0,
+          "note": "Unanimous.",
+          "source": "https://livelaw.in/top-stories/womens-reservation-bill-live-updates-from-rajya-sabha-238294"
+        }
+      ],
+      "committee": {
+        "referred": false,
+        "note": "The 2023 Bill went to no committee. Earlier versions did: a Joint Committee in 1996 and a Standing Committee in 2008.",
+        "source": "https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023"
+      },
+      "arguments_for": [
+        {
+          "text": "It fulfils a demand pending since the 1996 Bill, with near-unanimous support across parties.",
+          "by": "PRS Legislative Research (bill history)",
+          "source": "https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023"
+        },
+        {
+          "text": "A “historic achievement” for representation.",
+          "by": "Jagdeep Dhankhar, then Rajya Sabha Chairman",
+          "source": "https://organiser.org/2023/09/22/197210/bharat/womens-reservation-bill-passed-unanimousously-in-rajya-sabha-dhankhar-says-historic-achievement/"
+        },
+        {
+          "text": "Blocking the 2026 fast-track amendment denies women their quota.",
+          "by": "Home Minister Amit Shah (April 2026)",
+          "source": "https://m.thewire.in/article/politics/major-setback-modi-govts-constitution-amendment-bill-delimitation-fails-in-lok-sabha"
+        }
+      ],
+      "arguments_against": [
+        {
+          "text": "Tying the quota to a census and delimitation delays a right indefinitely; it should apply immediately.",
+          "by": "Petitioner Jaya Thakur (Congress leader), Supreme Court",
+          "source": "https://www.verdictum.in/court-updates/supreme-court/women-reservation-106-amendment-dr-jaya-thakur-v-union-of-india-wpc-11812023-1564454"
+        },
+        {
+          "text": "Population-based delimitation would penalise southern states that controlled population growth, so the quota should be delinked from it.",
+          "by": "Opposition parties (April 2026)",
+          "source": "https://www.drishtiias.com/daily-updates/daily-news-analysis/defeat-of-the-constitution-131st-amendment-bill-2026"
+        },
+        {
+          "text": "The 2026 notification bringing the Act into force was “absolutely bizarre” in its timing.",
+          "by": "Indian National Congress",
+          "source": "https://www.etvbharat.com/en/bharat/women-reservation-act-2023-comes-into-force-notification-enn26041700047"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2023-09-19",
+          "text": "Introduced as the first business in the new Parliament building.",
+          "source": "https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023"
+        },
+        {
+          "date": "2023-09-20",
+          "text": "Lok Sabha passes it, 454–2.",
+          "source": "https://www.deccanherald.com/amp/story/india%2Fhistoric-womens-reservation-bill-clears-parliament-hurdle-2696190"
+        },
+        {
+          "date": "2023-09-21",
+          "text": "Rajya Sabha passes it, 214–0.",
+          "source": "https://livelaw.in/top-stories/womens-reservation-bill-live-updates-from-rajya-sabha-238294"
+        },
+        {
+          "date": "2023-09-28",
+          "text": "Gazetted after presidential assent.",
+          "source": "https://www.etvbharat.com/en/bharat/women-reservation-act-2023-comes-into-force-notification-enn26041700047"
+        },
+        {
+          "date": "2026-04-16",
+          "text": "Act brought into force, more than 900 days after passage — but still not operational.",
+          "source": "https://thewire.in/government/modi-govt-enforces-2023-womens-reservation-act-more-than-900-days-after-it-was-passed"
+        },
+        {
+          "date": "2026-04-17",
+          "text": "A fast-track amendment to apply the quota in 2029 fails in Lok Sabha, 298–230. It needed 352.",
+          "source": "https://www.drishtiias.com/daily-updates/daily-news-analysis/defeat-of-the-constitution-131st-amendment-bill-2026"
+        }
+      ],
+      "outcome": "Passed",
+      "status": {
+        "text": "In force since April 2026 but not yet operational: seats will be reserved only after the next census and delimitation.",
+        "as_of": "2026-10",
+        "source": "https://www.etvbharat.com/en/bharat/women-reservation-act-2023-comes-into-force-notification-enn26041700047"
+      },
+      "reflection": {
+        "aye": "You joined 454 MPs. Almost everyone agreed on the goal; the fight was, and still is, over when it starts.",
+        "no": "You joined 2 MPs. AIMIM’s two members were the only Noes in either House.",
+        "committee": "You wanted scrutiny. The bill was introduced and passed within three days with no committee, though earlier versions had been examined twice.",
+        "abstain": "You stayed out of a near-unanimous vote. Constitutional amendments are judged by members present and voting, so abstaining changes the threshold."
+      },
+      "question": "Everyone voted yes, yet no woman has been elected to a reserved seat. Is a law passed if it hasn’t started?"
+    },
+    {
+      "id": "caa-2019",
+      "order": 3,
+      "title": "Citizenship Amendment",
+      "year": 2019,
+      "kicker": "The Citizenship (Amendment) Act, 2019",
+      "summary": "Fast-tracks Indian citizenship for Hindu, Sikh, Buddhist, Jain, Parsi and Christian migrants from Afghanistan, Bangladesh and Pakistan who entered India on or before 31 December 2014. Muslims are not among the covered groups, which is the core of the controversy.",
+      "provisions": [
+        "Six communities from three countries are no longer treated as “illegal migrants”.",
+        "Cut-off date: entry on or before 31 December 2014.",
+        "Residency needed for naturalisation cut to 5 years for these groups.",
+        "Sixth Schedule tribal areas of the North-East and Inner Line Permit areas are excluded."
+      ],
+      "votes": [
+        {
+          "house": "Lok Sabha",
+          "date": "2019-12-09",
+          "method": "division",
+          "ayes": 311,
+          "noes": 80,
+          "note": "Introduced and passed the same day; the vote came around midnight.",
+          "source": "https://www.deccanherald.com/amp/story/india%2Fcitizenship-amendment-bill-cleared-in-parliament-784665.html"
+        },
+        {
+          "house": "Rajya Sabha",
+          "date": "2019-12-11",
+          "method": "division",
+          "ayes": 125,
+          "noes": 105,
+          "note": "A motion to send it to a Select Committee failed 92–113.",
+          "source": "https://scroll.in/latest/946543/citizenship-amendment-bill-passed-in-rajya-sabha-with-125-votes-for-105-against"
+        }
+      ],
+      "committee": {
+        "referred": false,
+        "note": "The 2019 Bill went to no committee. Its 2016 predecessor was examined by a Joint Parliamentary Committee, then lapsed.",
+        "source": "https://prsindia.org/billtrack/the-citizenship-amendment-bill-2019"
+      },
+      "arguments_for": [
+        {
+          "text": "It gives refuge to religious minorities persecuted in neighbouring countries where Islam is the state religion.",
+          "by": "Home Minister Amit Shah",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        },
+        {
+          "text": "“No Indian has anything to worry regarding this act” — it grants citizenship and takes none away.",
+          "by": "Prime Minister Narendra Modi",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        },
+        {
+          "text": "It builds on a long-standing commitment to Partition-era minorities, and an earlier version was examined by a Joint Committee.",
+          "by": "Supporters (per PRS bill history)",
+          "source": "https://prsindia.org/billtrack/the-citizenship-amendment-bill-2019"
+        }
+      ],
+      "arguments_against": [
+        {
+          "text": "Granting citizenship by religion violates equality under Article 14 and secularism.",
+          "by": "Indian Union Muslim League and other petitioners",
+          "source": "https://www.scobserver.in/reports/citizenship-amendment-act-supreme-court-schedules-final-hearings-in-may-2026/"
+        },
+        {
+          "text": "Persecuted Muslim sects such as Ahmadis and Hazaras, and Tamils from Sri Lanka, are left out; combined with an NRC, it could leave Muslim citizens stateless.",
+          "by": "Critics, including The Economist",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        },
+        {
+          "text": "It breaks the 1985 Assam Accord, which set a 1971 cut-off, and threatens Assam’s culture.",
+          "by": "Protesters in Assam",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2019-12-09",
+          "text": "Introduced and passed in Lok Sabha, 311–80.",
+          "source": "https://prsindia.org/billtrack/the-citizenship-amendment-bill-2019"
+        },
+        {
+          "date": "2019-12-11",
+          "text": "Rajya Sabha passes it, 125–105.",
+          "source": "https://scroll.in/latest/946543/citizenship-amendment-bill-passed-in-rajya-sabha-with-125-votes-for-105-against"
+        },
+        {
+          "date": "2019-12-12",
+          "text": "Presidential assent.",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        },
+        {
+          "date": "2020-01-10",
+          "text": "Act comes into force.",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        },
+        {
+          "date": "2024-03-11",
+          "text": "Rules notified, more than four years later.",
+          "source": "https://www.verdictum.in/app-lite/court-updates/supreme-court/will-hear-challenge-citizenship-amendment-act-from-may-5-1608032?hasShare=1"
+        },
+        {
+          "date": "2024-05-15",
+          "text": "First 14 citizenship certificates handed over.",
+          "source": "https://en.wikipedia.org/wiki/Citizenship_(Amendment)_Act,_2019"
+        },
+        {
+          "date": "2026-05-05",
+          "text": "Supreme Court listed final hearing of about 237–242 petitions for 5–12 May.",
+          "source": "https://www.etvbharat.com/en/bharat/sc-to-begin-final-hearing-in-over-200-caa-pleas-on-may-5-enn26021905445"
+        }
+      ],
+      "outcome": "Passed",
+      "status": {
+        "text": "In force, with rules in use since March 2024. The constitutional challenge is before the Supreme Court; we found no verdict as of October 2026.",
+        "as_of": "2026-10",
+        "source": "https://www.scobserver.in/reports/citizenship-amendment-act-supreme-court-schedules-final-hearings-in-may-2026/"
+      },
+      "reflection": {
+        "aye": "You voted with the government. In the Rajya Sabha the margin was 20 votes — the closest of the four bills here.",
+        "no": "You joined 105 Rajya Sabha members. Twenty more votes the other way would have tied it.",
+        "committee": "You backed the Select Committee motion. It failed 92–113.",
+        "abstain": "You stayed out. In a 125–105 vote, every abstention on one side mattered."
+      },
+      "question": "Should a country’s citizenship law ever name religions? And who decides — Parliament or the courts?"
+    },
+    {
+      "id": "dpdp-2023",
+      "order": 4,
+      "title": "Data Protection",
+      "year": 2023,
+      "kicker": "The Digital Personal Data Protection Act, 2023",
+      "summary": "India’s first general law on digital personal data. Companies and government bodies must usually get clear consent before using your data, keep it safe and report breaches. You get rights to access, correct and erase it. The government can exempt its own agencies, and the Act narrows what the Right to Information Act can reveal about people.",
+      "provisions": [
+        "Consent needed to process personal data, with some “legitimate uses” allowed without it.",
+        "Rights to access, correct and erase data, and to withdraw consent.",
+        "No tracking, behavioural monitoring or targeted ads aimed at children.",
+        "A Data Protection Board decides complaints and imposes penalties.",
+        "The government can exempt its agencies, and Section 44(3) amends the RTI Act’s personal-information exemption."
+      ],
+      "votes": [
+        {
+          "house": "Lok Sabha",
+          "date": "2023-08-07",
+          "method": "voice",
+          "note": "Passed by voice vote; no division was recorded.",
+          "source": "https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023"
+        },
+        {
+          "house": "Rajya Sabha",
+          "date": "2023-08-09",
+          "method": "voice",
+          "note": "Passed by voice vote after the opposition walked out over Manipur.",
+          "source": "https://www.thenewsminute.com/news/digital-personal-data-protection-bill-2023-passed-rajya-sabha-180849"
+        }
+      ],
+      "committee": {
+        "referred": false,
+        "note": "The 2023 Bill went to no committee. Its 2019 predecessor spent two years with a Joint Parliamentary Committee, then was withdrawn in August 2022.",
+        "source": "https://privacymatters.dlapiper.com/2022/08/india-government-withdraws-long-awaited-personal-data-protection-bill/"
+      },
+      "arguments_for": [
+        {
+          "text": "India finally gets a data protection law with enforceable rights and a dedicated Board.",
+          "by": "Ministry of Electronics and IT",
+          "source": "https://newsonair.gov.in/rajya-sabha-passes-digital-personal-data-protection-bill-2023"
+        },
+        {
+          "text": "Replacing the sprawling 2019 bill with a leaner law was a “pragmatic move”.",
+          "by": "Carnegie India",
+          "source": "https://carnegieindia.org/2022/08/22/withdrawal-of-proposed-data-protection-law-is-pragmatic-move-pub-87710"
+        },
+        {
+          "text": "Phased rules give businesses 12–18 months to build consent systems.",
+          "by": "Industry experts",
+          "source": "https://www.deccanherald.com/amp/story/india%2Fcentre-notifies-dpdp-rules-implementation-planned-in-phases-spread-over-12-18-months-3798465"
+        }
+      ],
+      "arguments_against": [
+        {
+          "text": "Section 44(3) guts the RTI Act by removing the public-interest override, blocking access to records like officials’ assets.",
+          "by": "RTI activists (Venkatesh Nayak, NCPRI)",
+          "source": "https://www.livelaw.in/amp/top-stories/supreme-court-refers-pleas-challenging-dpdp-act-amendment-to-rti-act-to-larger-bench-523266"
+        },
+        {
+          "text": "No exemption for journalism chills press freedom.",
+          "by": "The Reporters Collective and other petitioners",
+          "source": "https://www.internetfreedom.in/supreme-court-issues-notice-on-constitutional-challenge-to-the-digital-personal-data-protection-act-2023-and-the-digital-personal-data-protection-rules-2025/"
+        },
+        {
+          "text": "Broad exemptions for government agencies risk an “Orwellian State”.",
+          "by": "Justice B.N. Srikrishna (on the 2019 bill)",
+          "source": "https://ppdecsnew.business-standard.com/amp/article/current-affairs/new-data-protection-bill-must-consider-all-criticism-justice-srikrishna-122080400716_1.html"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2022-08-03",
+          "text": "Government withdraws the 2019 Personal Data Protection Bill after the Joint Committee’s report.",
+          "source": "https://privacymatters.dlapiper.com/2022/08/india-government-withdraws-long-awaited-personal-data-protection-bill/"
+        },
+        {
+          "date": "2023-08-03",
+          "text": "New bill introduced in Lok Sabha.",
+          "source": "https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023"
+        },
+        {
+          "date": "2023-08-07",
+          "text": "Lok Sabha passes it by voice vote.",
+          "source": "https://en.wikipedia.org/wiki/Digital_Personal_Data_Protection_Act,_2023"
+        },
+        {
+          "date": "2023-08-09",
+          "text": "Rajya Sabha passes it by voice vote.",
+          "source": "https://www.thenewsminute.com/news/digital-personal-data-protection-bill-2023-passed-rajya-sabha-180849"
+        },
+        {
+          "date": "2023-08-11",
+          "text": "Presidential assent.",
+          "source": "https://www.barandbench.com/news/president-grants-assent-to-digital-personal-data-protection-bill-2023"
+        },
+        {
+          "date": "2025-11-14",
+          "text": "Rules notified in phases; the Data Protection Board starts at once.",
+          "source": "https://it.delhi.gov.in/sites/default/files/IT/generic_multiple_files/dpdp_om.pdf"
+        },
+        {
+          "date": "2026-02-16",
+          "text": "Supreme Court issues notice on challenges and refers them to a larger bench, with no stay.",
+          "source": "https://www.livelaw.in/amp/top-stories/supreme-court-refers-pleas-challenging-dpdp-act-amendment-to-rti-act-to-larger-bench-523266"
+        }
+      ],
+      "outcome": "Passed",
+      "status": {
+        "text": "Partly in force. Consent-manager rules start in November 2026 and the core obligations in May 2027. Challenges are pending before a larger Supreme Court bench.",
+        "as_of": "2026-10",
+        "source": "https://www.deccanherald.com/amp/story/india%2Fcentre-notifies-dpdp-rules-implementation-planned-in-phases-spread-over-12-18-months-3798465"
+      },
+      "reflection": {
+        "aye": "You voted yes — but on a voice vote, nobody knows who did. No MP’s individual vote on this law was recorded.",
+        "no": "You shouted “No”. On a voice vote the Chair judges which side is louder; unless someone demands a division, your vote leaves no record.",
+        "committee": "You wanted a committee. The previous version spent two years with one and was then withdrawn; this one went straight to the floor.",
+        "abstain": "You stayed out — as much of the opposition did, having walked out over Manipur."
+      },
+      "question": "A law on your personal data passed without a single recorded vote. Should major laws always require a division?"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "method": "Productivity is the share of scheduled time a House actually sat, as measured by PRS Legislative Research. It can exceed 100% when sittings run late. Government figures use a different method and usually come out higher in disrupted sessions.",
+  "terms": [
+    { "id": "14", "label": "14th", "years": "2004–09", "committee_pct": 60, "ls_pct": 87, "rs_pct": 86, "approx": true, "sittings": null, "bills": null, "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-16th-lok-sabha-2014-2019" },
+    { "id": "15", "label": "15th", "years": "2009–14", "committee_pct": 71, "ls_pct": 63, "rs_pct": 68, "approx": true, "sittings": null, "bills": null, "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-16th-lok-sabha-2014-2019" },
+    { "id": "16", "label": "16th", "years": "2014–19", "committee_pct": 25, "ls_pct": 84, "rs_pct": 64, "approx": true, "sittings": 331, "bills": 133, "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-16th-lok-sabha-2014-2019" },
+    { "id": "17", "label": "17th", "years": "2019–24", "committee_pct": 16, "ls_pct": 88, "rs_pct": 73, "approx": false, "sittings": 274, "bills": 179, "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-the-17th-lok-sabha" }
+  ],
+  "approx_note": "For the 14th–16th Lok Sabhas, PRS reports time lost to disruption; we show 100% minus that figure.",
+  "sessions": [
+    { "label": "Budget 2024", "dates": "Jul–Aug 2024", "ls_pct": 148, "rs_pct": 137, "sittings": null, "bills": null, "source": "https://prsindia.org/sessiontrack/budget-session-2024/plan-performance" },
+    { "label": "Winter 2024", "dates": "Nov–Dec 2024", "ls_pct": 52, "rs_pct": 39, "sittings": null, "bills": null, "source": "https://prsindia.org/sessiontrack/winter-session-2024/plan-performance" },
+    { "label": "Budget 2025", "dates": "Jan–Apr 2025", "ls_pct": 111, "rs_pct": null, "sittings": 26, "bills": 10, "source": "https://prsindia.org/parliamenttrack/vital-stats/parliament-functioning-in-budget-session-2025" },
+    { "label": "Monsoon 2025", "dates": "Jul–Aug 2025", "ls_pct": 29, "rs_pct": 34, "sittings": 21, "bills": 12, "bills_note": "press count", "source": "https://prsindia.org/parliamenttrack/vital-stats/parliament-functioning-in-monsoon-session-2025" },
+    { "label": "Winter 2025", "dates": "Dec 2025", "ls_pct": 103, "rs_pct": 104, "sittings": 15, "bills": 7, "source": "https://prsindia.org/parliamenttrack/vital-stats/parliament-functioning-in-winter-session-2025" },
+    { "label": "Budget 2026", "dates": "Jan–Apr 2026", "ls_pct": 86, "rs_pct": 92, "sittings": 31, "bills": 6, "source": "https://prsindia.org/sessiontrack/budget-session-2026/vital-stats" },
+    { "label": "Monsoon 2026", "dates": "Jul–Aug 2026", "ls_pct": 15, "rs_pct": 33, "sittings": 19, "bills": 12, "bills_note": "11 or 12; reports differ", "source": "https://prsindia.org/sessiontrack/monsoon-session-2026/vital-stats" }
+  ],
+  "records": [
+    { "value": "274", "text": "sittings in the 17th Lok Sabha — the fewest of any full-term House.", "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-the-17th-lok-sabha" },
+    { "value": "146", "text": "MPs suspended in a single session, December 2023.", "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-the-17th-lok-sabha" },
+    { "value": "35%", "text": "of bills in the 17th Lok Sabha passed after less than an hour of debate.", "source": "https://prsindia.org/parliamenttrack/vital-stats/functioning-of-the-17th-lok-sabha" },
+    { "value": "0", "text": "Deputy Speakers since June 2019, though Article 93 says the House shall choose one.", "source": "https://prsindia.org/parliamenttrack/vital-stats/parliament-functioning-in-winter-session-2025" },
+    { "value": "2 of 380", "text": "listed questions answered orally in the Lok Sabha in Monsoon 2026.", "source": "https://prsindia.org/sessiontrack/monsoon-session-2026/vital-stats" }
+  ]
+}
