@@ -1,0 +1,35 @@
+{
+  "_note": "PLACEHOLDER SAMPLE DATA with fictional parties. Replace with sourced manifesto positions before launch. stance: 1 = supports, -1 = opposes, 0 = neutral/silent.",
+  "parties": [
+    { "id": "alpha", "name": "Alpha Party (sample)" },
+    { "id": "beta", "name": "Beta Front (sample)" },
+    { "id": "gamma", "name": "Gamma Alliance (sample)" }
+  ],
+  "statements": [
+    {
+      "id": "msp-law",
+      "text": "Minimum Support Price for crops should be a legal guarantee.",
+      "stances": { "alpha": 1, "beta": -1, "gamma": 0 }
+    },
+    {
+      "id": "free-power",
+      "text": "Households should get a fixed amount of free electricity each month.",
+      "stances": { "alpha": 1, "beta": 0, "gamma": -1 }
+    },
+    {
+      "id": "privatise",
+      "text": "The government should sell loss-making public sector companies.",
+      "stances": { "alpha": -1, "beta": 1, "gamma": 0 }
+    },
+    {
+      "id": "women-quota",
+      "text": "Women should have reserved seats in Parliament.",
+      "stances": { "alpha": 1, "beta": 1, "gamma": 1 }
+    },
+    {
+      "id": "one-election",
+      "text": "Lok Sabha and state elections should be held together.",
+      "stances": { "alpha": -1, "beta": 1, "gamma": 1 }
+    }
+  ]
+}
