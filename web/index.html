@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sansad Lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Sansad Lab</h1>
+    <nav>
+      <button data-tab="matcher" class="active">Manifesto Matcher</button>
+      <button data-tab="mp">You Be the MP</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="matcher">
+      <p class="notice">Sample data with fictional parties. Not real manifesto positions.</p>
+      <div id="statements"></div>
+      <button id="match-btn" class="primary">Show my match</button>
+      <div id="match-result" aria-live="polite"></div>
+    </section>
+
+    <section id="mp" hidden>
+      <h2 id="scenario-title"></h2>
+      <p id="scenario-summary"></p>
+      <div class="cols">
+        <div><h3>Arguments for</h3><ul id="args-for"></ul></div>
+        <div><h3>Arguments against</h3><ul id="args-against"></ul></div>
+      </div>
+      <h3>Your vote</h3>
+      <div id="choices"></div>
+      <div id="mp-result" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
