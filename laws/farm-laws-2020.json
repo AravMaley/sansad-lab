@@ -1,40 +1,99 @@
 {
   "id": "farm-laws-2020",
-  "title": "The 2020 Farm Laws",
+  "order": 1,
+  "title": "The Farm Laws",
   "year": 2020,
-  "summary": "Three Acts passed in September 2020 to change how farm produce is sold, contracted and stored. Farmer protests followed, and the Acts were repealed in late 2021.",
-  "bills": [
-    "The Farmers' Produce Trade and Commerce (Promotion and Facilitation) Act, 2020",
-    "The Farmers (Empowerment and Protection) Agreement on Price Assurance and Farm Services Act, 2020",
-    "The Essential Commodities (Amendment) Act, 2020"
+  "kicker": "Three Acts on how farm produce is sold, contracted and stored",
+  "summary": "Three laws let farmers sell outside government-regulated APMC mandis without state market fees, set up a framework for contract farming, and removed most stock limits on food staples. They began as ordinances in June 2020 and were passed in September. After a year of protests, Parliament repealed them in November 2021.",
+  "provisions": [
+    "Trade outside APMC yards (farm gates, warehouses, cold storages and e-trading platforms) with no state market fee or cess.",
+    "Pre-sowing contracts between farmers and buyers for one season to five years, with the price stated up front. Disputes go to the SDM, with appeal to the Collector.",
+    "Cereals, pulses, oilseeds, onions and potatoes regulated only in extraordinary circumstances. Stock limits apply only after a 100% price rise (horticulture) or 50% (non-perishables)."
   ],
-  "arguments_for": [
-    "Farmers could sell outside government-run APMC mandis, widening their choice of buyers.",
-    "Contract farming could bring private investment and assured buyers.",
-    "Relaxing stock limits could attract investment in storage and supply chains."
-  ],
-  "arguments_against": [
-    "Farmers feared the mandi system and Minimum Support Price (MSP) procurement would weaken over time.",
-    "Small farmers may have little bargaining power against large corporate buyers in contracts.",
-    "The bills were passed quickly with limited committee scrutiny, and states, which handle agriculture and markets, were not fully consulted."
-  ],
-  "choices": [
+  "votes": [
     {
-      "id": "aye",
-      "label": "Vote Aye",
-      "outcome": "The Acts pass. Large protests build, especially around Delhi's borders, and continue for about a year."
+      "house": "Lok Sabha",
+      "date": "2020-09-17",
+      "method": "unrecorded",
+      "note": "Passed 15 Sep (Essential Commodities) and 17 Sep (the other two). We found no recorded division count.",
+      "source": "https://prsindia.org/billtrack/the-farmers-produce-trade-and-commerce-promotion-and-facilitation-bill-2020"
     },
     {
-      "id": "nay",
-      "label": "Vote Nay",
-      "outcome": "You vote against. If the majority still carries the bills, the Acts pass without your support, but your dissent is on record."
-    },
-    {
-      "id": "refer",
-      "label": "Demand referral to a Select Committee",
-      "outcome": "You push for detailed scrutiny and consultation with farmer groups and states before any vote. Delay, but a better-tested law."
+      "house": "Rajya Sabha",
+      "date": "2020-09-20",
+      "method": "voice",
+      "note": "Passed by voice vote amid chaos. Opposition MPs say the Deputy Chairman refused their demand for a division (a recorded vote). The third bill passed on 22 Sep while most of the opposition boycotted.",
+      "source": "https://livelaw.in/top-stories/farmers-bills-chaos-rajya-sabha-suspends-8-opposition-mps-163240"
     }
   ],
-  "what_happened": "The Acts were passed in September 2020. After sustained protests, the government announced repeal in November 2021, and Parliament repealed them in the Winter Session that year.",
-  "sources_todo": "Add citations to PRS Legislative Research bill pages and the Gazette notifications."
+  "committee": {
+    "referred": false,
+    "note": "None of the three bills went to a parliamentary committee. Rajya Sabha did not adopt motions to send them to a Select Committee.",
+    "source": "https://prsindia.org/media/media-updates/monsoon-session-day-7-september-20-2020"
+  },
+  "arguments_for": [
+    {
+      "text": "“One nation, one market”: farmers gain the freedom to sell to any buyer, anywhere, without mandi fees.",
+      "by": "Union government",
+      "source": "https://www.iasparliament.com/current-affairs/farm-reform-laws-concerns"
+    },
+    {
+      "text": "MSP and the mandi system will continue; the government offered a written assurance and said MSP procurement hit record levels.",
+      "by": "Agriculture Minister Narendra Singh Tomar",
+      "source": "https://www.deccanherald.com/india/dont-fall-prey-to-lies-of-opposition-on-new-farm-laws-agri-min-tomar-in-open-letter-to-farmers-928490.html"
+    },
+    {
+      "text": "Mandis are scarce: each one serves 496 sq km against a recommended 80 sq km, and 86% of landholdings are small or marginal. Competition could make APMCs more efficient.",
+      "by": "PRS Legislative Research (analysis)",
+      "source": "https://prsindia.org/billtrack/the-farmers-produce-trade-and-commerce-promotion-and-facilitation-bill-2020"
+    }
+  ],
+  "arguments_against": [
+    {
+      "text": "Private buyers outside mandis have no duty to pay MSP. Farmers answered with “one nation, one MSP”.",
+      "by": "Samyukt Kisan Morcha; Sharad Pawar (NCP)",
+      "source": "https://www.nationalheraldindia.com/national/agriculture-minister-not-giving-correct-facts-on-farm-bills-pawar-counters-tomar"
+    },
+    {
+      "text": "Agriculture and markets are state subjects, so the Centre overrode the states.",
+      "by": "Opposition parties; Jairam Ramesh (INC)",
+      "source": "https://www.huffingtonpost.in/entry/govt-bill-rajya-sabha-opposition-boycott_in_5f69adc7c5b655acbc6f5303"
+    },
+    {
+      "text": "Deregulation alone may not bring buyers: Bihar scrapped its APMC Act in 2006 and private investment did not follow.",
+      "by": "PRS Legislative Research (analysis)",
+      "source": "https://prsindia.org/billtrack/the-essential-commodities-amendment-bill-2020"
+    },
+    {
+      "text": "The process was rushed: ordinances first, no committee scrutiny, and a voice vote in the Rajya Sabha.",
+      "by": "Opposition MPs",
+      "source": "https://www.theweek.in/wire-updates/national/2020/09/20/par13-rs-farm-bills-pass.html"
+    }
+  ],
+  "timeline": [
+    { "date": "2020-06-05", "text": "Three ordinances promulgated during the COVID-19 lockdown.", "source": "https://prsindia.org/billtrack/the-essential-commodities-amendment-bill-2020" },
+    { "date": "2020-09-14", "text": "Bills introduced in Lok Sabha.", "source": "https://prsindia.org/billtrack/the-farmers-produce-trade-and-commerce-promotion-and-facilitation-bill-2020" },
+    { "date": "2020-09-20", "text": "Rajya Sabha passes two bills by voice vote; demand for a division refused.", "source": "https://livelaw.in/top-stories/farmers-bills-chaos-rajya-sabha-suspends-8-opposition-mps-163240" },
+    { "date": "2020-09-21", "text": "Eight Rajya Sabha MPs suspended.", "source": "https://thewire.in/politics/rajya-sabha-eight-opposition-members-including-derek-obrien-suspended" },
+    { "date": "2020-09-27", "text": "Laws gazetted after presidential assent.", "source": "https://www.tribuneindia.com/news/nation/president-kovind-gives-assent-to-3-contentious-farm-bills-147445" },
+    { "date": "2020-11-26", "text": "“Delhi Chalo” march begins; farmers camp at Delhi’s borders for about a year.", "source": "https://www.downtoearth.org.in/agriculture/delhi-chalo-amid-police-face-off-farmers-keep-up-the-march-74413" },
+    { "date": "2021-01-12", "text": "Supreme Court stays all three laws and appoints an expert committee.", "source": "https://theleaflet.in/sc-stays-implementation-of-3-farm-laws-forms-committee" },
+    { "date": "2021-11-19", "text": "PM Modi announces repeal: “we couldn’t convince a section of farmers.”", "source": "https://www.npr.org/2021/11/19/1057127412/india-will-repeal-controversial-farm-laws-that-led-to-massive-protests" },
+    { "date": "2021-11-29", "text": "Both Houses pass the Farm Laws Repeal Bill without debate.", "source": "https://www.tribuneindia.com/news/nation/no-debate-parliament-passes-bill-to-repeal-farm-laws-will-answer-all-queries-says-pm-modi-344295" },
+    { "date": "2021-12-09", "text": "Samyukt Kisan Morcha suspends the protest. It reports about 700 farmer deaths; the government says it has no record.", "source": "https://www.downtoearth.org.in/agriculture/samyukt-kisan-morcha-suspends-farm-protests-after-letter-from-centre-80625" },
+    { "date": "2024-02-13", "text": "A new march for a legal MSP guarantee is stopped at the Punjab–Haryana border.", "source": "https://businesstoday.in/india/story/farmers-protest-farmers-break-barricades-at-shambhu-border-cops-fire-tear-gas-417303-2024-02-13" }
+  ],
+  "outcome": "Repealed",
+  "status": {
+    "text": "Repealed in November 2021. A legal guarantee for MSP, the farmers’ central demand, is still unresolved.",
+    "as_of": "2026-10",
+    "source": "https://www.barandbench.com/news/farm-laws-repeal-act-2021-gets-presidential-assent"
+  },
+  "reflection": {
+    "aye": "You backed the reform. The laws passed, but they lasted 14 months: the Supreme Court suspended them and Parliament repealed them.",
+    "no": "You voted against. In practice, the Rajya Sabha never counted the votes, so a “No” on 20 September was never recorded.",
+    "committee": "You asked for a committee. That was the opposition’s demand on the floor, and it was refused. Even the RSS-affiliated Bharatiya Kisan Sangh wanted committee scrutiny.",
+    "abstain": "You stayed out. Many opposition MPs walked out or boycotted on 22 September, and the third bill passed with almost no debate."
+  },
+  "question": "Passed without a recorded vote, repealed without a debate. How much scrutiny should a law that affects millions of farmers get?"
 }

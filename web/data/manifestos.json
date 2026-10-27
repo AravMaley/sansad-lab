@@ -1,35 +1,131 @@
 {
-  "_note": "PLACEHOLDER SAMPLE DATA with fictional parties. Replace with sourced manifesto positions before launch. stance: 1 = supports, -1 = opposes, 0 = neutral/silent.",
+  "election": "Lok Sabha 2024",
+  "method": "Stances are coded only from what each manifesto says. “Silent” means the document makes no commitment on that statement — not that the party opposes it. Page numbers are the printed page numbers.",
+  "excluded": "AAP, AITC and CPI(M) are not included yet: we could not verify their positions against their own documents.",
   "parties": [
-    { "id": "alpha", "name": "Alpha Party (sample)" },
-    { "id": "beta", "name": "Beta Front (sample)" },
-    { "id": "gamma", "name": "Gamma Alliance (sample)" }
+    {
+      "id": "bjp",
+      "name": "Bharatiya Janata Party",
+      "short": "BJP",
+      "manifesto": "Modi Ki Guarantee — Sankalp Patra 2024",
+      "url": "https://www.bjp.org/files/inline-documents/Modi-Ki-Guarantee-Sankalp-Patra-English_0.pdf"
+    },
+    {
+      "id": "inc",
+      "name": "Indian National Congress",
+      "short": "INC",
+      "manifesto": "Nyay Patra 2024",
+      "url": "https://manifesto.inc.in/assets/Congress-Manifesto-English-2024-Dyoxp_4E.pdf"
+    }
   ],
   "statements": [
     {
       "id": "msp-law",
-      "text": "Minimum Support Price for crops should be a legal guarantee.",
-      "stances": { "alpha": 1, "beta": -1, "gamma": 0 }
+      "topic": "Farming",
+      "text": "Minimum Support Price for crops should be guaranteed by law.",
+      "positions": {
+        "bjp": { "stance": 0, "page": 22, "quote": "We have ensured unprecedented increase in MSP for major crops, and we will continue to increase MSP from time to time." },
+        "inc": { "stance": 1, "page": 17, "quote": "Congress will give a legal guarantee to the Minimum Support Prices (MSP) announced by the government every year, as recommended by the Swaminathan Commission." }
+      }
+    },
+    {
+      "id": "onoe",
+      "topic": "Elections",
+      "text": "Lok Sabha and state assembly elections should be held at the same time.",
+      "positions": {
+        "bjp": { "stance": 1, "page": 55, "quote": "Making One Nation, One Election a Reality … will work towards the implementation of the recommendations of the Committee.", "verify": "Reconstructed from a page that extracts poorly; check against the PDF." },
+        "inc": { "stance": -1, "page": 22, "quote": "We reject the ‘one nation one election’ idea and we promise that elections to the Lok Sabha and the State Assemblies will be held as and when they are due." }
+      }
+    },
+    {
+      "id": "ucc",
+      "topic": "Law",
+      "text": "India should adopt a Uniform Civil Code.",
+      "positions": {
+        "bjp": { "stance": 1, "page": 54, "quote": "BJP reiterates its stand to draw a Uniform Civil Code, drawing upon the best traditions and harmonising them with the modern times." },
+        "inc": { "stance": 0, "page": 8, "quote": "We will encourage reform of personal laws. Such reform must be undertaken with the participation and consent of the communities concerned." }
+      }
+    },
+    {
+      "id": "caste-census",
+      "topic": "Social justice",
+      "text": "A nationwide caste census should be conducted.",
+      "positions": {
+        "bjp": { "stance": 0, "page": null, "quote": null },
+        "inc": { "stance": 1, "page": 6, "quote": "Congress will conduct a nation-wide Socio-Economic and Caste Census to enumerate the castes and sub-castes and their socio-economic conditions." }
+      }
+    },
+    {
+      "id": "agnipath",
+      "topic": "Defence",
+      "text": "The Agnipath short-term military recruitment scheme should be scrapped.",
+      "positions": {
+        "bjp": { "stance": 0, "page": null, "quote": null },
+        "inc": { "stance": 1, "page": 38, "quote": "Congress will scrap the Agnipath Scheme and return to the normal recruitment processes followed by the Army, Navy and Air Force." }
+      }
+    },
+    {
+      "id": "womens-quota-now",
+      "topic": "Representation",
+      "text": "Women’s reservation in legislatures should start without waiting for a new census and delimitation.",
+      "positions": {
+        "bjp": { "stance": 0, "page": 16, "quote": "We will systematically implement this to ensure representation for women in the Parliament and State Legislatures." },
+        "inc": { "stance": 1, "page": 16, "quote": "Congress will delete the sinister provisions and bring the Amendment Act into force immediately … applied to the Lok Sabha that will be elected in 2029." }
+      }
+    },
+    {
+      "id": "paper-leaks",
+      "topic": "Education",
+      "text": "There should be strict legal action against exam paper leaks.",
+      "positions": {
+        "bjp": { "stance": 1, "page": 17, "quote": "We have already enacted a strict law to stop misconduct in recruitment exams across the country. We will strictly implement this law." },
+        "inc": { "stance": 1, "page": 11, "quote": "We will provide fast-track courts to adjudicate cases of leaking question papers for job examinations and provide monetary compensation to the victims." }
+      }
     },
     {
       "id": "free-power",
-      "text": "Households should get a fixed amount of free electricity each month.",
-      "stances": { "alpha": 1, "beta": 0, "gamma": -1 }
+      "topic": "Welfare",
+      "text": "Poor households should get free electricity.",
+      "positions": {
+        "bjp": { "stance": 1, "page": 12, "quote": "Zero Electricity Bill – We will provide free electricity to poor households under PM Surya Ghar Muft Bijli Yojana." },
+        "inc": { "stance": 0, "page": null, "quote": null }
+      }
     },
     {
-      "id": "privatise",
-      "text": "The government should sell loss-making public sector companies.",
-      "stances": { "alpha": -1, "beta": 1, "gamma": 0 }
+      "id": "cash-women",
+      "topic": "Welfare",
+      "text": "Poor families should get a direct annual cash transfer to a woman of the household.",
+      "positions": {
+        "bjp": { "stance": 0, "page": null, "quote": null },
+        "inc": { "stance": 1, "page": 15, "quote": "Congress resolves to launch a Mahalakshmi scheme to provide ₹1 lakh per year to every poor Indian family as an unconditional cash transfer." }
+      }
     },
     {
-      "id": "women-quota",
-      "text": "Women should have reserved seats in Parliament.",
-      "stances": { "alpha": 1, "beta": 1, "gamma": 1 }
+      "id": "gst",
+      "topic": "Economy",
+      "text": "The GST system should be restructured.",
+      "positions": {
+        "bjp": { "stance": 0, "page": 31, "quote": "We will further simplify the GST portal to increase accessibility to users, especially MSMEs and small traders." },
+        "inc": { "stance": 1, "page": 31, "quote": "The GST Council will be re-designed. It will be the final authority on policy and on all matters relating to GST." }
+      }
     },
     {
-      "id": "one-election",
-      "text": "Lok Sabha and state elections should be held together.",
-      "stances": { "alpha": -1, "beta": 1, "gamma": 1 }
+      "id": "jk-statehood",
+      "topic": "Federalism",
+      "text": "Full statehood should be restored to Jammu & Kashmir.",
+      "positions": {
+        "bjp": { "stance": 0, "page": null, "quote": null },
+        "inc": { "stance": 1, "page": 36, "quote": "We will immediately restore full statehood to Jammu and Kashmir." }
+      }
+    },
+    {
+      "id": "apprenticeship",
+      "topic": "Jobs",
+      "text": "Young graduates should have a legal right to a paid apprenticeship.",
+      "positions": {
+        "bjp": { "stance": 0, "page": null, "quote": null },
+        "inc": { "stance": 1, "page": 11, "quote": "Congress guarantees a new Right to Apprenticeship Act to provide a one year apprenticeship … to every diploma holder or college graduate below the age of 25." }
+      }
     }
   ]
 }

@@ -1,0 +1,94 @@
+{
+  "id": "womens-reservation-2023",
+  "order": 2,
+  "title": "Women’s Reservation",
+  "year": 2023,
+  "kicker": "The Constitution (106th Amendment) Act — Nari Shakti Vandan Adhiniyam",
+  "summary": "Reserves one-third of seats in the Lok Sabha, state assemblies and the Delhi assembly for women, including within seats already reserved for SCs and STs. It applies only after the next census is published and constituencies are redrawn, and lasts 15 years unless Parliament extends it.",
+  "provisions": [
+    "One-third of seats reserved for women in the Lok Sabha, state assemblies and the Delhi assembly.",
+    "One-third of SC/ST-reserved seats also reserved for women.",
+    "Takes effect only after the first census after commencement and the delimitation based on it.",
+    "Lasts 15 years, extendable by Parliament. Reserved seats rotate after each delimitation."
+  ],
+  "votes": [
+    {
+      "house": "Lok Sabha",
+      "date": "2023-09-20",
+      "method": "division",
+      "ayes": 454,
+      "noes": 2,
+      "note": "Both Noes were AIMIM MPs. As a constitutional amendment it needed a two-thirds majority of members present and voting.",
+      "source": "https://www.deccanherald.com/amp/story/india%2Fhistoric-womens-reservation-bill-clears-parliament-hurdle-2696190"
+    },
+    {
+      "house": "Rajya Sabha",
+      "date": "2023-09-21",
+      "method": "division",
+      "ayes": 214,
+      "noes": 0,
+      "note": "Unanimous.",
+      "source": "https://livelaw.in/top-stories/womens-reservation-bill-live-updates-from-rajya-sabha-238294"
+    }
+  ],
+  "committee": {
+    "referred": false,
+    "note": "The 2023 Bill went to no committee. Earlier versions did: a Joint Committee in 1996 and a Standing Committee in 2008.",
+    "source": "https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023"
+  },
+  "arguments_for": [
+    {
+      "text": "It fulfils a demand pending since the 1996 Bill, with near-unanimous support across parties.",
+      "by": "PRS Legislative Research (bill history)",
+      "source": "https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023"
+    },
+    {
+      "text": "A “historic achievement” for representation.",
+      "by": "Jagdeep Dhankhar, then Rajya Sabha Chairman",
+      "source": "https://organiser.org/2023/09/22/197210/bharat/womens-reservation-bill-passed-unanimousously-in-rajya-sabha-dhankhar-says-historic-achievement/"
+    },
+    {
+      "text": "Blocking the 2026 fast-track amendment denies women their quota.",
+      "by": "Home Minister Amit Shah (April 2026)",
+      "source": "https://m.thewire.in/article/politics/major-setback-modi-govts-constitution-amendment-bill-delimitation-fails-in-lok-sabha"
+    }
+  ],
+  "arguments_against": [
+    {
+      "text": "Tying the quota to a census and delimitation delays a right indefinitely; it should apply immediately.",
+      "by": "Petitioner Jaya Thakur (Congress leader), Supreme Court",
+      "source": "https://www.verdictum.in/court-updates/supreme-court/women-reservation-106-amendment-dr-jaya-thakur-v-union-of-india-wpc-11812023-1564454"
+    },
+    {
+      "text": "Population-based delimitation would penalise southern states that controlled population growth, so the quota should be delinked from it.",
+      "by": "Opposition parties (April 2026)",
+      "source": "https://www.drishtiias.com/daily-updates/daily-news-analysis/defeat-of-the-constitution-131st-amendment-bill-2026"
+    },
+    {
+      "text": "The 2026 notification bringing the Act into force was “absolutely bizarre” in its timing.",
+      "by": "Indian National Congress",
+      "source": "https://www.etvbharat.com/en/bharat/women-reservation-act-2023-comes-into-force-notification-enn26041700047"
+    }
+  ],
+  "timeline": [
+    { "date": "2023-09-19", "text": "Introduced as the first business in the new Parliament building.", "source": "https://prsindia.org/billtrack/the-constitution-one-hundred-twenty-eighth-amendment-bill-2023" },
+    { "date": "2023-09-20", "text": "Lok Sabha passes it, 454–2.", "source": "https://www.deccanherald.com/amp/story/india%2Fhistoric-womens-reservation-bill-clears-parliament-hurdle-2696190" },
+    { "date": "2023-09-21", "text": "Rajya Sabha passes it, 214–0.", "source": "https://livelaw.in/top-stories/womens-reservation-bill-live-updates-from-rajya-sabha-238294" },
+    { "date": "2023-09-28", "text": "Gazetted after presidential assent.", "source": "https://www.etvbharat.com/en/bharat/women-reservation-act-2023-comes-into-force-notification-enn26041700047" },
+    { "date": "2026-04-16", "text": "Act brought into force, more than 900 days after passage — but still not operational.", "source": "https://thewire.in/government/modi-govt-enforces-2023-womens-reservation-act-more-than-900-days-after-it-was-passed" },
+    { "date": "2026-04-17", "text": "A fast-track amendment to apply the quota in 2029 fails in Lok Sabha, 298–230. It needed 352.", "source": "https://www.drishtiias.com/daily-updates/daily-news-analysis/defeat-of-the-constitution-131st-amendment-bill-2026" }
+  ],
+  "outcome": "Passed",
+  "status": {
+    "text": "In force since April 2026 but not yet operational: seats will be reserved only after the next census and delimitation.",
+    "as_of": "2026-10",
+    "source": "https://www.etvbharat.com/en/bharat/women-reservation-act-2023-comes-into-force-notification-enn26041700047"
+  },
+  "reflection": {
+    "aye": "You joined 454 MPs. Almost everyone agreed on the goal; the fight was, and still is, over when it starts.",
+    "no": "You joined 2 MPs. AIMIM’s two members were the only Noes in either House.",
+    "committee": "You wanted scrutiny. The bill was introduced and passed within three days with no committee, though earlier versions had been examined twice.",
+    "abstain": "You stayed out of a near-unanimous vote. Constitutional amendments are judged by members present and voting, so abstaining changes the threshold."
+  },
+  "question": "Everyone voted yes, yet no woman has been elected to a reserved seat. Is a law passed if it hasn’t started?"
+}

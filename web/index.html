@@ -4,38 +4,91 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sansad Lab</title>
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Understand India's Parliament by doing: see the 18th Lok Sabha, match your views to party manifestos, vote on landmark bills, and read the record.">
+  <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 24a12 12 0 0 1 24 0' fill='none' stroke='%231e5b48' stroke-width='4'/%3E%3C/svg%3E">
 </head>
 <body>
-  <header>
-    <h1>Sansad Lab</h1>
-    <nav>
-      <button data-tab="matcher" class="active">Manifesto Matcher</button>
-      <button data-tab="mp">You Be the MP</button>
-    </nav>
+  <a class="skip" href="#house">Skip to content</a>
+
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="wordmark" href="#top">Sansad <em>Lab</em></a>
+      <nav aria-label="Sections">
+        <a href="#house">House</a>
+        <a href="#match">Match</a>
+        <a href="#vote">Vote</a>
+        <a href="#ledger">Ledger</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section id="matcher">
-      <p class="notice">Sample data with fictional parties. Not real manifesto positions.</p>
-      <div id="statements"></div>
-      <button id="match-btn" class="primary">Show my match</button>
-      <div id="match-result" aria-live="polite"></div>
+  <main id="top">
+    <!-- 01 · The House -->
+    <section id="house" class="room room-entrance">
+      <div class="wrap">
+        <p class="meta">India’s Parliament, explained by doing</p>
+        <h1 class="display">543 seats.<br>One House.<br><span class="accent">Your turn.</span></h1>
+        <p class="lede">The 18th Lok Sabha as elected on 4 June 2024. Tap a seat or a party to see who holds the House.</p>
+
+        <figure class="hemicycle-figure">
+          <div id="hemicycle" class="hemicycle" role="img" aria-label="Seat chart of the 18th Lok Sabha"></div>
+          <figcaption id="seat-caption" class="seat-caption" aria-live="polite">&nbsp;</figcaption>
+        </figure>
+
+        <div id="alliance-bar" class="alliance-bar"></div>
+        <div id="party-legend" class="party-legend"></div>
+
+        <dl id="house-facts" class="facts"></dl>
+        <p id="house-since" class="note"></p>
+      </div>
     </section>
 
-    <section id="mp" hidden>
-      <h2 id="scenario-title"></h2>
-      <p id="scenario-summary"></p>
-      <div class="cols">
-        <div><h3>Arguments for</h3><ul id="args-for"></ul></div>
-        <div><h3>Arguments against</h3><ul id="args-against"></ul></div>
+    <!-- 02 · Manifesto Matcher -->
+    <section id="match" class="room">
+      <div class="wrap narrow">
+        <p class="meta">02 · Manifesto Matcher</p>
+        <h2 class="display">Who promised what you want?</h2>
+        <p class="lede">Twelve statements, taken from the 2024 manifestos. Answer each one, then see where each party’s own document stands — page by page.</p>
+        <div id="matcher" class="matcher"></div>
       </div>
-      <h3>Your vote</h3>
-      <div id="choices"></div>
-      <div id="mp-result" aria-live="polite"></div>
+    </section>
+
+    <!-- 03 · You Be the MP -->
+    <section id="vote" class="room room-chamber">
+      <div class="wrap">
+        <p class="meta">03 · You Be the MP</p>
+        <h2 class="display">Four laws. Your vote.</h2>
+        <p class="lede">Read both sides, cast your vote, then see how Parliament actually voted — and what happened next.</p>
+        <div id="bill-tabs" class="bill-tabs" role="tablist" aria-label="Choose a bill"></div>
+        <article id="bill" class="bill" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <!-- 04 · The Ledger -->
+    <section id="ledger" class="room">
+      <div class="wrap">
+        <p class="meta">04 · The Ledger</p>
+        <h2 class="display">Is Parliament doing its job?</h2>
+        <p class="lede">How often it sits, how long it works, and how closely it reads the laws it passes.</p>
+        <div id="ledger-body" class="ledger"></div>
+      </div>
     </section>
   </main>
 
-  <script src="app.js"></script>
+  <footer class="colophon">
+    <div class="wrap narrow">
+      <p class="display-sm">Every number here has a source.</p>
+      <p>Tap any figure’s source link to check it yourself. Data comes from PRS Legislative Research, the Election Commission of India, ADR, party manifestos and court records. Where sources disagree, we say so.</p>
+      <p>Found an error? <a href="https://github.com/AravMaley/sansad-lab/issues">Tell us on GitHub</a>.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
