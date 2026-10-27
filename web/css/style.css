@@ -52,6 +52,11 @@
 
 * { box-sizing: border-box; }
 [hidden] { display: none !important; }
+
+/* Set by JS just before a reveal, cleared when the element animates in.
+   If Motion never loads, nothing adds the class, so content stays visible. */
+.will-reveal { opacity: 0; }
+@media (prefers-reduced-motion: reduce) { .will-reveal { opacity: 1; } }
 html { scroll-behavior: smooth; scroll-padding-top: 64px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 

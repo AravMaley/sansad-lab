@@ -1,0 +1,19 @@
+{
+  "name": "sansad-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive civic tools for understanding India's Parliament",
+  "scripts": {
+    "build:data": "node scripts/build-data.mjs",
+    "build:motion": "node scripts/build-motion.mjs",
+    "build": "npm run build:data && npm run build:motion",
+    "serve": "cd web && python -m http.server 8000"
+  },
+  "dependencies": {
+    "motion": "^14.7.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.0"
+  }
+}

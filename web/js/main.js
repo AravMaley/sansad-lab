@@ -5,10 +5,28 @@ import { initMP } from "./mp.js";
 import { initLedger } from "./ledger.js";
 
 // Each section loads its own data, so one failure doesn't blank the page.
-initHouse().catch((e) => fail(document.getElementById("hemicycle"), e));
-initMatcher().catch((e) => fail(document.getElementById("matcher"), e));
-initMP().catch((e) => fail(document.getElementById("bill"), e));
-initLedger().catch((e) => fail(document.getElementById("ledger-body"), e));
+// Motion is optional: if it fails to load, content is already visible.
+const sections = [
+  [initHouse, "hemicycle"],
+  [initMatcher, "matcher"],
+  [initMP, "bill"],
+  [initLedger, "ledger-body"],
+];
+
+await Promise.all(sections.map(([init, id]) =>
+  init().catch((e) => fail(document.getElementById(id), e))
+));
+
+try {
+  const { reveal, countUpAll } = await import("./motion.js");
+  reveal(".room .meta, .room > .wrap > .display, .room > .wrap > .lede");
+  reveal(".facts div", { each: 0.07 });
+  reveal(".panel", { y: 18, each: 0.1 });
+  reveal(".record", { each: 0.05 });
+  countUpAll(".facts dt, .ab-labels strong, .record .big, .hbar .val");
+} catch {
+  /* Motion unavailable — the page works without it. */
+}
 
 // Mark the nav link for the section in view.
 const links = [...document.querySelectorAll(".bar nav a")];
