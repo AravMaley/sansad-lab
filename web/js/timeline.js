@@ -5,10 +5,10 @@ const VERDICT_CLASS = { won: "v-won", partly: "v-partly", lost: "v-lost", live: 
 function card(p, key, i) {
   const img = p.image
     ? el("figure", { class: "p-figure" },
-        el("img", {
+        el("div", { class: "p-frame" }, el("img", {
           src: p.image.src, alt: p.image.alt, loading: "lazy", decoding: "async",
           width: p.image.w, height: p.image.h,
-        }),
+        })),
         el("figcaption", {},
           p.image.alt, " · ",
           el("a", { href: p.image.url, target: "_blank", rel: "noopener" }, `${p.image.credit}, ${p.image.licence} ↗`)
@@ -22,13 +22,13 @@ function card(p, key, i) {
     ? el("div", { class: "p-row " + (cls ?? "") }, el("dt", {}, label), el("dd", {}, text))
     : null;
 
-  return el("article", { class: "p-card", id: "protest-" + p.id },
+  return el("article", { class: "p-card", id: "protest-" + p.id, "data-verdict": p.verdict },
     el("div", { class: "p-spine-dot", "aria-hidden": "true" }),
 
     el("header", { class: "p-head" },
-      el("p", { class: "p-years" }, p.years),
+      el("span", { class: "p-year-big", "aria-hidden": "true" }, p.sortDate.slice(0, 4)),
       el("h3", {}, p.name),
-      el("p", { class: "p-place" }, p.place),
+      el("p", { class: "p-place" }, p.years, " · ", p.place),
       el("span", { class: "p-verdict " + VERDICT_CLASS[p.verdict] }, key[p.verdict])
     ),
 
@@ -75,6 +75,16 @@ export async function initTimeline() {
       const track = document.getElementById("timeline");
       scroll((progress) => { fill.style.transform = `scaleY(${progress})`; },
         { target: track, offset: ["start 80%", "end 60%"] });
+
+      // Gallery-style parallax: the photo drifts inside its frame as the card passes.
+      document.querySelectorAll(".p-figure").forEach((fig) => {
+        const img = fig.querySelector(".p-frame img");
+        if (!img) return;
+        img.style.willChange = "transform";
+        scroll((progress) => {
+          img.style.transform = `scale(1.14) translate3d(0, ${(progress - 0.5) * 8}%, 0)`;
+        }, { target: fig, offset: ["start end", "end start"] });
+      });
     }
   } catch {
     /* no motion — the timeline still reads top to bottom */

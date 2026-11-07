@@ -5,7 +5,26 @@
   "critiqueNote": "“Criticises” marks a position stated in a party's attack on the government rather than in its own list of promises.",
   "excluded": {
     "heading": "Why only five parties?",
-    "text": "A manifesto matcher is only honest if every party is judged from its own document. These five published one and we read all five in full. Four parties you might expect are missing, and the reason matters: AAP published no 2024 Lok Sabha manifesto at all — only ten promises read out at a press conference, which would show as “silent” on most statements purely because nobody wrote them down. NCP (Sharadchandra Pawar) released a manifesto we could not obtain in any form, including from web archives. CPI's manifesto was likewise unobtainable. TVK did not contest the 2024 Lok Sabha election. Guessing their positions from news reports would put invented stances beside sourced ones."
+    "lede": "A matcher is only honest if every party is judged from its own document. These five published a 2024 Lok Sabha manifesto, and all five were read in full. Four you might expect are missing:",
+    "missing": [
+      {
+        "party": "AAP",
+        "why": "Published no 2024 manifesto — only ten promises read out at a press conference."
+      },
+      {
+        "party": "NCP (SP)",
+        "why": "Manifesto could not be obtained in any form, web archives included."
+      },
+      {
+        "party": "CPI",
+        "why": "Manifesto likewise unobtainable."
+      },
+      {
+        "party": "TVK",
+        "why": "Did not contest the 2024 Lok Sabha election."
+      }
+    ],
+    "close": "Guessing their positions from news reports would put invented stances beside sourced ones."
   },
   "parties": [
     {
@@ -56,11 +75,33 @@
       "topic": "Farming",
       "text": "Minimum Support Price for crops should be guaranteed by law.",
       "positions": {
-        "bjp": { "stance": 0, "page": 22, "quote": "We have ensured unprecedented increase in MSP for major crops, and we will continue to increase MSP from time to time." },
-        "inc": { "stance": 1, "page": 17, "quote": "Congress will give a legal guarantee to the Minimum Support Prices (MSP) announced by the government every year, as recommended by the Swaminathan Commission." },
-        "aitc": { "stance": 1, "page": 33, "quote": "…introduce a bill in Parliament that legally mandates an MSP at least 50% higher than the average cost of production of all such crops." },
-        "cpim": { "stance": 1, "page": 21, "quote": "Ensure legal guarantee for the Minimum Support Price (MSP), which will be at least one and a half times the comprehensive cost of production (C2+50 per cent)." },
-        "dmk": { "stance": 1, "partial": true, "page": 52, "quote": "The recommendations of the M.S. Swaminathan committee will be adopted, ensuring that agricultural products' MSP is set at total production cost + 50%.", "note": "Promises the price level, but never says “legal guarantee”." }
+        "bjp": {
+          "stance": 0,
+          "page": 22,
+          "quote": "We have ensured unprecedented increase in MSP for major crops, and we will continue to increase MSP from time to time."
+        },
+        "inc": {
+          "stance": 1,
+          "page": 17,
+          "quote": "Congress will give a legal guarantee to the Minimum Support Prices (MSP) announced by the government every year, as recommended by the Swaminathan Commission."
+        },
+        "aitc": {
+          "stance": 1,
+          "page": 33,
+          "quote": "…introduce a bill in Parliament that legally mandates an MSP at least 50% higher than the average cost of production of all such crops."
+        },
+        "cpim": {
+          "stance": 1,
+          "page": 21,
+          "quote": "Ensure legal guarantee for the Minimum Support Price (MSP), which will be at least one and a half times the comprehensive cost of production (C2+50 per cent)."
+        },
+        "dmk": {
+          "stance": 1,
+          "partial": true,
+          "page": 52,
+          "quote": "The recommendations of the M.S. Swaminathan committee will be adopted, ensuring that agricultural products' MSP is set at total production cost + 50%.",
+          "note": "Promises the price level, but never says “legal guarantee”."
+        }
       },
       "actions": {
         "bjp": {
@@ -78,11 +119,32 @@
       "topic": "Elections",
       "text": "Lok Sabha and state assembly elections should be held at the same time.",
       "positions": {
-        "bjp": { "stance": 1, "page": 55, "quote": "Making One Nation, One Election a Reality — we will work towards the implementation of the recommendations of the Committee.", "verify": "Rebuilt from a page that extracts poorly; check against the PDF." },
-        "inc": { "stance": -1, "page": 22, "quote": "We reject the ‘one nation one election’ idea and we promise that elections to the Lok Sabha and the State Assemblies will be held as and when they are due." },
-        "aitc": { "stance": -1, "page": 14, "quote": "We will not accept the ‘One Nation One Election’ proposal." },
-        "cpim": { "stance": 0, "page": null, "quote": null },
-        "dmk": { "stance": -1, "page": 27, "quote": "The plan for ‘One Nation, One Election’ will be abandoned." }
+        "bjp": {
+          "stance": 1,
+          "page": 55,
+          "quote": "Making One Nation, One Election a Reality — we will work towards the implementation of the recommendations of the Committee.",
+          "verify": "Rebuilt from a page that extracts poorly; check against the PDF."
+        },
+        "inc": {
+          "stance": -1,
+          "page": 22,
+          "quote": "We reject the ‘one nation one election’ idea and we promise that elections to the Lok Sabha and the State Assemblies will be held as and when they are due."
+        },
+        "aitc": {
+          "stance": -1,
+          "page": 14,
+          "quote": "We will not accept the ‘One Nation One Election’ proposal."
+        },
+        "cpim": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "dmk": {
+          "stance": -1,
+          "page": 27,
+          "quote": "The plan for ‘One Nation, One Election’ will be abandoned."
+        }
       }
     },
     {
@@ -90,11 +152,33 @@
       "topic": "Law",
       "text": "India should adopt a Uniform Civil Code.",
       "positions": {
-        "bjp": { "stance": 1, "page": 54, "quote": "BJP reiterates its stand to draw a Uniform Civil Code, drawing upon the best traditions and harmonising them with the modern times." },
-        "inc": { "stance": 0, "page": 8, "quote": "We will encourage reform of personal laws. Such reform must be undertaken with the participation and consent of the communities concerned." },
-        "aitc": { "stance": -1, "page": 74, "quote": "The Uniform Civil Code will not be implemented. TMC will firmly endeavour to preserve the secular nature of India, as per the Constitution." },
-        "cpim": { "stance": -1, "critique": true, "page": 2, "quote": "BJP state governments have enacted laws aiming to sharpen communal polarization… the so-called love jihad, Uniform Civil Code etc.", "note": "The only mention. UCC appears in the critique, not in the party's list of commitments." },
-        "dmk": { "stance": -1, "page": 27, "quote": "The introduction of the Uniform Civil Code will be strictly prevented to preserve the secular nature of India as stated in the Constitution's preamble." }
+        "bjp": {
+          "stance": 1,
+          "page": 54,
+          "quote": "BJP reiterates its stand to draw a Uniform Civil Code, drawing upon the best traditions and harmonising them with the modern times."
+        },
+        "inc": {
+          "stance": 0,
+          "page": 8,
+          "quote": "We will encourage reform of personal laws. Such reform must be undertaken with the participation and consent of the communities concerned."
+        },
+        "aitc": {
+          "stance": -1,
+          "page": 74,
+          "quote": "The Uniform Civil Code will not be implemented. TMC will firmly endeavour to preserve the secular nature of India, as per the Constitution."
+        },
+        "cpim": {
+          "stance": -1,
+          "critique": true,
+          "page": 2,
+          "quote": "BJP state governments have enacted laws aiming to sharpen communal polarization… the so-called love jihad, Uniform Civil Code etc.",
+          "note": "The only mention. UCC appears in the critique, not in the party's list of commitments."
+        },
+        "dmk": {
+          "stance": -1,
+          "page": 27,
+          "quote": "The introduction of the Uniform Civil Code will be strictly prevented to preserve the secular nature of India as stated in the Constitution's preamble."
+        }
       },
       "actions": {
         "inc": {
@@ -112,11 +196,32 @@
       "topic": "Social justice",
       "text": "A nationwide caste census should be conducted.",
       "positions": {
-        "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 6, "quote": "Congress will conduct a nation-wide Socio-Economic and Caste Census to enumerate the castes and sub-castes and their socio-economic conditions." },
-        "aitc": { "stance": 0, "page": 14, "quote": null, "note": "Promises a population census, and an OBC status task force, but never asks for caste enumeration." },
-        "cpim": { "stance": 1, "page": 32, "quote": "Immediate conduct of a Caste Census as part of general census." },
-        "dmk": { "stance": 1, "page": 45, "quote": "…population censuses, including caste-wise censuses and censuses concerning people below the poverty line, will be conducted by the Union government once every five years." }
+        "bjp": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "inc": {
+          "stance": 1,
+          "page": 6,
+          "quote": "Congress will conduct a nation-wide Socio-Economic and Caste Census to enumerate the castes and sub-castes and their socio-economic conditions."
+        },
+        "aitc": {
+          "stance": 0,
+          "page": 14,
+          "quote": null,
+          "note": "Promises a population census, and an OBC status task force, but never asks for caste enumeration."
+        },
+        "cpim": {
+          "stance": 1,
+          "page": 32,
+          "quote": "Immediate conduct of a Caste Census as part of general census."
+        },
+        "dmk": {
+          "stance": 1,
+          "page": 45,
+          "quote": "…population censuses, including caste-wise censuses and censuses concerning people below the poverty line, will be conducted by the Union government once every five years."
+        }
       },
       "actions": {
         "bjp": {
@@ -134,11 +239,33 @@
       "topic": "Defence",
       "text": "The Agnipath short-term military recruitment scheme should be scrapped.",
       "positions": {
-        "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 38, "quote": "Congress will scrap the Agnipath Scheme and return to the normal recruitment processes followed by the Army, Navy and Air Force." },
-        "aitc": { "stance": 1, "page": 57, "quote": "The Agnipath scheme. We will restore the Indian Armed Forces' traditional recruitment mechanisms." },
-        "cpim": { "stance": 1, "critique": true, "page": 7, "quote": "Even recruitment in the armed forces — critical for the country's security — are now being contractorised with the cruel ‘agniveer’ scheme.", "note": "The only mention. Agnipath is absent from the party's list of laws it promises to scrap." },
-        "dmk": { "stance": 1, "page": 53, "quote": "The Agnipath scheme will be withdrawn. Permanent recruitment service for Indian Armed Forces personnel will be restored." }
+        "bjp": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "inc": {
+          "stance": 1,
+          "page": 38,
+          "quote": "Congress will scrap the Agnipath Scheme and return to the normal recruitment processes followed by the Army, Navy and Air Force."
+        },
+        "aitc": {
+          "stance": 1,
+          "page": 57,
+          "quote": "The Agnipath scheme. We will restore the Indian Armed Forces' traditional recruitment mechanisms."
+        },
+        "cpim": {
+          "stance": 1,
+          "critique": true,
+          "page": 7,
+          "quote": "Even recruitment in the armed forces — critical for the country's security — are now being contractorised with the cruel ‘agniveer’ scheme.",
+          "note": "The only mention. Agnipath is absent from the party's list of laws it promises to scrap."
+        },
+        "dmk": {
+          "stance": 1,
+          "page": 53,
+          "quote": "The Agnipath scheme will be withdrawn. Permanent recruitment service for Indian Armed Forces personnel will be restored."
+        }
       },
       "actions": {
         "bjp": {
@@ -156,11 +283,33 @@
       "topic": "Representation",
       "text": "Women's reservation in legislatures should start without waiting for a new census and delimitation.",
       "positions": {
-        "bjp": { "stance": 0, "page": 16, "quote": "We have enacted the long-awaited Nari Shakti Vandan Adhiniyam. We will systematically implement this…", "note": "Commits to implementing the Act, but gives no timing and does not address the census condition." },
-        "inc": { "stance": 1, "page": 16, "quote": "Congress will delete the sinister provisions and bring the Amendment Act into force immediately… applied to the Lok Sabha that will be elected in 2029." },
-        "aitc": { "stance": 0, "page": 61, "quote": null, "note": "Promises 33% reservation in the West Bengal assembly only, and says nothing about the national Act's timing." },
-        "cpim": { "stance": 1, "page": 13, "quote": "Immediately implement the legislation for one-third reservation for women in Parliament and state assemblies without linking it to census and delimitation." },
-        "dmk": { "stance": 1, "page": 28, "quote": "A 33% reservation for women in Parliament and legislative assemblies will be implemented immediately." }
+        "bjp": {
+          "stance": 0,
+          "page": 16,
+          "quote": "We have enacted the long-awaited Nari Shakti Vandan Adhiniyam. We will systematically implement this…",
+          "note": "Commits to implementing the Act, but gives no timing and does not address the census condition."
+        },
+        "inc": {
+          "stance": 1,
+          "page": 16,
+          "quote": "Congress will delete the sinister provisions and bring the Amendment Act into force immediately… applied to the Lok Sabha that will be elected in 2029."
+        },
+        "aitc": {
+          "stance": 0,
+          "page": 61,
+          "quote": null,
+          "note": "Promises 33% reservation in the West Bengal assembly only, and says nothing about the national Act's timing."
+        },
+        "cpim": {
+          "stance": 1,
+          "page": 13,
+          "quote": "Immediately implement the legislation for one-third reservation for women in Parliament and state assemblies without linking it to census and delimitation."
+        },
+        "dmk": {
+          "stance": 1,
+          "page": 28,
+          "quote": "A 33% reservation for women in Parliament and legislative assemblies will be implemented immediately."
+        }
       }
     },
     {
@@ -168,11 +317,32 @@
       "topic": "Education",
       "text": "There should be strict legal action against exam paper leaks.",
       "positions": {
-        "bjp": { "stance": 1, "page": 17, "quote": "We have already enacted a strict law to stop misconduct in recruitment exams across the country. We will strictly implement this law." },
-        "inc": { "stance": 1, "page": 11, "quote": "We will provide fast-track courts to adjudicate cases of leaking question papers for job examinations and provide monetary compensation to the victims." },
-        "aitc": { "stance": 1, "page": 41, "quote": "We will introduce a bill in Parliament… to constitute an independent judicial commission (Union and State level) to oversee the conduct of competitive examinations, end-to-end." },
-        "cpim": { "stance": 0, "page": null, "quote": null },
-        "dmk": { "stance": 0, "page": null, "quote": null, "note": "Its exam promises concern NEET exemption and exams in Tamil, not malpractice." }
+        "bjp": {
+          "stance": 1,
+          "page": 17,
+          "quote": "We have already enacted a strict law to stop misconduct in recruitment exams across the country. We will strictly implement this law."
+        },
+        "inc": {
+          "stance": 1,
+          "page": 11,
+          "quote": "We will provide fast-track courts to adjudicate cases of leaking question papers for job examinations and provide monetary compensation to the victims."
+        },
+        "aitc": {
+          "stance": 1,
+          "page": 41,
+          "quote": "We will introduce a bill in Parliament… to constitute an independent judicial commission (Union and State level) to oversee the conduct of competitive examinations, end-to-end."
+        },
+        "cpim": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "dmk": {
+          "stance": 0,
+          "page": null,
+          "quote": null,
+          "note": "Its exam promises concern NEET exemption and exams in Tamil, not malpractice."
+        }
       }
     },
     {
@@ -180,11 +350,34 @@
       "topic": "Welfare",
       "text": "Poor households should get free electricity.",
       "positions": {
-        "bjp": { "stance": 1, "page": 12, "quote": "Zero Electricity Bill — We will provide free electricity to poor households under PM Surya Ghar Muft Bijli Yojana." },
-        "inc": { "stance": 0, "page": null, "quote": null },
-        "aitc": { "stance": 0, "page": 21, "quote": null, "note": "Promises electricity as a basic amenity for all households — access, not free supply." },
-        "cpim": { "stance": 0, "page": 19, "quote": "Ensuring affordable electricity at subsidized rates…", "note": "Subsidised, not free." },
-        "dmk": { "stance": 0, "page": null, "quote": null, "note": "The word “electricity” does not appear in the manifesto." }
+        "bjp": {
+          "stance": 1,
+          "page": 12,
+          "quote": "Zero Electricity Bill — We will provide free electricity to poor households under PM Surya Ghar Muft Bijli Yojana."
+        },
+        "inc": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "aitc": {
+          "stance": 0,
+          "page": 21,
+          "quote": null,
+          "note": "Promises electricity as a basic amenity for all households — access, not free supply."
+        },
+        "cpim": {
+          "stance": 0,
+          "page": 19,
+          "quote": "Ensuring affordable electricity at subsidized rates…",
+          "note": "Subsidised, not free."
+        },
+        "dmk": {
+          "stance": 0,
+          "page": null,
+          "quote": null,
+          "note": "The word “electricity” does not appear in the manifesto."
+        }
       },
       "actions": {
         "inc": {
@@ -202,11 +395,32 @@
       "topic": "Welfare",
       "text": "The government should make regular direct cash payments to women.",
       "positions": {
-        "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 15, "quote": "Congress resolves to launch a Mahalakshmi scheme to provide ₹1 lakh per year to every poor Indian family as an unconditional cash transfer.", "note": "Paid to the oldest woman of each poor household." },
-        "aitc": { "stance": 1, "page": 62, "quote": "…we will provide all women in India a monthly financial assistance of ₹1,000 (General) and ₹1,200 (SC, ST)." },
-        "cpim": { "stance": 0, "page": null, "quote": null },
-        "dmk": { "stance": 1, "page": 24, "quote": "A monthly entitlement of ₹1000 for all women in every state." }
+        "bjp": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "inc": {
+          "stance": 1,
+          "page": 15,
+          "quote": "Congress resolves to launch a Mahalakshmi scheme to provide ₹1 lakh per year to every poor Indian family as an unconditional cash transfer.",
+          "note": "Paid to the oldest woman of each poor household."
+        },
+        "aitc": {
+          "stance": 1,
+          "page": 62,
+          "quote": "…we will provide all women in India a monthly financial assistance of ₹1,000 (General) and ₹1,200 (SC, ST)."
+        },
+        "cpim": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "dmk": {
+          "stance": 1,
+          "page": 24,
+          "quote": "A monthly entitlement of ₹1000 for all women in every state."
+        }
       },
       "actions": {
         "bjp": {
@@ -224,11 +438,32 @@
       "topic": "Economy",
       "text": "The GST system should be restructured.",
       "positions": {
-        "bjp": { "stance": 0, "page": 31, "quote": "We will further simplify the GST portal to increase accessibility to users, especially MSMEs and small traders.", "note": "Promises a better portal, not a restructured system." },
-        "inc": { "stance": 1, "page": 31, "quote": "The GST Council will be re-designed. It will be the final authority on policy and on all matters relating to GST." },
-        "aitc": { "stance": 1, "page": 22, "quote": "The current GST regime, which has eroded the fiscal autonomy of our states and led to heavy losses, will be reformed into a more equitable instrument of revenue distribution." },
-        "cpim": { "stance": 1, "page": 16, "quote": "GST to be overhauled respecting the federal structure of our country and the rights of the states by sharing resources with them." },
-        "dmk": { "stance": 1, "page": 48, "quote": "The Union government's financial contributions to states will be based on the income tax and GST collected in those states." }
+        "bjp": {
+          "stance": 0,
+          "page": 31,
+          "quote": "We will further simplify the GST portal to increase accessibility to users, especially MSMEs and small traders.",
+          "note": "Promises a better portal, not a restructured system."
+        },
+        "inc": {
+          "stance": 1,
+          "page": 31,
+          "quote": "The GST Council will be re-designed. It will be the final authority on policy and on all matters relating to GST."
+        },
+        "aitc": {
+          "stance": 1,
+          "page": 22,
+          "quote": "The current GST regime, which has eroded the fiscal autonomy of our states and led to heavy losses, will be reformed into a more equitable instrument of revenue distribution."
+        },
+        "cpim": {
+          "stance": 1,
+          "page": 16,
+          "quote": "GST to be overhauled respecting the federal structure of our country and the rights of the states by sharing resources with them."
+        },
+        "dmk": {
+          "stance": 1,
+          "page": 48,
+          "quote": "The Union government's financial contributions to states will be based on the income tax and GST collected in those states."
+        }
       }
     },
     {
@@ -236,11 +471,33 @@
       "topic": "Federalism",
       "text": "Full statehood should be restored to Jammu & Kashmir.",
       "positions": {
-        "bjp": { "stance": 0, "page": 8, "quote": null, "note": "Cites revoking Article 370 as an achievement; makes no statehood commitment." },
-        "inc": { "stance": 1, "page": 36, "quote": "We will immediately restore full statehood to Jammu and Kashmir." },
-        "aitc": { "stance": 0, "page": null, "quote": null, "note": "Mentions Jammu and Kashmir once, on university vacancies." },
-        "cpim": { "stance": 1, "page": 11, "quote": "The CPI(M) stands for immediate elections to the State Assembly and also for the restoration of full statehood as a first step." },
-        "dmk": { "stance": 1, "page": 27, "quote": "State status will be restored to the bifurcated Jammu and Kashmir, and democratic elections will be conducted for the state legislature immediately." }
+        "bjp": {
+          "stance": 0,
+          "page": 8,
+          "quote": null,
+          "note": "Cites revoking Article 370 as an achievement; makes no statehood commitment."
+        },
+        "inc": {
+          "stance": 1,
+          "page": 36,
+          "quote": "We will immediately restore full statehood to Jammu and Kashmir."
+        },
+        "aitc": {
+          "stance": 0,
+          "page": null,
+          "quote": null,
+          "note": "Mentions Jammu and Kashmir once, on university vacancies."
+        },
+        "cpim": {
+          "stance": 1,
+          "page": 11,
+          "quote": "The CPI(M) stands for immediate elections to the State Assembly and also for the restoration of full statehood as a first step."
+        },
+        "dmk": {
+          "stance": 1,
+          "page": 27,
+          "quote": "State status will be restored to the bifurcated Jammu and Kashmir, and democratic elections will be conducted for the state legislature immediately."
+        }
       },
       "actions": {
         "bjp": {
@@ -258,11 +515,33 @@
       "topic": "Jobs",
       "text": "Young graduates should have a legal right to a paid apprenticeship.",
       "positions": {
-        "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 11, "quote": "Congress guarantees a new Right to Apprenticeship Act to provide a one year apprenticeship… to every diploma holder or college graduate below the age of 25." },
-        "aitc": { "stance": 1, "partial": true, "page": 68, "quote": "…guaranteed 1-year apprenticeships to all diploma holders or college graduates upto the age of 25… A monthly stipend will be provided.", "note": "Universal and paid, but not promised as a legal right." },
-        "cpim": { "stance": 0, "page": null, "quote": null },
-        "dmk": { "stance": 0, "page": null, "quote": null }
+        "bjp": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "inc": {
+          "stance": 1,
+          "page": 11,
+          "quote": "Congress guarantees a new Right to Apprenticeship Act to provide a one year apprenticeship… to every diploma holder or college graduate below the age of 25."
+        },
+        "aitc": {
+          "stance": 1,
+          "partial": true,
+          "page": 68,
+          "quote": "…guaranteed 1-year apprenticeships to all diploma holders or college graduates upto the age of 25… A monthly stipend will be provided.",
+          "note": "Universal and paid, but not promised as a legal right."
+        },
+        "cpim": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        },
+        "dmk": {
+          "stance": 0,
+          "page": null,
+          "quote": null
+        }
       },
       "actions": {
         "bjp": {

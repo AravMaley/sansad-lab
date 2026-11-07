@@ -151,9 +151,15 @@ export async function initMatcher() {
 
       el("div", { class: "method-box" },
         el("h3", {}, data.excluded.heading),
-        el("p", {}, data.excluded.text),
-        el("p", { class: "note" }, data.method, " ", data.partialNote, " ", data.critiqueNote),
-        el("p", { class: "note" }, "A “what they actually did” panel appears where a manifesto is silent. It records votes, Parliament answers and state schemes. It is kept separate from the manifesto layer and is never scored.")
+        el("p", { class: "mb-lede" }, data.excluded.lede),
+        el("dl", { class: "mb-missing" }, data.excluded.missing.map((m) =>
+          el("div", {}, el("dt", {}, m.party), el("dd", {}, m.why)))),
+        el("p", { class: "mb-close" }, data.excluded.close),
+        el("details", { class: "mb-how" },
+          el("summary", {}, "How this is scored"),
+          el("p", { class: "note" }, data.method),
+          el("p", { class: "note" }, data.partialNote, " ", data.critiqueNote),
+          el("p", { class: "note" }, "A “what they actually did” panel appears where a manifesto is silent. It records votes, Parliament answers and state schemes, and is never scored."))
       ),
 
       el("button", { class: "btn", type: "button", onclick: () => { answers = {}; store.set("answers", answers); i = 0; render(); } }, "Start again")
