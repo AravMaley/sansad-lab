@@ -1,0 +1,92 @@
+{
+  "id": "income-tax-2025",
+  "order": 6,
+  "title": "The Income Tax Rewrite",
+  "year": 2025,
+  "kicker": "The Income-tax Act, 2025 — replacing the law of 1961",
+  "summary": "The first full rewrite of India's income tax law in sixty-four years. It was meant to be simpler: shorter sections, plain tables, and one “tax year” in place of the confusing “previous year” and “assessment year”. It also wrote into law the tax officer's power to break into your email, cloud storage and social media during a search. The Lok Sabha passed it in about three minutes, without debate.",
+  "provisions": [
+    "Replaces the Income-tax Act 1961 in full, from 1 April 2026.",
+    "Cuts length and jargon: formulae and tables replace long provisos, and a single “tax year” replaces “previous year” and “assessment year”.",
+    "Mostly a redraft, not a tax cut — the ₹12 lakh rebate and the new slabs came from the Finance Act 2025, a separate law.",
+    "Section 247 lets authorised officers override access codes to search a “computer system” during a raid; section 261 defines that to include email, cloud, online investment accounts and social media."
+  ],
+  "votes": [
+    {
+      "house": "Lok Sabha",
+      "date": "2025-08-11",
+      "method": "voice",
+      "note": "Introduced and passed the same day by voice vote, reportedly in about three minutes, with no debate, while the opposition protested over the revision of Bihar's electoral rolls.",
+      "source": "https://www.thehindu.com/business/Economy/lok-sabha-passes-new-income-tax-bill-2025/article69920145.ece"
+    },
+    {
+      "house": "Rajya Sabha",
+      "date": "2025-08-12",
+      "method": "voice",
+      "note": "Returned to the Lok Sabha by voice vote the next day. As a Money Bill, the Rajya Sabha could recommend changes but not block it.",
+      "source": "https://www.thehindu.com/business/Economy/rajya-sabha-returns-income-tax-bill-2025/article69923456.ece"
+    }
+  ],
+  "committee": {
+    "referred": true,
+    "note": "The February 2025 version did go to a Select Committee under Baijayant Panda, which made more than 285 recommendations and reported in July 2025. The government then withdrew that bill and introduced a fresh one, which passed the same day it was introduced — so the bill that became law was never itself examined by a committee.",
+    "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+  },
+  "arguments_for": [
+    {
+      "text": "The 1961 Act had been amended so many times it had become unreadable. The rewrite cuts the word count roughly in half and replaces tangled provisos with tables and formulae.",
+      "by": "Ministry of Finance",
+      "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+    },
+    {
+      "text": "A single “tax year” removes a genuine and long-standing source of confusion for ordinary taxpayers filing returns.",
+      "by": "Select Committee on the Income-tax Bill, chaired by Baijayant Panda",
+      "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+    },
+    {
+      "text": "The Select Committee's scrutiny was real: it made more than 285 recommendations, and the government accepted enough of them to withdraw its own bill and start again.",
+      "by": "Government, August 2025",
+      "source": "https://www.thehindu.com/business/Economy/govt-withdraws-income-tax-bill-2025-to-bring-fresh-version/article69910234.ece"
+    }
+  ],
+  "arguments_against": [
+    {
+      "text": "A law governing every taxpayer in the country passed in roughly three minutes with no debate, after the version a committee had actually examined was withdrawn.",
+      "by": "Opposition MPs",
+      "source": "https://www.thehindu.com/business/Economy/lok-sabha-passes-new-income-tax-bill-2025/article69920145.ece"
+    },
+    {
+      "text": "The power to compel access to a person's email, cloud storage and social media during a search is far broader than a search of premises, and may not survive constitutional scrutiny.",
+      "by": "Institute of Chartered Accountants of India, pre-Budget memorandum, January 2026",
+      "source": "https://www.icai.org/post/pre-budget-memorandum-2026"
+    },
+    {
+      "text": "Commentary claiming the digital search power was dropped from the final Act is wrong: the phrase moved, but section 261's definition of “computer system” carries the same reach.",
+      "by": "Tax and privacy commentators",
+      "source": "https://www.livelaw.in/top-stories/supreme-court-income-tax-act-2025-section-247-digital-search-plea-283419"
+    }
+  ],
+  "timeline": [
+    { "date": "2025-02-13", "text": "The Income-tax Bill 2025 is introduced in the Lok Sabha and sent to a Select Committee.", "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025" },
+    { "date": "2025-07-21", "text": "The Select Committee reports, with more than 285 recommendations.", "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025" },
+    { "date": "2025-08-08", "text": "The government withdraws that bill.", "source": "https://www.thehindu.com/business/Economy/govt-withdraws-income-tax-bill-2025-to-bring-fresh-version/article69910234.ece" },
+    { "date": "2025-08-11", "text": "A fresh bill is introduced and passed by the Lok Sabha the same day, by voice vote, in about three minutes.", "source": "https://www.thehindu.com/business/Economy/lok-sabha-passes-new-income-tax-bill-2025/article69920145.ece" },
+    { "date": "2025-08-12", "text": "The Rajya Sabha returns it by voice vote.", "source": "https://www.thehindu.com/business/Economy/rajya-sabha-returns-income-tax-bill-2025/article69923456.ece" },
+    { "date": "2025-08-21", "text": "Presidential assent.", "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025" },
+    { "date": "2026-02-10", "text": "The Supreme Court hears a petition against the digital search power and declines to entertain it, unpersuaded that the power is unguided.", "source": "https://www.livelaw.in/top-stories/supreme-court-income-tax-act-2025-section-247-digital-search-plea-283419" },
+    { "date": "2026-04-01", "text": "The Act comes into force, replacing the 1961 law.", "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025" }
+  ],
+  "outcome": "Passed",
+  "status": {
+    "text": "In force since 1 April 2026. The constitutional challenge to the digital search power was refused a hearing in February 2026, so section 247 stands.",
+    "as_of": "2026-10",
+    "source": "https://www.livelaw.in/top-stories/supreme-court-income-tax-act-2025-section-247-digital-search-plea-283419"
+  },
+  "reflection": {
+    "aye": "You voted for it. So did the House — though on a voice vote nobody's name is recorded, so there is no way to show that you did. Most of what you approved was a redraft; the part that was genuinely new was the digital search power, and it was not debated.",
+    "no": "You voted against. On a voice vote the Chair judges which side sounded louder, and unless a member demands a division, no count is taken. The record of this law shows no opponents at all.",
+    "committee": "You asked for a committee — and this is the one bill here that got one. The Select Committee made over 285 recommendations. Then the government withdrew that bill and passed a new one the day it was introduced. The law in force was never examined by a committee in its final form.",
+    "abstain": "You stayed out. Much of the opposition effectively did too: they were protesting about Bihar's electoral rolls while the tax law went through in about three minutes."
+  },
+  "question": "A committee spent five months on this bill. The version that became law was passed in three minutes. What was the committee for?"
+}

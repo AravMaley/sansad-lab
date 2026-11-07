@@ -4,63 +4,60 @@ Understand India's Parliament by doing. Live at https://sansad-lab-web.vercel.ap
 
 ## What's on the site
 
-1. **The House.** A seat chart of the 18th Lok Sabha as elected on 4 June 2024, with alliance totals and MP profile figures.
-2. **Manifesto Matcher.** Twelve statements coded from the 2024 BJP and INC manifestos, with page-cited quotes. "Silent" is its own state and is never scored as disagreement.
-3. **You Be the MP.** Vote on four real laws (the farm laws, women's reservation, the Citizenship Amendment Act and the data protection law), then see the actual votes, the timeline and where each law stands now.
-4. **The Ledger.** PRS figures on committee scrutiny, session productivity and sittings across four full Lok Sabhas and the 18th Lok Sabha so far.
+1. **The House** — the 18th Lok Sabha as elected on 4 June 2024, seat by seat.
+2. **Manifesto Matcher** — 12 statements, five parties, every stance read from the party's own 2024 manifesto with a page citation. Where a manifesto is silent, a separate "what they actually did" panel records votes, Parliament answers and state schemes.
+3. **You Be the MP** — vote on six laws, then see the real record: the farm laws, women's reservation, the Citizenship Amendment Act, the data protection law, a national Uniform Civil Code (never introduced), and the 2025 income tax rewrite.
+4. **The Street** — a timeline of 12 protest movements from Chipko to the electoral-rolls protests now running, each with an honest verdict on whether it got what it asked for.
+5. **The Ledger** — PRS figures on committee scrutiny, sittings and session productivity.
 
 Every figure links to its source.
+
+## Why only five parties in the matcher
+
+A matcher is only honest if every party is judged from its own document. BJP, INC, TMC, CPI(M) and DMK published 2024 Lok Sabha manifestos and all five were read in full. AAP published none — only ten promises read out at a press conference. NCP (SP) and CPI manifestos could not be obtained anywhere, including web archives. TVK did not contest. Their positions are left out rather than guessed.
+
+"Silent" is never scored against a party, so a short manifesto is not penalised.
 
 ## Structure
 
 ```
-web/                 static site (Vercel serves this folder, no build step)
+web/                 static site (Vercel serves this, no build step)
   index.html
   css/style.css
-  js/                one module per section, plus util.js
-  data/              JSON the site loads
-    bills.json       GENERATED from laws/ (don't edit by hand)
-    manifestos.json
-    lok-sabha-18.json
-    productivity.json
+  js/                one module per section, plus util.js and motion.js
+  data/              JSON the site loads (bills.json is GENERATED)
+  img/               CC-licensed protest photos, credited in protests.json
+  vendor/motion.js   GENERATED — tree-shaken motion.dev bundle
 laws/                one JSON file per bill scenario (source of truth)
-scripts/build-data.mjs   validates laws/*.json and writes web/data/bills.json
-data/money/          placeholder for funding datasets
-reports/             research report behind the data
-research_notes/      the raw research notes, with every source
+scripts/             build-data.mjs, build-motion.mjs
+reports/, research_notes/   the research behind every figure
 ```
 
-## Editing data
+## Editing
 
-- **To add or change a bill:** edit or add a file in `laws/`, then run:
-  ```
-  node scripts/build-data.mjs
-  ```
-  The script fails if a vote, argument or timeline entry is missing its `source`, or if a division has no numeric counts.
-- **Everything else:** edit the JSON file in `web/data/` directly.
+- **Bills:** edit `laws/*.json`, then `npm run build:data`. The script rejects any vote, argument or timeline entry without a `source`.
+- **Motion:** change the import list in `scripts/build-motion.mjs`, then `npm run build:motion`. Currently 18 KB raw / 8 KB gzipped.
+- **Everything else:** edit the JSON in `web/data/` directly.
+
+Node lives at `D:\node.exe` on the author's machine and is not on PATH; call it by full path if `node` is not found.
 
 ## Run locally
 
 ```
-cd web
-python -m http.server 8000
+cd web && python -m http.server 8000
 ```
-
-Then open http://localhost:8000.
 
 ## Deploy
 
-Vercel is connected to the GitHub repo, with Root Directory set to `web` and no build command.
+Vercel, Root Directory `web`, no build command. `main` is production; every other branch gets a preview URL.
 
-- `main` is production.
-- Every other branch gets a preview URL.
+## Images
+
+Only freely licensed images are used, each credited with its licence in `web/data/protests.json`. Several movements — Chipko, anti-Mandal, Narmada, the RTI campaign, Telangana — have **no** free photograph, and the cards say so rather than substituting something misleading. Images are re-encoded to roughly 900 KB total.
 
 ## To verify before a wider launch
 
-See `reports/Sansad Lab civic data sources.md` for full detail.
-
-- **BJP manifesto p.55 (One Nation One Election):** the quote was rebuilt from text that extracted badly. Check it against the PDF.
-- **Contested dates:** check the farm-law assent dates (24 vs 27 Sep 2020, 30 Nov vs 1 Dec 2021) on egazette.gov.in.
-- **Current party positions:** check them on sansad.in. The site shows the June 2024 result.
-- **2024 sessions:** the PRS figures for Budget 2024 and Winter 2024 came from search snippets, so confirm them on the PRS pages.
-- **Other parties:** AAP, AITC and CPI(M) manifesto positions need checking against their own documents before they can join the matcher.
+- **BJP manifesto p.54 and p.55** — the UCC and One Nation One Election quotes came from a mirror of the official PDF, and p.55 extracts badly. Open the official file and check both by eye.
+- **Contested dates** — farm-law assent (24 vs 27 Sep 2020; 30 Nov vs 1 Dec 2021) on egazette.gov.in.
+- **Live items** — the electoral-rolls protests and the CAA court case both move. `protests.json` carries a `verifiedOn` date.
+- **Current party positions** — sansad.in. The seat chart shows the June 2024 result.

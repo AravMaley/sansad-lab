@@ -1,21 +1,53 @@
 {
   "election": "Lok Sabha 2024",
-  "method": "Stances are coded only from what each manifesto says. “Silent” means the document makes no commitment on that statement — not that the party opposes it. Page numbers are the printed page numbers.",
-  "excluded": "AAP, AITC and CPI(M) are not included yet: we could not verify their positions against their own documents.",
+  "method": "Every stance below was read in the party's own manifesto. “Silent” means the document makes no commitment on that statement — it does not mean the party opposes it, and it is never scored against a party. Page numbers are the printed pages in each manifesto.",
+  "partialNote": "“Partly” marks a promise close to the statement but not identical — the price level without the law, or a monthly payment to all women rather than a yearly one to poor households. The quote says which.",
+  "critiqueNote": "“Criticises” marks a position stated in a party's attack on the government rather than in its own list of promises.",
+  "excluded": {
+    "heading": "Why only five parties?",
+    "text": "A manifesto matcher is only honest if every party is judged from its own document. These five published one and we read all five in full. Four parties you might expect are missing, and the reason matters: AAP published no 2024 Lok Sabha manifesto at all — only ten promises read out at a press conference, which would show as “silent” on most statements purely because nobody wrote them down. NCP (Sharadchandra Pawar) released a manifesto we could not obtain in any form, including from web archives. CPI's manifesto was likewise unobtainable. TVK did not contest the 2024 Lok Sabha election. Guessing their positions from news reports would put invented stances beside sourced ones."
+  },
   "parties": [
     {
       "id": "bjp",
       "name": "Bharatiya Janata Party",
       "short": "BJP",
-      "manifesto": "Modi Ki Guarantee — Sankalp Patra 2024",
-      "url": "https://www.bjp.org/files/inline-documents/Modi-Ki-Guarantee-Sankalp-Patra-English_0.pdf"
+      "manifesto": "Sankalp Patra 2024",
+      "url": "https://www.bjp.org/files/inline-documents/Modi-Ki-Guarantee-Sankalp-Patra-English_0.pdf",
+      "pageOffset": 3
     },
     {
       "id": "inc",
       "name": "Indian National Congress",
       "short": "INC",
       "manifesto": "Nyay Patra 2024",
-      "url": "https://manifesto.inc.in/assets/Congress-Manifesto-English-2024-Dyoxp_4E.pdf"
+      "url": "https://manifesto.inc.in/assets/Congress-Manifesto-English-2024-Dyoxp_4E.pdf",
+      "pageOffset": 1
+    },
+    {
+      "id": "aitc",
+      "name": "All India Trinamool Congress",
+      "short": "TMC",
+      "manifesto": "Didir Shopoth 2024",
+      "url": "https://data.opencity.in/dataset/76e54184-f294-44e4-a40c-8594ccb410c8/resource/628261ee-a164-4760-a475-7a7e10d78d44/download/5e073a4f-f293-4cb0-90f1-bf5847a0015b.pdf",
+      "pageOffset": 0
+    },
+    {
+      "id": "cpim",
+      "name": "Communist Party of India (Marxist)",
+      "short": "CPI(M)",
+      "manifesto": "CPI(M) Manifesto 2024",
+      "url": "https://data.opencity.in/dataset/76e54184-f294-44e4-a40c-8594ccb410c8/resource/c04b71e0-5941-4684-8b7e-c58cd713081d/download/2bc55e52-18f0-42fa-b228-56e85ec55de5.pdf",
+      "pageOffset": 0,
+      "pageNote": "This PDF carries no printed page numbers, so CPI(M) citations give the PDF page."
+    },
+    {
+      "id": "dmk",
+      "name": "Dravida Munnetra Kazhagam",
+      "short": "DMK",
+      "manifesto": "DMK Manifesto 2024",
+      "url": "https://www.scobserver.in/wp-content/uploads/2024/04/2024-DMK-Election-Manifesto-English.pdf",
+      "pageOffset": 0
     }
   ],
   "statements": [
@@ -25,7 +57,20 @@
       "text": "Minimum Support Price for crops should be guaranteed by law.",
       "positions": {
         "bjp": { "stance": 0, "page": 22, "quote": "We have ensured unprecedented increase in MSP for major crops, and we will continue to increase MSP from time to time." },
-        "inc": { "stance": 1, "page": 17, "quote": "Congress will give a legal guarantee to the Minimum Support Prices (MSP) announced by the government every year, as recommended by the Swaminathan Commission." }
+        "inc": { "stance": 1, "page": 17, "quote": "Congress will give a legal guarantee to the Minimum Support Prices (MSP) announced by the government every year, as recommended by the Swaminathan Commission." },
+        "aitc": { "stance": 1, "page": 33, "quote": "…introduce a bill in Parliament that legally mandates an MSP at least 50% higher than the average cost of production of all such crops." },
+        "cpim": { "stance": 1, "page": 21, "quote": "Ensure legal guarantee for the Minimum Support Price (MSP), which will be at least one and a half times the comprehensive cost of production (C2+50 per cent)." },
+        "dmk": { "stance": 1, "partial": true, "page": 52, "quote": "The recommendations of the M.S. Swaminathan committee will be adopted, ensuring that agricultural products' MSP is set at total production cost + 50%.", "note": "Promises the price level, but never says “legal guarantee”." }
+      },
+      "actions": {
+        "bjp": {
+          "type": "Government",
+          "date": "2026-07-28",
+          "who": "Ramnath Thakur, Minister of State for Agriculture, in the Lok Sabha",
+          "summary": "Asked directly whether it would legislate an MSP guarantee, the government gave neither a yes nor a reason.",
+          "detail": "Lok Sabha Question 1598 asked “whether the Government proposes to enact a legal framework guaranteeing remunerative prices… including a statutory guarantee for MSP, if not, the reasons therefor”. The reply listed only existing schemes — MSP fixed annually for 22 crops, ₹27.80 lakh crore procured since 2014, PM-AASHA — and addressed neither half of the question. In February 2024 the government had offered protesting farmers a five-year purchase contract instead of a law; the farm unions rejected it.",
+          "source": "https://sansad.in/getFile/lsapps/loksabhaquestions/annex/188/AU1598_LJJBy5.pdf"
+        }
       }
     },
     {
@@ -33,8 +78,11 @@
       "topic": "Elections",
       "text": "Lok Sabha and state assembly elections should be held at the same time.",
       "positions": {
-        "bjp": { "stance": 1, "page": 55, "quote": "Making One Nation, One Election a Reality … will work towards the implementation of the recommendations of the Committee.", "verify": "Reconstructed from a page that extracts poorly; check against the PDF." },
-        "inc": { "stance": -1, "page": 22, "quote": "We reject the ‘one nation one election’ idea and we promise that elections to the Lok Sabha and the State Assemblies will be held as and when they are due." }
+        "bjp": { "stance": 1, "page": 55, "quote": "Making One Nation, One Election a Reality — we will work towards the implementation of the recommendations of the Committee.", "verify": "Rebuilt from a page that extracts poorly; check against the PDF." },
+        "inc": { "stance": -1, "page": 22, "quote": "We reject the ‘one nation one election’ idea and we promise that elections to the Lok Sabha and the State Assemblies will be held as and when they are due." },
+        "aitc": { "stance": -1, "page": 14, "quote": "We will not accept the ‘One Nation One Election’ proposal." },
+        "cpim": { "stance": 0, "page": null, "quote": null },
+        "dmk": { "stance": -1, "page": 27, "quote": "The plan for ‘One Nation, One Election’ will be abandoned." }
       }
     },
     {
@@ -43,7 +91,20 @@
       "text": "India should adopt a Uniform Civil Code.",
       "positions": {
         "bjp": { "stance": 1, "page": 54, "quote": "BJP reiterates its stand to draw a Uniform Civil Code, drawing upon the best traditions and harmonising them with the modern times." },
-        "inc": { "stance": 0, "page": 8, "quote": "We will encourage reform of personal laws. Such reform must be undertaken with the participation and consent of the communities concerned." }
+        "inc": { "stance": 0, "page": 8, "quote": "We will encourage reform of personal laws. Such reform must be undertaken with the participation and consent of the communities concerned." },
+        "aitc": { "stance": -1, "page": 74, "quote": "The Uniform Civil Code will not be implemented. TMC will firmly endeavour to preserve the secular nature of India, as per the Constitution." },
+        "cpim": { "stance": -1, "critique": true, "page": 2, "quote": "BJP state governments have enacted laws aiming to sharpen communal polarization… the so-called love jihad, Uniform Civil Code etc.", "note": "The only mention. UCC appears in the critique, not in the party's list of commitments." },
+        "dmk": { "stance": -1, "page": 27, "quote": "The introduction of the Uniform Civil Code will be strictly prevented to preserve the secular nature of India as stated in the Constitution's preamble." }
+      },
+      "actions": {
+        "inc": {
+          "type": "Party position and a recorded vote",
+          "date": "2022-12-09",
+          "who": "Congress MPs in the Rajya Sabha; Jairam Ramesh for the party",
+          "summary": "Opposed a UCC bill on the floor, and rests its case on the Law Commission's own 2018 finding.",
+          "detail": "When a BJP member moved to introduce a private UCC bill in December 2022, Congress MPs opposed it alongside CPI, CPI(M), Trinamool, MDMK and IUML; the introduction carried 63–23. In June 2023 the party invoked the 21st Law Commission's 2018 conclusion that a UCC was “neither necessary nor desirable at this stage”. Reports of a July 2023 party meeting say it agreed to back gender equality in inheritance while opposing imposed uniformity. No government UCC bill has ever been put to Parliament, so no vote on one exists.",
+          "source": "https://www.livelaw.in/news-updates/private-bill-to-implement-uniform-civil-code-introduced-in-rajya-sabha-216307"
+        }
       }
     },
     {
@@ -52,7 +113,20 @@
       "text": "A nationwide caste census should be conducted.",
       "positions": {
         "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 6, "quote": "Congress will conduct a nation-wide Socio-Economic and Caste Census to enumerate the castes and sub-castes and their socio-economic conditions." }
+        "inc": { "stance": 1, "page": 6, "quote": "Congress will conduct a nation-wide Socio-Economic and Caste Census to enumerate the castes and sub-castes and their socio-economic conditions." },
+        "aitc": { "stance": 0, "page": 14, "quote": null, "note": "Promises a population census, and an OBC status task force, but never asks for caste enumeration." },
+        "cpim": { "stance": 1, "page": 32, "quote": "Immediate conduct of a Caste Census as part of general census." },
+        "dmk": { "stance": 1, "page": 45, "quote": "…population censuses, including caste-wise censuses and censuses concerning people below the poverty line, will be conducted by the Union government once every five years." }
+      },
+      "actions": {
+        "bjp": {
+          "type": "Government — position reversed",
+          "date": "2025-04-30",
+          "who": "Ashwini Vaishnaw, announcing a Cabinet Committee decision",
+          "summary": "Against it in 2021, for it in 2025 — the clearest reversal in this data.",
+          "detail": "In July 2021 the government told the Lok Sabha it had “decided as a matter of policy not to enumerate caste-wise population other than SCs and STs”. In a September 2021 Supreme Court affidavit it called a caste census “administratively difficult and cumbersome” and a “conscious policy decision”. Then on 30 April 2025 it announced that caste enumeration would be included in the next Census. The June 2025 gazette notification for Census 2027 made no mention of caste, which Congress called a retreat; the Home Ministry said the reports were misleading and the commitment stands.",
+          "source": "https://www.deccanherald.com/india/modi-govt-decides-to-includes-caste-enumeration-in-upcoming-census-3518289"
+        }
       }
     },
     {
@@ -61,16 +135,32 @@
       "text": "The Agnipath short-term military recruitment scheme should be scrapped.",
       "positions": {
         "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 38, "quote": "Congress will scrap the Agnipath Scheme and return to the normal recruitment processes followed by the Army, Navy and Air Force." }
+        "inc": { "stance": 1, "page": 38, "quote": "Congress will scrap the Agnipath Scheme and return to the normal recruitment processes followed by the Army, Navy and Air Force." },
+        "aitc": { "stance": 1, "page": 57, "quote": "The Agnipath scheme. We will restore the Indian Armed Forces' traditional recruitment mechanisms." },
+        "cpim": { "stance": 1, "critique": true, "page": 7, "quote": "Even recruitment in the armed forces — critical for the country's security — are now being contractorised with the cruel ‘agniveer’ scheme.", "note": "The only mention. Agnipath is absent from the party's list of laws it promises to scrap." },
+        "dmk": { "stance": 1, "page": 53, "quote": "The Agnipath scheme will be withdrawn. Permanent recruitment service for Indian Armed Forces personnel will be restored." }
+      },
+      "actions": {
+        "bjp": {
+          "type": "Government",
+          "date": "2024-03-01",
+          "who": "Defence Minister Rajnath Singh",
+          "summary": "Defended the scheme throughout and has not scrapped it, while leaving the door open to changes.",
+          "detail": "During the 2022 protests the government called Agnipath a “golden opportunity”, and a senior Defence Ministry officer asked about a rollback replied “No, why should there be a rollback?” In March 2024 Rajnath Singh said the government was “open” to changes “if required”. After the 2024 election, NDA allies JD(U) and LJP(RV) asked for a review, and the services were reported to have proposed retaining far more than the current 25% of each batch. No change has been notified as of October 2026.",
+          "source": "https://www.tribuneindia.com/news/india/government-open-to-change-in-agniveer-scheme-if-needed-says-defence-minister-rajnath-singh-604972"
+        }
       }
     },
     {
       "id": "womens-quota-now",
       "topic": "Representation",
-      "text": "Women’s reservation in legislatures should start without waiting for a new census and delimitation.",
+      "text": "Women's reservation in legislatures should start without waiting for a new census and delimitation.",
       "positions": {
-        "bjp": { "stance": 0, "page": 16, "quote": "We will systematically implement this to ensure representation for women in the Parliament and State Legislatures." },
-        "inc": { "stance": 1, "page": 16, "quote": "Congress will delete the sinister provisions and bring the Amendment Act into force immediately … applied to the Lok Sabha that will be elected in 2029." }
+        "bjp": { "stance": 0, "page": 16, "quote": "We have enacted the long-awaited Nari Shakti Vandan Adhiniyam. We will systematically implement this…", "note": "Commits to implementing the Act, but gives no timing and does not address the census condition." },
+        "inc": { "stance": 1, "page": 16, "quote": "Congress will delete the sinister provisions and bring the Amendment Act into force immediately… applied to the Lok Sabha that will be elected in 2029." },
+        "aitc": { "stance": 0, "page": 61, "quote": null, "note": "Promises 33% reservation in the West Bengal assembly only, and says nothing about the national Act's timing." },
+        "cpim": { "stance": 1, "page": 13, "quote": "Immediately implement the legislation for one-third reservation for women in Parliament and state assemblies without linking it to census and delimitation." },
+        "dmk": { "stance": 1, "page": 28, "quote": "A 33% reservation for women in Parliament and legislative assemblies will be implemented immediately." }
       }
     },
     {
@@ -79,7 +169,10 @@
       "text": "There should be strict legal action against exam paper leaks.",
       "positions": {
         "bjp": { "stance": 1, "page": 17, "quote": "We have already enacted a strict law to stop misconduct in recruitment exams across the country. We will strictly implement this law." },
-        "inc": { "stance": 1, "page": 11, "quote": "We will provide fast-track courts to adjudicate cases of leaking question papers for job examinations and provide monetary compensation to the victims." }
+        "inc": { "stance": 1, "page": 11, "quote": "We will provide fast-track courts to adjudicate cases of leaking question papers for job examinations and provide monetary compensation to the victims." },
+        "aitc": { "stance": 1, "page": 41, "quote": "We will introduce a bill in Parliament… to constitute an independent judicial commission (Union and State level) to oversee the conduct of competitive examinations, end-to-end." },
+        "cpim": { "stance": 0, "page": null, "quote": null },
+        "dmk": { "stance": 0, "page": null, "quote": null, "note": "Its exam promises concern NEET exemption and exams in Tamil, not malpractice." }
       }
     },
     {
@@ -87,17 +180,43 @@
       "topic": "Welfare",
       "text": "Poor households should get free electricity.",
       "positions": {
-        "bjp": { "stance": 1, "page": 12, "quote": "Zero Electricity Bill – We will provide free electricity to poor households under PM Surya Ghar Muft Bijli Yojana." },
-        "inc": { "stance": 0, "page": null, "quote": null }
+        "bjp": { "stance": 1, "page": 12, "quote": "Zero Electricity Bill — We will provide free electricity to poor households under PM Surya Ghar Muft Bijli Yojana." },
+        "inc": { "stance": 0, "page": null, "quote": null },
+        "aitc": { "stance": 0, "page": 21, "quote": null, "note": "Promises electricity as a basic amenity for all households — access, not free supply." },
+        "cpim": { "stance": 0, "page": 19, "quote": "Ensuring affordable electricity at subsidized rates…", "note": "Subsidised, not free." },
+        "dmk": { "stance": 0, "page": null, "quote": null, "note": "The word “electricity” does not appear in the manifesto." }
+      },
+      "actions": {
+        "inc": {
+          "type": "State governments",
+          "date": "2023-07-01",
+          "who": "Congress governments in Karnataka, Telangana and Himachal Pradesh",
+          "summary": "Made free power a flagship promise in states — and then narrowed it in one of them.",
+          "detail": "Karnataka's Gruha Jyothi, one of the party's five 2023 guarantees, gives up to 200 free units a month, capped at each household's earlier average plus 10%. Telangana runs a similar 200-unit scheme. Himachal Pradesh cuts the other way: the 125-free-unit scheme there was started by the previous BJP government, Congress continued it, and in July 2024 the Congress cabinet withdrew it from income-tax payers, MLAs and senior officials on fiscal grounds. Its promised 300 free units was still “under consideration” in August 2025. These are state schemes, not a national commitment.",
+          "source": "https://www.deccanherald.com/india/karnataka/karnataka-govts-2-guarantees-anna-bhagya-and-gruha-jyothi-come-into-effect-1232966.html"
+        }
       }
     },
     {
       "id": "cash-women",
       "topic": "Welfare",
-      "text": "Poor families should get a direct annual cash transfer to a woman of the household.",
+      "text": "The government should make regular direct cash payments to women.",
       "positions": {
         "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 15, "quote": "Congress resolves to launch a Mahalakshmi scheme to provide ₹1 lakh per year to every poor Indian family as an unconditional cash transfer." }
+        "inc": { "stance": 1, "page": 15, "quote": "Congress resolves to launch a Mahalakshmi scheme to provide ₹1 lakh per year to every poor Indian family as an unconditional cash transfer.", "note": "Paid to the oldest woman of each poor household." },
+        "aitc": { "stance": 1, "page": 62, "quote": "…we will provide all women in India a monthly financial assistance of ₹1,000 (General) and ₹1,200 (SC, ST)." },
+        "cpim": { "stance": 0, "page": null, "quote": null },
+        "dmk": { "stance": 1, "page": 24, "quote": "A monthly entitlement of ₹1000 for all women in every state." }
+      },
+      "actions": {
+        "bjp": {
+          "type": "State governments",
+          "date": "2023-03-05",
+          "who": "BJP state governments in Madhya Pradesh, Maharashtra, Odisha and Delhi",
+          "summary": "No national scheme, but monthly payments to women have become a signature BJP state policy.",
+          "detail": "Madhya Pradesh's Ladli Behna began in March 2023 at ₹1,000 a month, since raised to ₹1,500. Maharashtra's Ladki Bahin pays ₹1,500 a month and was widely credited with the alliance's 2024 state election win. Odisha's Subhadra pays ₹10,000 a year, and Delhi's Mahila Samridhi — a BJP state manifesto promise — ₹2,500 a month. We found no central scheme of this kind; the nearest, PM-KISAN, goes to landholding farmers and is not women-specific. In October 2026 Madhya Pradesh's Chief Minister called Ladli Behna a “heavy burden” on the state's finances.",
+          "source": "https://www.business-standard.com/india-news/ladli-behna-scheme-a-heavy-burden-madhya-pradesh-cm-mohan-yadav-126100600148_1.html"
+        }
       }
     },
     {
@@ -105,8 +224,11 @@
       "topic": "Economy",
       "text": "The GST system should be restructured.",
       "positions": {
-        "bjp": { "stance": 0, "page": 31, "quote": "We will further simplify the GST portal to increase accessibility to users, especially MSMEs and small traders." },
-        "inc": { "stance": 1, "page": 31, "quote": "The GST Council will be re-designed. It will be the final authority on policy and on all matters relating to GST." }
+        "bjp": { "stance": 0, "page": 31, "quote": "We will further simplify the GST portal to increase accessibility to users, especially MSMEs and small traders.", "note": "Promises a better portal, not a restructured system." },
+        "inc": { "stance": 1, "page": 31, "quote": "The GST Council will be re-designed. It will be the final authority on policy and on all matters relating to GST." },
+        "aitc": { "stance": 1, "page": 22, "quote": "The current GST regime, which has eroded the fiscal autonomy of our states and led to heavy losses, will be reformed into a more equitable instrument of revenue distribution." },
+        "cpim": { "stance": 1, "page": 16, "quote": "GST to be overhauled respecting the federal structure of our country and the rights of the states by sharing resources with them." },
+        "dmk": { "stance": 1, "page": 48, "quote": "The Union government's financial contributions to states will be based on the income tax and GST collected in those states." }
       }
     },
     {
@@ -114,8 +236,21 @@
       "topic": "Federalism",
       "text": "Full statehood should be restored to Jammu & Kashmir.",
       "positions": {
-        "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 36, "quote": "We will immediately restore full statehood to Jammu and Kashmir." }
+        "bjp": { "stance": 0, "page": 8, "quote": null, "note": "Cites revoking Article 370 as an achievement; makes no statehood commitment." },
+        "inc": { "stance": 1, "page": 36, "quote": "We will immediately restore full statehood to Jammu and Kashmir." },
+        "aitc": { "stance": 0, "page": null, "quote": null, "note": "Mentions Jammu and Kashmir once, on university vacancies." },
+        "cpim": { "stance": 1, "page": 11, "quote": "The CPI(M) stands for immediate elections to the State Assembly and also for the restoration of full statehood as a first step." },
+        "dmk": { "stance": 1, "page": 27, "quote": "State status will be restored to the bifurcated Jammu and Kashmir, and democratic elections will be conducted for the state legislature immediately." }
+      },
+      "actions": {
+        "bjp": {
+          "type": "Government",
+          "date": "2023-12-11",
+          "who": "Home Minister Amit Shah, repeatedly in both Houses",
+          "summary": "Accepts statehood will return “at an appropriate time”, but has set no date in five years.",
+          "detail": "Shah told the Lok Sabha in February 2021 and the Rajya Sabha in December 2023 that statehood would be restored “at an appropriate time”, without naming one. In December 2023 the Supreme Court directed that restoration “shall take place at the earliest and as soon as possible”, partly relying on the Solicitor General's assurance. In October 2025 the Court gave the Centre four weeks to respond to fresh petitions, and the government cited security concerns. When the J&K Assembly passed a statehood resolution on 28 September 2026 with 60 of 90 MLAs, the BJP walked out. Statehood has not been restored.",
+          "source": "https://www.deccanherald.com/india/restoration-of-statehood-of-jk-at-appropriate-time-amit-shah-in-rs-2806509"
+        }
       }
     },
     {
@@ -124,7 +259,20 @@
       "text": "Young graduates should have a legal right to a paid apprenticeship.",
       "positions": {
         "bjp": { "stance": 0, "page": null, "quote": null },
-        "inc": { "stance": 1, "page": 11, "quote": "Congress guarantees a new Right to Apprenticeship Act to provide a one year apprenticeship … to every diploma holder or college graduate below the age of 25." }
+        "inc": { "stance": 1, "page": 11, "quote": "Congress guarantees a new Right to Apprenticeship Act to provide a one year apprenticeship… to every diploma holder or college graduate below the age of 25." },
+        "aitc": { "stance": 1, "partial": true, "page": 68, "quote": "…guaranteed 1-year apprenticeships to all diploma holders or college graduates upto the age of 25… A monthly stipend will be provided.", "note": "Universal and paid, but not promised as a legal right." },
+        "cpim": { "stance": 0, "page": null, "quote": null },
+        "dmk": { "stance": 0, "page": null, "quote": null }
+      },
+      "actions": {
+        "bjp": {
+          "type": "Government",
+          "date": "2024-07-23",
+          "who": "Finance Minister Nirmala Sitharaman, Union Budget",
+          "summary": "Chose a voluntary scheme over a statutory right.",
+          "detail": "The PM Internship Scheme offers internships at the top 500 companies to one crore young people over five years, paying ₹5,000 a month plus a one-time ₹6,000. Company participation is voluntary and the scheme is not backed by a statute, so it creates no enforceable individual entitlement. Asked about it in the Rajya Sabha in February 2025, Sitharaman said “the intent of the program itself is not to provide job, but to provide an exposure”. The existing Apprentices Act 1961 places duties on employers but gives no one a right to an apprenticeship.",
+          "source": "https://www.deccanherald.com/business/union-budget/union-budget-2024-government-to-launch-scheme-to-provide-internship-opportunities-to-1-crore-youth-over-5-years-3117799"
+        }
       }
     }
   ]

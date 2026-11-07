@@ -503,6 +503,266 @@
         "abstain": "You stayed out — as much of the opposition did, having walked out over Manipur."
       },
       "question": "A law on your personal data passed without a single recorded vote. Should major laws always require a division?"
+    },
+    {
+      "id": "ucc-national",
+      "order": 5,
+      "title": "A Uniform Civil Code",
+      "year": null,
+      "yearLabel": "Never voted on",
+      "hypothetical": true,
+      "kicker": "The bill Parliament has never been asked to pass",
+      "summary": "A Uniform Civil Code would replace the separate Hindu, Muslim, Christian and Parsi personal laws on marriage, divorce, inheritance and adoption with one law for everyone. The Constitution has directed the state to “endeavour to secure” it since 1950. In seventy-six years no government has introduced one in Parliament — so this is the one bill here you cannot look up. Four states have passed their own.",
+      "provisions": [
+        "One law on marriage, divorce, maintenance, inheritance and adoption, applying regardless of religion.",
+        "Replaces the Hindu Marriage Act 1955, the Hindu Succession Act 1956, the Muslim Personal Law (Shariat) Application Act 1937, the Indian Christian Marriage Act 1872 and the Parsi Marriage and Divorce Act 1936.",
+        "The Special Marriage Act 1954 already offers a religion-neutral marriage to anyone who opts in; a UCC would make it the default rather than a choice.",
+        "Every state code passed so far exempts Scheduled Tribes."
+      ],
+      "votes": [
+        {
+          "house": "Parliament of India",
+          "date": "2026-10-27",
+          "method": "none",
+          "note": "No government has ever introduced a national Uniform Civil Code bill in either House. A private member's bill was introduced in the Rajya Sabha in December 2022 — the motion merely to introduce it carried 63–23 and the bill went no further.",
+          "source": "https://www.livelaw.in/news-updates/private-bill-to-implement-uniform-civil-code-introduced-in-rajya-sabha-216307"
+        },
+        {
+          "house": "Uttarakhand Assembly",
+          "date": "2024-02-07",
+          "method": "voice",
+          "note": "The nearest real vote. Passed by voice vote; the opposition's demand to send it to a select committee was rejected. Reports do not break the voice vote down by party, so no party's MLAs can be said to have voted either way.",
+          "source": "https://www.deccanherald.com/india/uttarakhand/uttarakhand-becomes-first-state-to-pass-uniform-civil-code-bill-2884458"
+        }
+      ],
+      "committee": {
+        "referred": false,
+        "note": "The 21st Law Commission examined it and reported in 2018. The 22nd reopened consultation in June 2023, received about 46 lakh responses, and its term lapsed in August 2024 without it producing a UCC report.",
+        "source": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632.pdf"
+      },
+      "arguments_for": [
+        {
+          "text": "The Constitution already directs it: “The State shall endeavour to secure for the citizens a uniform civil code throughout the territory of India.”",
+          "by": "Article 44, Directive Principles of State Policy",
+          "source": "https://www.indiacode.nic.in/show-data?actid=AC_CEN_1_1_00001_195102_1517807320555&sectionId=1372&sectionno=44&orderno=48"
+        },
+        {
+          "text": "Personal laws are where women lose most. A Muslim women's organisation found that about 90% of the 4,700 women it surveyed wanted polygamy ended — a reform their own personal law blocks.",
+          "by": "Zakia Soman, Bharatiya Muslim Mahila Andolan",
+          "source": "https://bmmaindia.com/2015/08/25/seeking-justice-within-family/"
+        },
+        {
+          "text": "One rule for inheritance and divorce is simpler to administer than five, and Uttarakhand's experience suggests the machinery can cope: about 4.7 lakh marriages were registered in its first year, nearly all online.",
+          "by": "Uttarakhand government, one-year review (January 2026)",
+          "source": "https://www.hindustantimes.com/cities/dehradun-news/one-year-of-ucc-in-uttarakhand-4-74-lakh-marriages-registered-101737304567890.html"
+        }
+      ],
+      "arguments_against": [
+        {
+          "text": "Even its architect did not want it forced on everyone at the start. Ambedkar told the Constituent Assembly the article “does not require enforcement on all citizens merely because they are citizens”, and suggested Parliament might begin by making the code purely voluntary.",
+          "by": "B.R. Ambedkar, Constituent Assembly, 23 November 1948",
+          "source": "https://www.constitutionofindia.net/debates/23-nov-1948/"
+        },
+        {
+          "text": "The government's own law reform body examined it and said no: a uniform civil code is “neither necessary nor desirable at this stage”. It recommended fixing the discriminatory parts of each personal law instead.",
+          "by": "21st Law Commission of India, consultation paper, 2018",
+          "source": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632.pdf"
+        },
+        {
+          "text": "Equal rights need not mean an identical law. The demand should be “uniformity of rights, not a uniform law” — and historically it was Hindu law, not minority law, that was the most gender-unjust.",
+          "by": "Flavia Agnes, lawyer and women's rights scholar",
+          "source": "https://www.epw.in/journal/2016/48/perspectives/muslim-women-and-uniform-civil-code.html"
+        },
+        {
+          "text": "Several of the governing coalition's own allies reject it. Mizoram's assembly passed a resolution against a UCC in February 2023, and parties in Nagaland and Meghalaya have opposed it as a threat to customary law.",
+          "by": "MNF, NDPP, NPF and NPP — all NDA allies",
+          "source": "https://www.thehindu.com/news/national/other-states/mizoram-assembly-adopts-resolution-against-uniform-civil-code/article66505263.ece"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "1948-11-23",
+          "text": "The Constituent Assembly debates it. Amendments by four Muslim members to protect personal law are defeated; Ambedkar suggests the code could begin as voluntary.",
+          "source": "https://www.constitutionofindia.net/debates/23-nov-1948/"
+        },
+        {
+          "date": "1950-01-26",
+          "text": "Article 44 comes into force as a Directive Principle — a goal the state must work towards, but which no court can enforce.",
+          "source": "https://www.indiacode.nic.in/show-data?actid=AC_CEN_1_1_00001_195102_1517807320555&sectionId=1372&sectionno=44&orderno=48"
+        },
+        {
+          "date": "1985-04-23",
+          "text": "In the Shah Bano case the Supreme Court regrets that Article 44 “has remained a dead letter”. Parliament responds by passing a law reversing the judgment.",
+          "source": "https://indiankanoon.org/doc/823221/"
+        },
+        {
+          "date": "2018-08-31",
+          "text": "The 21st Law Commission concludes a UCC is “neither necessary nor desirable at this stage”.",
+          "source": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632.pdf"
+        },
+        {
+          "date": "2023-06-14",
+          "text": "The 22nd Law Commission reopens consultation and receives about 46 lakh responses. Its term lapses in August 2024 without a report.",
+          "source": "https://www.thehindu.com/news/national/law-commission-begins-fresh-consultation-on-uniform-civil-code/article66966321.ece"
+        },
+        {
+          "date": "2024-02-07",
+          "text": "Uttarakhand becomes the first state to pass a UCC, by voice vote.",
+          "source": "https://www.deccanherald.com/india/uttarakhand/uttarakhand-becomes-first-state-to-pass-uniform-civil-code-bill-2884458"
+        },
+        {
+          "date": "2025-01-27",
+          "text": "The Uttarakhand code comes into force.",
+          "source": "https://www.deccanherald.com/india/uttarakhand/uttarakhand-implements-uniform-civil-code-3374519"
+        },
+        {
+          "date": "2026-03-24",
+          "text": "Gujarat passes its own UCC. Assam follows in May and Madhya Pradesh in July.",
+          "source": "https://www.thehindu.com/news/national/gujarat/gujarat-assembly-passes-uniform-civil-code-bill/article69364821.ece"
+        },
+        {
+          "date": "2026-09-13",
+          "text": "Amit Shah says every NDA-ruled state will have a UCC before 2029. Still no bill in Parliament.",
+          "source": "https://www.thehindu.com/news/national/all-nda-ruled-states-to-have-ucc-before-2029-says-amit-shah/article69942318.ece"
+        }
+      ],
+      "outcome": "Never introduced",
+      "status": {
+        "text": "No national UCC bill exists. Four states have passed their own and more have announced them, so the country is getting a patchwork of civil codes rather than a uniform one — which is close to the opposite of what Article 44 describes.",
+        "as_of": "2026-10",
+        "source": "https://www.thehindu.com/news/national/all-nda-ruled-states-to-have-ucc-before-2029-says-amit-shah/article69942318.ece"
+      },
+      "reflection": {
+        "aye": "You voted for it — so look at what the states that did this actually got. Uttarakhand registered about 4.7 lakh marriages in its first year, so the administration coped. But its most argued-over provision, registering live-in relationships, was used 68 times in twelve months. And every state code so far exempts Scheduled Tribes, so none of them is fully uniform.",
+        "no": "You voted against — and so, in effect, has every government since 1950. None has introduced a bill. The Law Commission reached your conclusion in 2018 and proposed the alternative: fix the unjust parts of each personal law one at a time, which is how triple talaq was ended in 2019.",
+        "committee": "You asked for scrutiny. That has been tried twice. The 21st Law Commission reported in 2018 and said no. The 22nd reopened the question in 2023, collected about 46 lakh responses, and its term ran out before it wrote anything. Referral is not always a delaying tactic — but it is not always an answer either.",
+        "abstain": "You abstained on the one bill here that was never put to a vote. That is roughly what Parliament has done for seventy-six years: Article 44 says the state “shall endeavour”, and endeavouring has meant leaving it to the states."
+      },
+      "question": "The Constitution asks for one civil code. Four states have now written four different ones. Is that progress towards Article 44, or away from it?"
+    },
+    {
+      "id": "income-tax-2025",
+      "order": 6,
+      "title": "The Income Tax Rewrite",
+      "year": 2025,
+      "kicker": "The Income-tax Act, 2025 — replacing the law of 1961",
+      "summary": "The first full rewrite of India's income tax law in sixty-four years. It was meant to be simpler: shorter sections, plain tables, and one “tax year” in place of the confusing “previous year” and “assessment year”. It also wrote into law the tax officer's power to break into your email, cloud storage and social media during a search. The Lok Sabha passed it in about three minutes, without debate.",
+      "provisions": [
+        "Replaces the Income-tax Act 1961 in full, from 1 April 2026.",
+        "Cuts length and jargon: formulae and tables replace long provisos, and a single “tax year” replaces “previous year” and “assessment year”.",
+        "Mostly a redraft, not a tax cut — the ₹12 lakh rebate and the new slabs came from the Finance Act 2025, a separate law.",
+        "Section 247 lets authorised officers override access codes to search a “computer system” during a raid; section 261 defines that to include email, cloud, online investment accounts and social media."
+      ],
+      "votes": [
+        {
+          "house": "Lok Sabha",
+          "date": "2025-08-11",
+          "method": "voice",
+          "note": "Introduced and passed the same day by voice vote, reportedly in about three minutes, with no debate, while the opposition protested over the revision of Bihar's electoral rolls.",
+          "source": "https://www.thehindu.com/business/Economy/lok-sabha-passes-new-income-tax-bill-2025/article69920145.ece"
+        },
+        {
+          "house": "Rajya Sabha",
+          "date": "2025-08-12",
+          "method": "voice",
+          "note": "Returned to the Lok Sabha by voice vote the next day. As a Money Bill, the Rajya Sabha could recommend changes but not block it.",
+          "source": "https://www.thehindu.com/business/Economy/rajya-sabha-returns-income-tax-bill-2025/article69923456.ece"
+        }
+      ],
+      "committee": {
+        "referred": true,
+        "note": "The February 2025 version did go to a Select Committee under Baijayant Panda, which made more than 285 recommendations and reported in July 2025. The government then withdrew that bill and introduced a fresh one, which passed the same day it was introduced — so the bill that became law was never itself examined by a committee.",
+        "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+      },
+      "arguments_for": [
+        {
+          "text": "The 1961 Act had been amended so many times it had become unreadable. The rewrite cuts the word count roughly in half and replaces tangled provisos with tables and formulae.",
+          "by": "Ministry of Finance",
+          "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+        },
+        {
+          "text": "A single “tax year” removes a genuine and long-standing source of confusion for ordinary taxpayers filing returns.",
+          "by": "Select Committee on the Income-tax Bill, chaired by Baijayant Panda",
+          "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+        },
+        {
+          "text": "The Select Committee's scrutiny was real: it made more than 285 recommendations, and the government accepted enough of them to withdraw its own bill and start again.",
+          "by": "Government, August 2025",
+          "source": "https://www.thehindu.com/business/Economy/govt-withdraws-income-tax-bill-2025-to-bring-fresh-version/article69910234.ece"
+        }
+      ],
+      "arguments_against": [
+        {
+          "text": "A law governing every taxpayer in the country passed in roughly three minutes with no debate, after the version a committee had actually examined was withdrawn.",
+          "by": "Opposition MPs",
+          "source": "https://www.thehindu.com/business/Economy/lok-sabha-passes-new-income-tax-bill-2025/article69920145.ece"
+        },
+        {
+          "text": "The power to compel access to a person's email, cloud storage and social media during a search is far broader than a search of premises, and may not survive constitutional scrutiny.",
+          "by": "Institute of Chartered Accountants of India, pre-Budget memorandum, January 2026",
+          "source": "https://www.icai.org/post/pre-budget-memorandum-2026"
+        },
+        {
+          "text": "Commentary claiming the digital search power was dropped from the final Act is wrong: the phrase moved, but section 261's definition of “computer system” carries the same reach.",
+          "by": "Tax and privacy commentators",
+          "source": "https://www.livelaw.in/top-stories/supreme-court-income-tax-act-2025-section-247-digital-search-plea-283419"
+        }
+      ],
+      "timeline": [
+        {
+          "date": "2025-02-13",
+          "text": "The Income-tax Bill 2025 is introduced in the Lok Sabha and sent to a Select Committee.",
+          "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+        },
+        {
+          "date": "2025-07-21",
+          "text": "The Select Committee reports, with more than 285 recommendations.",
+          "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+        },
+        {
+          "date": "2025-08-08",
+          "text": "The government withdraws that bill.",
+          "source": "https://www.thehindu.com/business/Economy/govt-withdraws-income-tax-bill-2025-to-bring-fresh-version/article69910234.ece"
+        },
+        {
+          "date": "2025-08-11",
+          "text": "A fresh bill is introduced and passed by the Lok Sabha the same day, by voice vote, in about three minutes.",
+          "source": "https://www.thehindu.com/business/Economy/lok-sabha-passes-new-income-tax-bill-2025/article69920145.ece"
+        },
+        {
+          "date": "2025-08-12",
+          "text": "The Rajya Sabha returns it by voice vote.",
+          "source": "https://www.thehindu.com/business/Economy/rajya-sabha-returns-income-tax-bill-2025/article69923456.ece"
+        },
+        {
+          "date": "2025-08-21",
+          "text": "Presidential assent.",
+          "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+        },
+        {
+          "date": "2026-02-10",
+          "text": "The Supreme Court hears a petition against the digital search power and declines to entertain it, unpersuaded that the power is unguided.",
+          "source": "https://www.livelaw.in/top-stories/supreme-court-income-tax-act-2025-section-247-digital-search-plea-283419"
+        },
+        {
+          "date": "2026-04-01",
+          "text": "The Act comes into force, replacing the 1961 law.",
+          "source": "https://prsindia.org/billtrack/the-income-tax-bill-2025"
+        }
+      ],
+      "outcome": "Passed",
+      "status": {
+        "text": "In force since 1 April 2026. The constitutional challenge to the digital search power was refused a hearing in February 2026, so section 247 stands.",
+        "as_of": "2026-10",
+        "source": "https://www.livelaw.in/top-stories/supreme-court-income-tax-act-2025-section-247-digital-search-plea-283419"
+      },
+      "reflection": {
+        "aye": "You voted for it. So did the House — though on a voice vote nobody's name is recorded, so there is no way to show that you did. Most of what you approved was a redraft; the part that was genuinely new was the digital search power, and it was not debated.",
+        "no": "You voted against. On a voice vote the Chair judges which side sounded louder, and unless a member demands a division, no count is taken. The record of this law shows no opponents at all.",
+        "committee": "You asked for a committee — and this is the one bill here that got one. The Select Committee made over 285 recommendations. Then the government withdrew that bill and passed a new one the day it was introduced. The law in force was never examined by a committee in its final form.",
+        "abstain": "You stayed out. Much of the opposition effectively did too: they were protesting about Bihar's electoral rolls while the tax law went through in about three minutes."
+      },
+      "question": "A committee spent five months on this bill. The version that became law was passed in three minutes. What was the committee for?"
     }
   ]
 }

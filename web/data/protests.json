@@ -1,0 +1,386 @@
+{
+  "intro": "Parliament makes the laws. These are the moments people went outside it to be heard — and what Parliament did next. Some won. Several lost. The honest answer is in each card.",
+  "verdictKey": {
+    "won": "Got what it asked for",
+    "partly": "Got some of it",
+    "lost": "Did not get it",
+    "live": "Still running"
+  },
+  "imageNote": "Photographs are used only where a freely licensed one exists. Several of these movements have no free photograph at all, which is itself part of the record.",
+  "protests": [
+    {
+      "id": "chipko",
+      "name": "Chipko",
+      "years": "1973–1981",
+      "sortDate": "1973-04-24",
+      "place": "Chamoli and Tehri Garhwal, Uttarakhand",
+      "trigger": "The forest department refused a village co-operative ten ash trees to make farm tools, then gave 300 trees in the same forest to a sporting-goods company from Allahabad. Villagers who had just watched landslides tear through logged slopes decided to physically stop the axemen.",
+      "who": "Chandi Prasad Bhatt and Sunderlal Bahuguna organised it; village women did the tree-hugging. At Reni in March 1974, 27 women led by Gaura Devi held an all-night vigil with their arms around the trees.",
+      "demanded": "An end to commercial felling by outside contractors in the Himalayan catchments, and local rights over forest produce.",
+      "verdict": "partly",
+      "changed": "A state committee ruled for the villagers, and in 1980 Indira Gandhi ordered a fifteen-year ban on commercial green felling in the Uttar Pradesh Himalaya. Recorded forest output from eight hill districts fell from over 62,000 cubic metres in 1971 to 40,000 by 1981. But local forest rights were never restored — the contractors left and the forest department stayed in charge.",
+      "parliament": "The Forest (Conservation) Act 1980, which requires central clearance before forest land is diverted, passed the same year and in the same political weather. Commentators credit Chipko; no parliamentary record ties the two directly.",
+      "detail": "On the day of the felling at Reni, the contractors' men were lured away to Chamoli to collect compensation cheques. The women were the only ones left in the village.",
+      "image": null,
+      "imageWhy": "Authentic 1970s Chipko photographs are held by news agencies. The freely licensed images search results return are mostly modern re-enactments, and captioning one as 1974 would be false.",
+      "sources": [
+        {
+          "label": "Chipko movement",
+          "url": "https://en.wikipedia.org/wiki/Chipko_movement"
+        },
+        {
+          "label": "Down To Earth: an unfinished mission",
+          "url": "https://www.downtoearth.org.in/environment/chipko-an-unfinished-mission-30883"
+        }
+      ]
+    },
+    {
+      "id": "emergency",
+      "name": "The Emergency",
+      "years": "1974–1977",
+      "sortDate": "1975-06-25",
+      "place": "Nationwide; begun in Gujarat and Bihar",
+      "trigger": "Student movements against corruption and unemployment grew into a national opposition under Jayaprakash Narayan. On 12 June 1975 the Allahabad High Court unseated Indira Gandhi for corrupt electoral practices. Thirteen days later she had the President proclaim a national Emergency.",
+      "who": "Jayaprakash Narayan, with Morarji Desai, Charan Singh, Vajpayee, Advani, George Fernandes and the socialist and Jana Sangh networks. After June 1975 the resistance was mostly underground — the mass expression came at the ballot box.",
+      "demanded": "First the resignation of corrupt state governments; after June 1975, an end to the Emergency, release of detainees, press freedom and fresh elections.",
+      "verdict": "won",
+      "changed": "The government fell. In March 1977 the Janata alliance won 298 seats and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
+      "parliament": "Maximal. Parliament's own term was extended; the 38th, 39th and 42nd Amendments were passed with the opposition in jail; the 44th reversed them.",
+      "toll": "The Shah Commission counted 110,806 detentions; Amnesty International estimated 140,000. Some 8.3 million sterilisations were performed in 1976–77, most of them coerced. About 150,000 structures were demolished in Delhi alone.",
+      "detail": "Power to the Delhi newspaper offices was cut within three hours of the proclamation. The Times of India responded with a mock obituary: “Democracy, beloved husband of Truth, loving father of Liberty… expired on June 26.”",
+      "image": {
+        "src": "img/emergency.jpg",
+        "alt": "Indira Gandhi photographed in 1977",
+        "credit": "Unknown author",
+        "licence": "CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:Indira_Gandhi_1977.jpg",
+        "w": 760,
+        "h": 1077
+      },
+      "imageWhy": "No free photograph of the Emergency itself — the censorship, the detentions, Turkman Gate — exists on Wikimedia Commons.",
+      "sources": [
+        {
+          "label": "The Emergency (India)",
+          "url": "https://en.wikipedia.org/wiki/The_Emergency_(India)"
+        },
+        {
+          "label": "Shah Commission",
+          "url": "https://en.wikipedia.org/wiki/Shah_Commission"
+        }
+      ]
+    },
+    {
+      "id": "assam",
+      "name": "The Assam Movement",
+      "years": "1979–1985",
+      "sortDate": "1979-06-08",
+      "place": "Assam, centred on Guwahati",
+      "trigger": "Preparing a by-election roll in 1979, officials found about 47,000 doubtful names. Of roughly 36,000 cases checked, some 26,000 were confirmed as non-citizens. The students' union concluded migration had swamped the electoral rolls.",
+      "who": "The All Assam Students' Union under Prafulla Kumar Mahanta and Bhrigu Kumar Phukan. In a single satyagraha in November 1979, an estimated 700,000 people courted arrest in Guwahati and about 2 million statewide.",
+      "demanded": "That migrants be detected, struck off the rolls and deported, and that Assamese language, land and representation be protected.",
+      "verdict": "partly",
+      "changed": "The Assam Accord of 15 August 1985 ended the movement and set 24 March 1971 as the citizenship cut-off. Parliament gave it effect through Section 6A of the Citizenship Act, which the Supreme Court upheld 4:1 in October 2024. The protesters then won power: AASU's leaders formed the Asom Gana Parishad and Mahanta became Chief Minister at 33. Forty years on, the Accord's Clause 6 safeguards remain largely unimplemented and the state has refused to accept its own NRC as a legal document.",
+      "parliament": "Section 6A of the Citizenship Act 1955, the IMDT Act 1983, and the NRC all flow from here. This is where revising the electoral roll to find non-citizens enters Indian politics — a thread that runs to the CAA protests and to the roll revision now underway.",
+      "toll": "The memorial at Boragaon commemorates 860 agitators who died. The Nellie massacre of 18 February 1983 killed between 1,819 (official reports) and up to 10,000 (unofficial estimates) in about six hours. Nobody was ever prosecuted for it.",
+      "detail": "The movement's first death was Khargeswar Talukdar, a 22-year-old student beaten to death less than six months after the first strike.",
+      "image": {
+        "src": "img/assam.jpg",
+        "alt": "A students' rally during the Assam Movement, January 1985",
+        "credit": "Shekhar das 94",
+        "licence": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:A_Students_Rally_during_the_Assam_Movement.jpg",
+        "w": 480,
+        "h": 360
+      },
+      "sources": [
+        {
+          "label": "Assam movement",
+          "url": "https://en.wikipedia.org/wiki/Assam_movement"
+        },
+        {
+          "label": "Supreme Court upholds Section 6A",
+          "url": "https://www.livelaw.in/top-stories/supreme-court-upholds-validity-of-s6a-of-citizenship-act-recognizing-assam-accord-by-41-majority-272689"
+        }
+      ]
+    },
+    {
+      "id": "narmada",
+      "name": "Narmada Bachao Andolan",
+      "years": "1985–",
+      "sortDate": "1985-01-01",
+      "place": "The Narmada valley across Madhya Pradesh, Maharashtra and Gujarat",
+      "trigger": "A 1979 tribunal award cleared a cascade of dams on the Narmada. Villagers — many Adivasi, most without land titles — found they would be submerged with no serious plan to resettle them.",
+      "who": "Medha Patkar, who founded the movement, with Baba Amte. Tens of thousands across hundreds of villages, mobilised through long marches and village satyagrahas rather than mass rallies.",
+      "demanded": "A halt to construction pending a full review, and land-for-land resettlement before any submergence.",
+      "verdict": "lost",
+      "changed": "The dam got built and was inaugurated in 2017. What the movement did win was procedural and global: an independent review forced the World Bank to withdraw its $450m loan in 1993 — the first time that had happened — which reshaped the Bank's resettlement policy and created its Inspection Panel. The Supreme Court allowed construction in 2000 but tied dam height to rehabilitation. Estimates of those displaced range from 40,000 families still unresettled to over 100,000 people; official figures are lower.",
+      "parliament": "Weaker than the others, and worth saying so. The decisive arenas were a tribunal, a foreign bank and the Supreme Court — not Parliament. The argument it made for thirty years surfaces in the land acquisition and resettlement law of 2013.",
+      "detail": "The movement's signature tactic was jal samarpan — standing in the rising monsoon waters and refusing to move, daring the state to let them drown.",
+      "image": null,
+      "imageWhy": "Free photographs exist of later dharnas and of Medha Patkar, but none of the 1990s satyagrahas in the valley itself.",
+      "sources": [
+        {
+          "label": "Narmada Bachao Andolan",
+          "url": "https://en.wikipedia.org/wiki/Narmada_Bachao_Andolan"
+        },
+        {
+          "label": "World Bank project timeline",
+          "url": "https://timeline.worldbank.org/en/timeline/eventdetail/1911"
+        }
+      ]
+    },
+    {
+      "id": "mandal",
+      "name": "Anti-Mandal",
+      "years": "1990",
+      "sortDate": "1990-08-07",
+      "place": "Delhi and across north and central India",
+      "trigger": "On 7 August 1990 Prime Minister V.P. Singh told the Lok Sabha his government would implement the Mandal Commission's 27% reservation for Other Backward Classes in central jobs, taking total reservation to 49.5%. Upper-caste students, facing a shrinking public sector, erupted.",
+      "who": "Largely leaderless and student-driven — college unions and coaching-centre students in north Indian towns. Tactics ran from strikes and blockades to self-immolation.",
+      "demanded": "Withdrawal of the 27% quota, and “merit, not caste” in public appointments.",
+      "verdict": "lost",
+      "changed": "The quota stands and has been in force since 1993. The Supreme Court upheld it 6:3 in Indra Sawhney in November 1992, adding three limits that still shape Indian reservation law: a 50% ceiling, exclusion of the “creamy layer”, and no reservation in promotions. The government did fall on 7 November 1990, but the immediate cause was the BJP withdrawing support over the Rath Yatra, not Mandal alone.",
+      "parliament": "The best case on this timeline of Parliament answering back to a court. Over the following decade the 77th, 81st, 82nd and 85th Amendments each undid a specific holding of Indra Sawhney, and in 2019 the 103rd Amendment breached the 50% ceiling with a 10% EWS quota.",
+      "toll": "Roughly 160 to 200 self-immolation attempts and about 60 or more deaths; no official count was ever published. Many of the dead were teenagers — the named victims include a 15-year-old in Haryana and a 15-year-old in Chandigarh.",
+      "detail": "Rajiv Goswami, the student whose burning body became the image of the agitation, survived with about 70% burns and was later elected president of the Delhi University students' union. He died in 2004 of complications from those burns, fourteen years after the fire.",
+      "image": {
+        "src": "img/mandal.jpg",
+        "alt": "V.P. Singh, who announced the Mandal Commission's implementation",
+        "credit": "Rsamy2008",
+        "licence": "CC0",
+        "url": "https://commons.wikimedia.org/wiki/File:V._P._Singh_(cropped).jpg",
+        "w": 760,
+        "h": 1014
+      },
+      "imageWhy": "There is no free photograph of the 1990 protests on Wikimedia Commons. The famous news images are not freely licensed, and at least one 1990 protest photograph circulates online with a false caption.",
+      "sources": [
+        {
+          "label": "Mandal Commission protests of 1990",
+          "url": "https://en.wikipedia.org/wiki/Mandal_Commission_protests_of_1990"
+        },
+        {
+          "label": "Indra Sawhney v. Union of India",
+          "url": "https://en.wikipedia.org/wiki/Indra_Sawhney_and_Others_v._Union_of_India"
+        }
+      ]
+    },
+    {
+      "id": "rti",
+      "name": "The Right to Information campaign",
+      "years": "1990–2005",
+      "sortDate": "1996-04-01",
+      "place": "Central Rajasthan — Devdungri, Bhim, Beawar — then nationwide",
+      "trigger": "Labourers in Rajasthan being paid below the minimum wage on government works could not challenge the muster rolls, because they were not allowed to see them. A demand for wages became a demand for the records.",
+      "who": "The Mazdoor Kisan Shakti Sangathan — Aruna Roy, Nikhil Dey, Shankar Singh and local leaders — scaling into a national campaign. Rural women formed the largest contingent at the Beawar sit-in.",
+      "demanded": "A legal right to inspect and copy government records, and public hearings where officials answer to villagers.",
+      "verdict": "won",
+      "changed": "The Right to Information Act 2005 — passed by the Lok Sabha on 11 May 2005 and the Rajya Sabha the next day, in force that October. Nine states had passed their own laws first. It has since been narrowed: a 2019 amendment gave the central government control over Information Commissioners' tenure and salaries, and the data protection law of 2023 amended the RTI Act to bar disclosure of all “personal information”.",
+      "parliament": "The strongest arc on this timeline — a village sit-in over muster rolls that ends in a statute every Indian can use.",
+      "detail": "The oddity that struck observers was that the rural poor were on hunger strike demanding neither food nor land, but photocopies of government records. Their slogan: hamara paisa, hamara hisaab — our money, our accounts.",
+      "image": null,
+      "imageWhy": "No freely licensed photograph of the Beawar dharna was found.",
+      "sources": [
+        {
+          "label": "Mazdoor Kisan Shakti Sangathan",
+          "url": "https://en.wikipedia.org/wiki/Mazdoor_Kisan_Shakti_Sangathan"
+        },
+        {
+          "label": "The Week: the RTI movement",
+          "url": "https://www.theweek.in/theweek/cover/2025/10/04/rti-movement-india-history-beawar-devdungari-village.html"
+        }
+      ]
+    },
+    {
+      "id": "telangana",
+      "name": "Telangana statehood",
+      "years": "2009–2014",
+      "sortDate": "2009-11-29",
+      "place": "The ten districts of Telangana, centred on Hyderabad",
+      "trigger": "On 29 November 2009 K. Chandrashekar Rao began a fast unto death demanding a Telangana statehood bill. His failing health and the general strikes that followed forced the Centre's hand within eleven days — then it reversed itself on 23 December, and the movement restarted.",
+      "who": "KCR and the Telangana Rashtra Samithi, with a joint action committee that pulled in Osmania University students, employees' associations, lawyers and the Singareni miners. A 42-day general strike in 2011 included about 60,000 coal miners.",
+      "demanded": "A separate state carved out of Andhra Pradesh.",
+      "verdict": "won",
+      "changed": "They got the state. The Andhra Pradesh Reorganisation Act passed both Houses in February 2014 and Telangana came into existence on 2 June 2014 — the most complete win on this timeline. The TRS won the next two state elections, then lost power to Congress in December 2023.",
+      "parliament": "Direct and dramatic: a movement whose demand was literally a bill, under Article 3's power to form new states.",
+      "toll": "Hundreds of deaths, mostly suicides, are attributed to the movement. Published counts range from under 100 to 885 and none has been independently verified; the widely repeated figure of over a thousand has no traceable source. The state commemorates the dead as martyrs but has published no audited list.",
+      "detail": "As the bill was introduced on 13 February 2014, an MP from the opposing region sprayed pepper spray inside the Lok Sabha chamber and the House had to be cleared. Five days later the bill passed — by voice vote, with the Lok Sabha TV feed blacked out.",
+      "image": null,
+      "imageWhy": "No freely licensed photograph of the Million March or the Osmania University protests was confirmed.",
+      "sources": [
+        {
+          "label": "Telangana movement",
+          "url": "https://en.wikipedia.org/wiki/Telangana_movement"
+        }
+      ]
+    },
+    {
+      "id": "anna",
+      "name": "India Against Corruption",
+      "years": "2011",
+      "sortDate": "2011-04-05",
+      "place": "Jantar Mantar and Ramlila Maidan, Delhi, and cities nationwide",
+      "trigger": "A run of enormous corruption scandals — 2G spectrum, the Commonwealth Games, Adarsh housing — collided with a stalled 42-year-old proposal for an anti-corruption ombudsman. When the government refused to let civil society help draft the bill, Anna Hazare began an indefinite hunger strike.",
+      "who": "Hazare as figurehead, with Arvind Kejriwal, Kiran Bedi, Prashant Bhushan and Medha Patkar. Organisers reported over 100,000 at Ramlila Maidan on 21 August 2011.",
+      "demanded": "The Jan Lokpal Bill — an independent ombudsman with its own investigators, covering the Prime Minister and the judiciary.",
+      "verdict": "partly",
+      "changed": "The Lokpal and Lokayuktas Act passed in December 2013 — but it was not the bill the movement wanted, and the office then sat empty for five years until India's first Lokpal was appointed in March 2019. It has prosecuted almost no senior figure. The movement's real legacy was political: it helped end the UPA government and produced the Aam Aadmi Party, founded in November 2012.",
+      "parliament": "Almost unique. On 27 August 2011 both Houses passed a resolution accepting the protesters' three conditions in principle — Parliament formally answering a hunger strike taking place outside it.",
+      "detail": "Ordered released from Tihar Jail on 16 August 2011, Hazare refused to leave. He stayed inside and kept fasting until he was allowed to protest on his own terms.",
+      "balance": "Support came from across the spectrum — the BJP and the CPI(M) both backed the April fast. Core member Prashant Bhushan later said the movement had been propped up by the BJP and RSS, and that he regretted not seeing it at the time.",
+      "image": {
+        "src": "img/anna.jpg",
+        "alt": "Crowds at Anna Hazare's protest at Jantar Mantar, August 2011",
+        "credit": "ramesh_lalwani",
+        "licence": "CC BY 2.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Anna_Hazare_Jantar_Mantar.jpg",
+        "w": 760,
+        "h": 1013
+      },
+      "sources": [
+        {
+          "label": "2011 Indian anti-corruption movement",
+          "url": "https://en.wikipedia.org/wiki/2011_Indian_anti-corruption_movement"
+        },
+        {
+          "label": "Lokpal and Lokayuktas Act, 2013",
+          "url": "https://en.wikipedia.org/wiki/Lokpal_and_Lokayuktas_Act,_2013"
+        }
+      ]
+    },
+    {
+      "id": "nirbhaya",
+      "name": "The Nirbhaya protests",
+      "years": "2012",
+      "sortDate": "2012-12-16",
+      "place": "India Gate, Rajpath and Raisina Hill, Delhi, and dozens of cities",
+      "trigger": "On the night of 16 December 2012 a 23-year-old physiotherapy intern was gang-raped and mutilated on a moving bus in South Delhi and thrown onto the roadside with her friend. She died in a Singapore hospital on 29 December.",
+      "who": "Leaderless — and that was the point. Students, young professionals and women's organisations mobilised by text message and social media, with no party in charge. Politicians who turned up were booed.",
+      "demanded": "The death penalty for rapists, fast-track courts, and police accountability — that the state treat sexual violence as a public-order failure rather than a private misfortune.",
+      "verdict": "partly",
+      "changed": "The Criminal Law (Amendment) Act 2013 rewrote India's sexual offence law in ninety-five days: it widened the definition of rape and created new offences of acid attack, sexual harassment, disrobing, voyeurism and stalking, and made it a crime for a police officer to refuse to register a rape complaint. But the Verma Committee's central recommendations were not enacted — it asked for the marital-rape exception to be removed (still law in 2026), opposed the death penalty (added anyway), and asked that the armed forces face ordinary criminal law for sexual offences (not done). Conviction rates remain around 27%.",
+      "parliament": "The fastest law-making response to a protest on this timeline. Attack on 16 December, committee on 22 December, a 631-page report in 29 days, ordinance on 3 February, Act through both Houses by 21 March.",
+      "toll": "No protester died. A Delhi Police constable collapsed during the 23 December protest and died; the recorded cause was cardiac arrest. Eight young men were charged with his murder, and police admitted in March 2013 that they had no evidence and dropped the charges — a fact worth remembering whenever a protest is blamed for a death.",
+      "detail": "On 24 December the government shut nine Metro stations and sealed the roads to India Gate to stop people gathering. Protesters climbed the lampposts along Rajpath instead, and the photographs of them silhouetted against tear gas became the images of the protest.",
+      "image": {
+        "src": "img/nirbhaya.jpg",
+        "alt": "Protesters in tear gas near Raisina Hill, Delhi, 22 December 2012",
+        "credit": "Nilanjana Roy",
+        "licence": "CC BY-SA 3.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Delhi_protests-teargassed.jpg",
+        "w": 1100,
+        "h": 658
+      },
+      "sources": [
+        {
+          "label": "2012 Delhi gang rape and murder",
+          "url": "https://en.wikipedia.org/wiki/2012_Delhi_gang_rape_and_murder"
+        },
+        {
+          "label": "Criminal Law (Amendment) Act, 2013",
+          "url": "https://prsindia.org/billtrack/the-criminal-law-amendment-bill-2013"
+        }
+      ]
+    },
+    {
+      "id": "caa",
+      "name": "Anti-CAA and Shaheen Bagh",
+      "years": "2019–2020",
+      "sortDate": "2019-12-04",
+      "place": "Nationwide; Jamia Millia Islamia and Shaheen Bagh in Delhi, and Assam",
+      "trigger": "The Citizenship (Amendment) Act offered a fast track to citizenship for six religious groups from three countries — but not Muslims. Critics said that, combined with a proposed national register of citizens, it made religion a test of citizenship for the first time in Indian law. In Assam the objection was the opposite: that the Act legalised any pre-2015 migrant, breaking the Assam Accord's 1971 cut-off.",
+      "who": "Leaderless and overwhelmingly young. The defining image was Muslim women occupying a road: Shaheen Bagh was run in rotating shifts by local women, many of them grandmothers who had never protested before.",
+      "demanded": "Repeal of the Act and abandonment of the proposed national register.",
+      "verdict": "lost",
+      "changed": "Nothing in the law changed. The Act was never repealed, amended or stayed. Its rules were notified in March 2024 and the Supreme Court refused to stay those too; about 237 petitions, the oldest from December 2019, were still pending in late 2026. What the movement did achieve was negative: no nationwide register has been attempted, and six state assemblies passed resolutions against the Act — symbolic, since citizenship is a Union subject. Kerala became the first state to sue the Union directly under Article 131.",
+      "parliament": "The protest was about an Act of Parliament, and both Houses had divided on it — 311 to 80 in the Lok Sabha, 125 to 105 in the Rajya Sabha. You can vote on this one yourself in the section above.",
+      "toll": "At least 27, and by some counts more than 60, people died, the great majority in Uttar Pradesh. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
+      "detail": "Shaheen Bagh lasted 101 days and did not end in a court ruling or a repeal. Police cleared it at 7:30 on the morning of the first day of the COVID lockdown and detained nine people, six of them women. In October 2020 the Supreme Court held that occupying public space indefinitely is not permissible — the protest's clearest legal legacy, and it cuts against protesters.",
+      "image": {
+        "src": "img/shaheenbagh.jpg",
+        "alt": "Women at the Shaheen Bagh sit-in, February 2020",
+        "credit": "DiplomatTesterMan",
+        "licence": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Ladies_of_Shaheen_Bagh.jpg",
+        "w": 960,
+        "h": 720
+      },
+      "sources": [
+        {
+          "label": "Citizenship Amendment Act protests",
+          "url": "https://en.wikipedia.org/wiki/Citizenship_Amendment_Act_protests"
+        },
+        {
+          "label": "Supreme Court Observer: the CAA case",
+          "url": "https://www.scobserver.in/cases/constitutionality-of-the-citizenship-amendment-act-2019-caa/"
+        }
+      ]
+    },
+    {
+      "id": "farmers",
+      "name": "The farmers' protests",
+      "years": "2020–2021",
+      "sortDate": "2020-11-26",
+      "place": "The Singhu, Tikri and Ghazipur borders of Delhi",
+      "trigger": "Three farm laws passed in September 2020 — in the Rajya Sabha by a voice vote, with a demand for a recorded count refused.",
+      "who": "The Samyukt Kisan Morcha, an umbrella of more than 400 unions. Tens of thousands camped at the Delhi borders through two winters and a COVID wave.",
+      "demanded": "Repeal of the three laws, and a legal guarantee for Minimum Support Price.",
+      "verdict": "partly",
+      "changed": "The laws were repealed — the only time in this timeline that a protest reversed a major Act of Parliament. The repeal bill passed both Houses on 29 November 2021 within minutes, again without debate. The second demand, a legal MSP guarantee, remains unmet five years later, and the written assurances that ended the protest are still, the unions say, unfulfilled.",
+      "parliament": "Passed without a recorded vote, repealed without a debate. The full record is in the voting section above.",
+      "toll": "The farm unions compiled a list of 702 deaths during the protest and later cited 736. The government told Parliament it had no record of any.",
+      "detail": "The agitation ended not with a vote but with a letter: the unions suspended it on 11 December 2021 after written government assurances two days earlier.",
+      "image": null,
+      "imageWhy": "Free photographs are plentiful for this one, but it already has a full scenario in the voting section above.",
+      "crossLink": "farm-laws-2020",
+      "sources": [
+        {
+          "label": "The Quint: one year on",
+          "url": "https://www.thequint.com/news/india/historic-win-one-year-loss-of-lives-farmers-protest-samyukta-kisan-morcha-modi"
+        }
+      ]
+    },
+    {
+      "id": "sir",
+      "name": "The electoral rolls protests",
+      "years": "2025–",
+      "sortDate": "2025-06-24",
+      "place": "Bihar first, then nationwide; protests centred on Delhi",
+      "ongoing": true,
+      "verifiedOn": "2026-10-27",
+      "trigger": "In June 2025 the Election Commission ordered a Special Intensive Revision of Bihar's electoral roll: every voter added since 2003 had to prove eligibility, with the 2003 roll as the baseline. About 47 lakh names came off, net. The revision then went nationwide. In September 2026 an Indian Express investigation reported that the two other Election Commissioners had objected on the record some fourteen times to the Chief Election Commissioner's decisions — and the protests began.",
+      "who": "Two separate tracks, not one front. Opposition parties have run a “vote chori” campaign since mid-2025. The Cockroach Janta Party — a Gen Z movement founded online in May 2026, after the Chief Justice of India compared unemployed young critics to cockroaches — joined only in September 2026. Left student groups form a third strand. They share demands but have no joint platform.",
+      "demanded": "The resignation of the Chief Election Commissioner, a halt to deletions pending an independent inquiry, and restoration of the earlier rolls before the next elections.",
+      "verdict": "live",
+      "changed": "Nothing demanded has been conceded. The revision has run through three phases and continues. The Supreme Court upheld it in May 2026, though with conditions that are the protesters' only legal gain: Aadhaar must be accepted as proof of identity, citizenship doubts must go to the proper authority under the Citizenship Act, and anyone wrongly deleted must be restored. The Chief Election Commissioner remains in post, with a term running to January 2029.",
+      "parliament": "The sharpest illustration on this timeline of Parliament's accountability powers and their limits. Under Article 324(5) a Chief Election Commissioner can only be removed by an address of both Houses. Opposition MPs filed removal notices in March 2026 with enough signatures to cross the thresholds; the Speaker and the Rajya Sabha Chairman rejected both in April, giving no reasons. A fresh notice followed. The Law Minister had already told the House that the Commission's functioning cannot be debated in Parliament.",
+      "toll": "No protest deaths have been reported. On 10 October 2026 Delhi deployed over 40,000 personnel, shut 43 Metro stations and cut mobile internet in the centre of the city. Detention figures for that day range from about 2,000 (Reuters, citing the Home Ministry) to over 5,000 (The Hindu); Amnesty International puts the nationwide figure far higher. At least 30 journalists were detained, and three women journalists alleged sexual harassment by police. The government rejected a UN statement on the detentions as interference in India's internal affairs.",
+      "detail": "Blocked from reaching the Election Commission in late October, protesters sat down in the road near Bangla Sahib Gurdwara and convened what they called a People's Parliament. Over a hundred were detained.",
+      "balance": "The Election Commission says the revision removes duplicate, deceased and ineligible entries, that deletion from a draft roll is not final, and that appeal routes exist. It says all three revision orders were approved unanimously by all three Commissioners. The BJP has made its own counter-allegations of roll manipulation in opposition-held seats.",
+      "caution": "The figure of about 130 million deletions now circulating internationally traces to a single newspaper report of October 2026. The verifiable components are smaller and separately sourced: 47 lakh net in Bihar, 61.8 lakh in West Bengal, about 2.04 crore in Uttar Pradesh.",
+      "image": {
+        "src": "img/cjp.jpg",
+        "alt": "Students at Jantar Mantar, Delhi, on 20 July 2026, before the march on Parliament",
+        "credit": "Sumita Roy Dutta",
+        "licence": "CC BY-SA 4.0",
+        "url": "https://commons.wikimedia.org/wiki/File:Students_from_All_Over_India_protesting_against_2026_NEET_UG_paper_leak_place_Jantar_Mantar_on_20_July_2026_ahead_of_Parliament_March_01.jpg",
+        "w": 1100,
+        "h": 825
+      },
+      "imageWhy": "This photograph is from the movement's earlier phase, over exam paper leaks, which forced the Education Minister's resignation in July 2026. No freely licensed photograph of the electoral-rolls protests exists.",
+      "sources": [
+        {
+          "label": "Special Intensive Revision",
+          "url": "https://en.wikipedia.org/wiki/Special_Intensive_Revision"
+        },
+        {
+          "label": "Supreme Court judgment summary",
+          "url": "https://www.scobserver.in/reports/challenge-to-the-ecis-revision-of-electoral-rolls-in-bihar-judgement-summary/"
+        },
+        {
+          "label": "Human Rights Watch, October 2026",
+          "url": "https://www.hrw.org/news/2026/10/13/india-end-crackdown-on-protesters-arbitrary-detentions"
+        }
+      ]
+    }
+  ]
+}

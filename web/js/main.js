@@ -3,6 +3,7 @@ import { initHouse } from "./house.js";
 import { initMatcher } from "./matcher.js";
 import { initMP } from "./mp.js";
 import { initLedger } from "./ledger.js";
+import { initTimeline } from "./timeline.js";
 
 // Each section loads its own data, so one failure doesn't blank the page.
 // Motion is optional: if it fails to load, content is already visible.
@@ -10,6 +11,7 @@ const sections = [
   [initHouse, "hemicycle"],
   [initMatcher, "matcher"],
   [initMP, "bill"],
+  [initTimeline, "timeline-body"],
   [initLedger, "ledger-body"],
 ];
 

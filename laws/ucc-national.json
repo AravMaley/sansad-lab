@@ -1,0 +1,100 @@
+{
+  "id": "ucc-national",
+  "order": 5,
+  "title": "A Uniform Civil Code",
+  "year": null,
+  "yearLabel": "Never voted on",
+  "hypothetical": true,
+  "kicker": "The bill Parliament has never been asked to pass",
+  "summary": "A Uniform Civil Code would replace the separate Hindu, Muslim, Christian and Parsi personal laws on marriage, divorce, inheritance and adoption with one law for everyone. The Constitution has directed the state to “endeavour to secure” it since 1950. In seventy-six years no government has introduced one in Parliament — so this is the one bill here you cannot look up. Four states have passed their own.",
+  "provisions": [
+    "One law on marriage, divorce, maintenance, inheritance and adoption, applying regardless of religion.",
+    "Replaces the Hindu Marriage Act 1955, the Hindu Succession Act 1956, the Muslim Personal Law (Shariat) Application Act 1937, the Indian Christian Marriage Act 1872 and the Parsi Marriage and Divorce Act 1936.",
+    "The Special Marriage Act 1954 already offers a religion-neutral marriage to anyone who opts in; a UCC would make it the default rather than a choice.",
+    "Every state code passed so far exempts Scheduled Tribes."
+  ],
+  "votes": [
+    {
+      "house": "Parliament of India",
+      "date": "2026-10-27",
+      "method": "none",
+      "note": "No government has ever introduced a national Uniform Civil Code bill in either House. A private member's bill was introduced in the Rajya Sabha in December 2022 — the motion merely to introduce it carried 63–23 and the bill went no further.",
+      "source": "https://www.livelaw.in/news-updates/private-bill-to-implement-uniform-civil-code-introduced-in-rajya-sabha-216307"
+    },
+    {
+      "house": "Uttarakhand Assembly",
+      "date": "2024-02-07",
+      "method": "voice",
+      "note": "The nearest real vote. Passed by voice vote; the opposition's demand to send it to a select committee was rejected. Reports do not break the voice vote down by party, so no party's MLAs can be said to have voted either way.",
+      "source": "https://www.deccanherald.com/india/uttarakhand/uttarakhand-becomes-first-state-to-pass-uniform-civil-code-bill-2884458"
+    }
+  ],
+  "committee": {
+    "referred": false,
+    "note": "The 21st Law Commission examined it and reported in 2018. The 22nd reopened consultation in June 2023, received about 46 lakh responses, and its term lapsed in August 2024 without it producing a UCC report.",
+    "source": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632.pdf"
+  },
+  "arguments_for": [
+    {
+      "text": "The Constitution already directs it: “The State shall endeavour to secure for the citizens a uniform civil code throughout the territory of India.”",
+      "by": "Article 44, Directive Principles of State Policy",
+      "source": "https://www.indiacode.nic.in/show-data?actid=AC_CEN_1_1_00001_195102_1517807320555&sectionId=1372&sectionno=44&orderno=48"
+    },
+    {
+      "text": "Personal laws are where women lose most. A Muslim women's organisation found that about 90% of the 4,700 women it surveyed wanted polygamy ended — a reform their own personal law blocks.",
+      "by": "Zakia Soman, Bharatiya Muslim Mahila Andolan",
+      "source": "https://bmmaindia.com/2015/08/25/seeking-justice-within-family/"
+    },
+    {
+      "text": "One rule for inheritance and divorce is simpler to administer than five, and Uttarakhand's experience suggests the machinery can cope: about 4.7 lakh marriages were registered in its first year, nearly all online.",
+      "by": "Uttarakhand government, one-year review (January 2026)",
+      "source": "https://www.hindustantimes.com/cities/dehradun-news/one-year-of-ucc-in-uttarakhand-4-74-lakh-marriages-registered-101737304567890.html"
+    }
+  ],
+  "arguments_against": [
+    {
+      "text": "Even its architect did not want it forced on everyone at the start. Ambedkar told the Constituent Assembly the article “does not require enforcement on all citizens merely because they are citizens”, and suggested Parliament might begin by making the code purely voluntary.",
+      "by": "B.R. Ambedkar, Constituent Assembly, 23 November 1948",
+      "source": "https://www.constitutionofindia.net/debates/23-nov-1948/"
+    },
+    {
+      "text": "The government's own law reform body examined it and said no: a uniform civil code is “neither necessary nor desirable at this stage”. It recommended fixing the discriminatory parts of each personal law instead.",
+      "by": "21st Law Commission of India, consultation paper, 2018",
+      "source": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632.pdf"
+    },
+    {
+      "text": "Equal rights need not mean an identical law. The demand should be “uniformity of rights, not a uniform law” — and historically it was Hindu law, not minority law, that was the most gender-unjust.",
+      "by": "Flavia Agnes, lawyer and women's rights scholar",
+      "source": "https://www.epw.in/journal/2016/48/perspectives/muslim-women-and-uniform-civil-code.html"
+    },
+    {
+      "text": "Several of the governing coalition's own allies reject it. Mizoram's assembly passed a resolution against a UCC in February 2023, and parties in Nagaland and Meghalaya have opposed it as a threat to customary law.",
+      "by": "MNF, NDPP, NPF and NPP — all NDA allies",
+      "source": "https://www.thehindu.com/news/national/other-states/mizoram-assembly-adopts-resolution-against-uniform-civil-code/article66505263.ece"
+    }
+  ],
+  "timeline": [
+    { "date": "1948-11-23", "text": "The Constituent Assembly debates it. Amendments by four Muslim members to protect personal law are defeated; Ambedkar suggests the code could begin as voluntary.", "source": "https://www.constitutionofindia.net/debates/23-nov-1948/" },
+    { "date": "1950-01-26", "text": "Article 44 comes into force as a Directive Principle — a goal the state must work towards, but which no court can enforce.", "source": "https://www.indiacode.nic.in/show-data?actid=AC_CEN_1_1_00001_195102_1517807320555&sectionId=1372&sectionno=44&orderno=48" },
+    { "date": "1985-04-23", "text": "In the Shah Bano case the Supreme Court regrets that Article 44 “has remained a dead letter”. Parliament responds by passing a law reversing the judgment.", "source": "https://indiankanoon.org/doc/823221/" },
+    { "date": "2018-08-31", "text": "The 21st Law Commission concludes a UCC is “neither necessary nor desirable at this stage”.", "source": "https://cdnbbsr.s3waas.gov.in/s3ca0daec69b5adc880fb464895726dbdf/uploads/2022/08/2022081632.pdf" },
+    { "date": "2023-06-14", "text": "The 22nd Law Commission reopens consultation and receives about 46 lakh responses. Its term lapses in August 2024 without a report.", "source": "https://www.thehindu.com/news/national/law-commission-begins-fresh-consultation-on-uniform-civil-code/article66966321.ece" },
+    { "date": "2024-02-07", "text": "Uttarakhand becomes the first state to pass a UCC, by voice vote.", "source": "https://www.deccanherald.com/india/uttarakhand/uttarakhand-becomes-first-state-to-pass-uniform-civil-code-bill-2884458" },
+    { "date": "2025-01-27", "text": "The Uttarakhand code comes into force.", "source": "https://www.deccanherald.com/india/uttarakhand/uttarakhand-implements-uniform-civil-code-3374519" },
+    { "date": "2026-03-24", "text": "Gujarat passes its own UCC. Assam follows in May and Madhya Pradesh in July.", "source": "https://www.thehindu.com/news/national/gujarat/gujarat-assembly-passes-uniform-civil-code-bill/article69364821.ece" },
+    { "date": "2026-09-13", "text": "Amit Shah says every NDA-ruled state will have a UCC before 2029. Still no bill in Parliament.", "source": "https://www.thehindu.com/news/national/all-nda-ruled-states-to-have-ucc-before-2029-says-amit-shah/article69942318.ece" }
+  ],
+  "outcome": "Never introduced",
+  "status": {
+    "text": "No national UCC bill exists. Four states have passed their own and more have announced them, so the country is getting a patchwork of civil codes rather than a uniform one — which is close to the opposite of what Article 44 describes.",
+    "as_of": "2026-10",
+    "source": "https://www.thehindu.com/news/national/all-nda-ruled-states-to-have-ucc-before-2029-says-amit-shah/article69942318.ece"
+  },
+  "reflection": {
+    "aye": "You voted for it — so look at what the states that did this actually got. Uttarakhand registered about 4.7 lakh marriages in its first year, so the administration coped. But its most argued-over provision, registering live-in relationships, was used 68 times in twelve months. And every state code so far exempts Scheduled Tribes, so none of them is fully uniform.",
+    "no": "You voted against — and so, in effect, has every government since 1950. None has introduced a bill. The Law Commission reached your conclusion in 2018 and proposed the alternative: fix the unjust parts of each personal law one at a time, which is how triple talaq was ended in 2019.",
+    "committee": "You asked for scrutiny. That has been tried twice. The 21st Law Commission reported in 2018 and said no. The 22nd reopened the question in 2023, collected about 46 lakh responses, and its term ran out before it wrote anything. Referral is not always a delaying tactic — but it is not always an answer either.",
+    "abstain": "You abstained on the one bill here that was never put to a vote. That is roughly what Parliament has done for seventy-six years: Article 44 says the state “shall endeavour”, and endeavouring has meant leaving it to the states."
+  },
+  "question": "The Constitution asks for one civil code. Four states have now written four different ones. Is that progress towards Article 44, or away from it?"
+}
