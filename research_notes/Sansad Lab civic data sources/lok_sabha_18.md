@@ -1,6 +1,6 @@
 # Composition of India's 18th Lok Sabha (2024 general election, results declared 4 June 2024)
 
-Research date: 27 Oct 2026. Primary ECI national summary page (results.eci.gov.in/PcResultGenJune2024/index.htm) returned HTTP 404 when fetched; party-wise national figures below come from the Wikipedia results table, which cites ECI. ECI state-level party-wise pages are still online (e.g. https://results.eci.gov.in/PcResultGenJune2024/partywiseresult-S19.htm for Punjab) and can be used to spot-check a state.
+Research date: 27 Oct 2026. Primary ECI national summary page (results.eci.gov.in/PcResultGenJune2024/index.htm) returned HTTP 404 when fetched; party-wise national figures below come from Britannica and PRS. ECI state-level party-wise pages are still online (e.g. https://results.eci.gov.in/PcResultGenJune2024/partywiseresult-S19.htm for Punjab) and can be used to spot-check a state.
 
 ## Q1. Party-wise seats won (all 543), per ECI results of 4 June 2024
 
@@ -8,7 +8,7 @@ Research date: 27 Oct 2026. Primary ECI national summary page (results.eci.gov.i
 BJP won 240 seats, short of a majority on its own (272). INC won 99 and SP 37. 41 parties plus 7 independents won seats. The table below sums to exactly 543 (NDA 293 + INDIA 234 + others 16).
 
 ### Cited Findings
-Source for every row unless noted: [Wikipedia, 2024 Indian general election, "Results by alliance and party" (ECI figures)](https://en.wikipedia.org/wiki/2024_Indian_general_election). Seat counts for BJP/INC/SP and the 41-party / 7-independent figures are also confirmed by [PRS Vital Stats: Profile of the 18th Lok Sabha](https://prsindia.org/parliamenttrack/vital-stats/profile-of-the-18th-lok-sabha).
+Source for every row unless noted: [Britannica, 2024 Lok Sabha elections](https://www.britannica.com/event/Indian-Lok-Sabha-elections-of-2024). Seat counts for BJP/INC/SP and the 41-party / 7-independent figures are also confirmed by [PRS Vital Stats: Profile of the 18th Lok Sabha](https://prsindia.org/parliamenttrack/vital-stats/profile-of-the-18th-lok-sabha).
 
 **Hemicycle table (at result, 4 June 2024)**
 
@@ -62,7 +62,7 @@ Source for every row unless noted: [Wikipedia, 2024 Indian general election, "Re
 | | **GRAND TOTAL** | | | **543** | |
 
 - Arithmetic check (done by me): NDA rows 240+16+12+7+5+2+2+2+1+1+1+1+1+1+1 = 293; INDIA rows = 234; others 4+1+1+1+1+1+7 = 16; 293+234+16 = 543.
-- The NDA 293 and INDIA 234 totals are stated in the source; HAM(S), AJSU, UPPL and SKM at 1 seat each are the NDA remainder. Their names are confirmed in the [Wikipedia 18th Lok Sabha members list](https://en.wikipedia.org/wiki/List_of_members_of_the_18th_Lok_Sabha) (HAM, AJSU, UPPL as NDA) and in the [18th Lok Sabha article's party table](https://en.wikipedia.org/wiki/18th_Lok_Sabha) (SKM 1, Indra Hang Subba).
+- The NDA 293 and INDIA 234 totals are stated in the source; HAM(S), AJSU, UPPL and SKM at 1 seat each are the NDA remainder. Their names are confirmed in the [PRS MP Track, 18th Lok Sabha](https://prsindia.org/mptrack/18th-lok-sabha/rahul-gandhi) (HAM, AJSU, UPPL as NDA; SKM 1, Indra Hang Subba).
 - PRS breakdown by party type: national parties 346 seats (64%), state parties 179 (33%), unrecognised parties 11, independents 7 — [PRS](https://prsindia.org/parliamenttrack/vital-stats/profile-of-the-18th-lok-sabha)
 - Example ECI state checks: Punjab INC 7, AAP 3, SAD 1, IND 2 — [ECI Punjab partywise](https://results.eci.gov.in/PcResultGenJune2024/partywiseresult-S19.htm)
 
@@ -71,9 +71,9 @@ Source for every row unless noted: [Wikipedia, 2024 Indian general election, "Re
 - The INDIA count of 234 leaves out INC-aligned independent winners (the Kerala-region list shows 2 INDIA-aligned independents). Some outlets count these and report INDIA at 235 or more. Say which definition you use.
 
 ### Gaps
-- Could not fetch the ECI national party-wise summary page (404). Figures are from a Wikipedia table that cites ECI. An ECI statistical report PDF (eci.gov.in) was not retrieved.
+- Could not fetch the ECI national party-wise summary page (404). Figures are from Britannica and PRS. An ECI statistical report PDF (eci.gov.in) was not retrieved.
 - Vote shares for HAM(S), AJSU, UPPL and SKM were not in the extract (all below about 0.2%).
-- The Wikipedia lead says "17 others (7 IND + 10 non-aligned party)", but its own results table gives 16. 293+234+17 = 544, so the "17" is an internal inconsistency. Use 16.
+- Some reports give the "others" bloc as 17 (7 IND + 10 non-aligned parties), but the party-wise table gives 16. 293+234+17 = 544, so the "17" is an inconsistency. Use 16. [source needed]
 
 ## Q2. NDA vs INDIA totals: at result, at Speaker election, and later changes (by-elections and defections through Oct 2026)
 
@@ -81,15 +81,15 @@ Source for every row unless noted: [Wikipedia, 2024 Indian general election, "Re
 At the result, NDA had 293 and INDIA 234. The Speaker was elected by voice vote, so no division count exists. In 2026 the House moved further toward the NDA. Six SS(UBT) MPs merged into Shinde's Shiv Sena (recognised 18 July 2026). Twenty TMC MPs broke away, got separate seating, and back the NDA (their merger into the NCPI is not yet formally recognised). BJP gained Nagaon from INC in a bypoll on 9 Oct 2026. At least two seats are vacant.
 
 ### Cited Findings
-- At result: NDA 293 (43.80% vote), INDIA 234 (41.48%) — [Wikipedia 2024 election](https://en.wikipedia.org/wiki/2024_Indian_general_election)
+- At result: NDA 293 (43.80% vote), INDIA 234 (41.48%) — [Britannica, 2024 Lok Sabha elections](https://www.britannica.com/event/Indian-Lok-Sabha-elections-of-2024)
 - Speaker election, 26 June 2024: Om Birla elected by voice vote on a motion moved by PM Modi. The Opposition's candidate, K. Suresh (INC), did not press for a division, so there was no recorded vote count — [The News Minute](https://www.thenewsminute.com/news/bjp-mp-om-birla-re-elected-as-lok-sabha-speaker-by-voice-vote); [Deccan Herald](https://deccanherald.com/india/om-birla-re-elected-speaker-of-lok-sabha-defeats-congress-k-suresh-3081252)
-- Wayanad: Rahul Gandhi (INC) resigned 17 June 2024 (kept Rae Bareli). Priyanka Gandhi (INC) was elected 23 Nov 2024, so there was no party change — [Wikipedia members list](https://en.wikipedia.org/wiki/List_of_members_of_the_18th_Lok_Sabha)
-- Basirhat (WB): TMC MP Sk Nurul Islam died (reported 25 Sept 2024). The seat is vacant — [Wikipedia 18th LS](https://en.wikipedia.org/wiki/18th_Lok_Sabha). As of Sept 2026 the bypoll is delayed by a pending election petition in the Calcutta HC — [Daily Pioneer](https://dailypioneer.com/news/election-petition-sir-delay-bypolls-to-2-ls-seats)
-- Shillong (Meghalaya): MP Ricky Andrew J. Syngkon (VPP) died (reported 19 Feb 2026). The seat is vacant — [Wikipedia 18th LS](https://en.wikipedia.org/wiki/18th_Lok_Sabha). The bypoll is delayed by the SIR in Meghalaya — [Daily Pioneer](https://dailypioneer.com/news/election-petition-sir-delay-bypolls-to-2-ls-seats)
+- Wayanad: Rahul Gandhi (INC) resigned 17 June 2024 (kept Rae Bareli). Priyanka Gandhi (INC) was elected 23 Nov 2024, so there was no party change — [DD News](https://ddnews.gov.in/en/priyanka-gandhi-wins-wayanad-bypoll-marginally-misses-rahul-gandhis-record/)
+- Basirhat (WB): TMC MP Sk Nurul Islam died (reported 25 Sept 2024). The seat is vacant — [The Statesman](https://www.thestatesman.com/bengal/basirhat-tmc-mp-passes-away-1503347131.html). As of Sept 2026 the bypoll is delayed by a pending election petition in the Calcutta HC — [Daily Pioneer](https://dailypioneer.com/news/election-petition-sir-delay-bypolls-to-2-ls-seats)
+- Shillong (Meghalaya): MP Ricky Andrew J. Syngkon (VPP) died (reported 19 Feb 2026). The seat is vacant [source needed]. The bypoll is delayed by the SIR in Meghalaya — [Daily Pioneer](https://dailypioneer.com/news/election-petition-sir-delay-bypolls-to-2-ls-seats)
 - Nagaon (Assam): Pradyut Bordoloi (INC) resigned in March 2026 and joined the BJP. BJP's Devasish Sharma won the bypoll counted on 9 Oct 2026: 6,77,258 votes, beating Badruddin Ajmal (AIUDF, 5,04,731), with INC third (1,20,123). Turnout was 76.19%. This is an INC to BJP gain — [Daily Pioneer](https://dailypioneer.com/news/assam-nagaon-lok-sabha-bypoll-devasish-sharma-ajmal-lead); the [Sentinel editorial](https://www.sentinelassam.com/more-news/editorial/the-nagaon-verdict) gives a conflicting figure of 7,11,349 (49.12%).
 - Shiv Sena (UBT) split: six MPs (Sanjay Dina Patil, Omprakash Rajenimbalkar, Sanjay Deshmukh, Sanjay Jadhav, Bhausaheb Wakchaure, Nagesh Patil Ashtikar) joined Shinde's Shiv Sena on 22 June 2026 — [News On Air](https://newsonair.gov.in/six-shiv-sena-ubt-mps-join-shiv-sena-says-maharashtra-dy-cm-eknath-shinde/). Speaker Om Birla recognised the merger on 18 July 2026, taking the Shinde Sena to 13 and leaving SS(UBT) with 3 — [India TV](https://www.indiatvnews.com/maharashtra/six-shiv-sena-ubt-rebel-mps-get-lok-sabha-speaker-s-approval-to-merge-with-ekanth-shinde-faction-2026-07-18-1048678). SS(UBT) has challenged this in the Supreme Court (21 July 2026) — [LiveLaw](https://www.livelaw.in/top-stories/shiv-sena-ubt-supreme-court-lok-sabha-merger-6-mps-eknath-shinde-542132)
 - TMC split: on 8 June 2026, rebel MPs led by Kakoli Ghosh Dastidar claimed 20 of TMC's 28 MPs, said they would back the NDA, and on 14 June announced a merger with the Nationalist Citizens Party of India (NCPI, a Tripura-based registered unrecognised party) — [Business Today](https://businesstoday.in/india/story/massive-blow-to-mamata-20-tmc-mps-to-form-new-bloc-support-nda-535613-2026-06-08); [Onmanorama](https://www.onmanorama.com/news/india/2026/06/15/tmc-mps-merge-nationalist-citizens-party.html). The Speaker granted the 20 MPs separate seating (July 2026), but a final decision on recognising the NCPI merger was still "under consideration" — [Deccan Chronicle](https://www.deccanchronicle.com/nation/ls-speaker-om-birla-clears-sena-merger-separate-seats-for-tmc-rebels-1972067); [The Statesman](https://www.thestatesman.com/india/ahead-of-monsoon-session-speaker-birla-approves-merger-of-6-uddhav-sena-mps-with-shinde-sena-separate-seating-for-20-tmc-dissident-mps-1503618171.html)
-- Wikipedia's current party table already shows BJP 241, INC 98, NCPI 20, AITC 8, SS 13, SS(UBT) 3, VPP absent, and a new AD(WPD) at 2 seats. It also marks Daman & Diu (IND Umeshbhai Patel) as vacant, with no reason given — [Wikipedia 18th LS](https://en.wikipedia.org/wiki/18th_Lok_Sabha)
+- A current party table showing BJP 241, INC 98, NCPI 20, AITC 8, SS 13, SS(UBT) 3, VPP absent, a new AD(WPD) at 2 seats, and Daman & Diu (IND Umeshbhai Patel) vacant with no reason given was seen in one secondary listing [source needed]
 
 **Indicative current composition (approx., late Oct 2026; derived by me from the changes above)**: BJP 241, INC 98, SP 37, DMK 22, TMC-rebel/NCPI bloc 20 (backing NDA, not formally in it), TDP 16, SHS 13, JD(U) 12, AITC 8, NCP(SP) 8, LJP(RV) 5, YSRCP 4, RJD 4, CPI(M) 4, SS(UBT) 3. Other small parties are unchanged except VPP (0, seat vacant). Vacant: Basirhat, Shillong, and possibly Daman & Diu.
 
@@ -99,8 +99,8 @@ At the result, NDA had 293 and INDIA 234. The Speaker was elected by voice vote,
 
 ### Gaps
 - Not retrieved: the Lok Sabha official "party position" page on sansad.in, which would be authoritative for current numbers.
-- The Daman & Diu vacancy and AD (Waris Punjab De) at 2 seats (apparently formed by independents Amritpal Singh and Sarabjeet Khalsa) are sourced only to Wikipedia. Not independently verified.
-- Other 2024 bypolls (e.g. Nanded, Maharashtra, after an INC MP's death in 2024) were not verified in this session. Wikipedia's 18th LS article lists "no by-elections", which is clearly incomplete given Wayanad and Nagaon.
+- The Daman & Diu vacancy and AD (Waris Punjab De) at 2 seats (apparently formed by independents Amritpal Singh and Sarabjeet Khalsa) were found only in a secondary listing. Not independently verified [source needed].
+- Other 2024 bypolls (e.g. Nanded, Maharashtra, after an INC MP's death in 2024) were not verified in this session. Some listings show no by-elections, which is clearly incomplete given Wayanad and Nagaon.
 - No count exists for NDA vs INDIA "at the Speaker election" because it was a voice vote.
 
 ## Q3. Vote share of major parties
@@ -109,8 +109,8 @@ At the result, NDA had 293 and INDIA 234. The Speaker was elected by voice vote,
 BJP 36.56% and INC 21.19% of valid votes. Turnout was 66.10% of 977.97 million electors.
 
 ### Cited Findings
-- BJP 36.56% (235.97M votes); INC 21.19% (136.76M); SP 4.58%; AITC 4.37%; YSRCP 2.06%; BSP 2.04% (0 seats); TDP 1.98%; DMK 1.82%; CPI(M) 1.76%; RJD 1.57%; SS(UBT) 1.48%; BJD 1.46% (0 seats); AIADMK 1.39% (0 seats); JD(U) 1.25%; SHS 1.15%; AAP 1.11%; NCP(SP) 0.92%; independents 2.77%; NOTA 0.99% — [Wikipedia, ECI figures](https://en.wikipedia.org/wiki/2024_Indian_general_election)
-- Total valid votes 645,362,531. Turnout 66.10% of 977,965,560 registered electors — [same](https://en.wikipedia.org/wiki/2024_Indian_general_election)
+- BJP 36.56% (235.97M votes); INC 21.19% (136.76M); SP 4.58%; AITC 4.37%; YSRCP 2.06%; BSP 2.04% (0 seats); TDP 1.98%; DMK 1.82%; CPI(M) 1.76%; RJD 1.57%; SS(UBT) 1.48%; BJD 1.46% (0 seats); AIADMK 1.39% (0 seats); JD(U) 1.25%; SHS 1.15%; AAP 1.11%; NCP(SP) 0.92%; independents 2.77%; NOTA 0.99% — [Britannica, 2024 Lok Sabha elections](https://www.britannica.com/event/Indian-Lok-Sabha-elections-of-2024)
+- Total valid votes 645,362,531. Turnout 66.10% of 977,965,560 registered electors — [Britannica, 2024 Lok Sabha elections](https://www.britannica.com/event/Indian-Lok-Sabha-elections-of-2024)
 - On average, winners received 50.58% of votes polled, about 2 points lower than 2019 (ADR) — [The Week/PTI](https://www.theweek.in/wire-updates/national/2024/07/04/des8-adr-ls-winners.html)
 
 ### Inferences
@@ -149,11 +149,11 @@ Om Birla (BJP, Kota) was re-elected Speaker by voice vote on 26 June 2024. Rahul
 ### Cited Findings
 - Om Birla elected Speaker on 26 June 2024 by voice vote. Pro-tem Speaker Bhartruhari Mahtab announced the result. The Opposition's candidate was K. Suresh (INC) — [The News Minute](https://www.thenewsminute.com/news/bjp-mp-om-birla-re-elected-as-lok-sabha-speaker-by-voice-vote); [Deccan Herald](https://deccanherald.com/india/om-birla-re-elected-speaker-of-lok-sabha-defeats-congress-k-suresh-3081252)
 - Rahul Gandhi, as Leader of Opposition, escorted Birla to the chair alongside PM Modi on 26 June 2024 — [Business Standard](https://www.business-standard.com/india-news/confident-that-you-will-allow-us-to-speak-rahul-s-message-to-om-birla-124062600443_1.html). INC's 99 seats exceed the 10% threshold (55) for LoP recognition (my inference from the seat count).
-- Deputy LoP: Gaurav Gogoi (INC). Leader of the House: Narendra Modi. Parliamentary Affairs Minister: Kiren Rijiju. Secretary General: Utpal Kumar Singh — [Wikipedia 18th LS](https://en.wikipedia.org/wiki/18th_Lok_Sabha)
+- Leader of the Opposition: Rahul Gandhi (INC) — [PRS MP Track, 18th Lok Sabha](https://prsindia.org/mptrack/18th-lok-sabha/rahul-gandhi). Deputy LoP: Gaurav Gogoi (INC). Leader of the House: Narendra Modi. Parliamentary Affairs Minister: Kiren Rijiju. Secretary General: Utpal Kumar Singh [source needed]
 - Deputy Speaker vacant. The Opposition demanded the post in exchange for supporting the Speaker, and the NDA refused — [The South First](https://thesouthfirst.com/news/ndas-om-birla-elected-ls-speaker-for-second-consecutive-term-after-oppositions-symbolic-challenge). The post has been vacant since 2019. Kharge wrote to the PM citing Article 93 — [Deccan Herald](https://www.deccanherald.com/amp/story/india%2Fkharge-revives-debate-over-absence-of-ls-deputy-speaker-urges-pm-modi-to-fill-post-vacant-for-six-years-3579296); [The Wire](https://thewire.in/politics/no-deputy-speaker-yet-in-18th-lok-sabha-post-vacant-since-six-years)
 
 ### Inferences
-- The 2024 Speaker election was the first contested one since 1976 (per Wikipedia), but it was decided without a division.
+- The 2024 Speaker election was the first contested one since 1976 ([source needed]), but it was decided without a division.
 
 ### Gaps
 - The exact date Rahul Gandhi was formally recognised as LoP (widely reported as 9 June 2024 by the INC/CWC decision, effective 24 June) was not confirmed from a primary source here.
