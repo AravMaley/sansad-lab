@@ -653,3 +653,11 @@ button { font: inherit; color: inherit; }
 .mf-method { margin-top: 36px; }
 .mf-excluded { margin-top: 16px; color: var(--ink-2); }
 .mf-excluded summary { cursor: pointer; color: var(--ink); }
+
+/* ---------- v2 · Methodology, nav ---------- */
+.method h2 { font-family: var(--serif); font-size: var(--t-title); margin: 40px 0 10px; }
+.method li { margin: 8px 0; }
+.topic-rules dt { font-weight: 600; margin-top: 14px; }
+.topic-rules dd { margin: 4px 0 0; color: var(--ink-2); font-size: .9375rem; text-transform: none; }
+.topic-rules code { font-family: var(--mono); font-size: .8125rem; }
+@media (max-width: 720px) { .bar nav { overflow-x: auto; scrollbar-width: none; } .bar nav .proto { display: none; } }

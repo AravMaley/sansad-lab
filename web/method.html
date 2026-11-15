@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Methodology · Sansad Lab</title>
+  <meta name="description" content="Where Sansad Lab's data comes from, how often it refreshes, how issues are tagged, and what it does not show.">
+  <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 24a12 12 0 0 1 24 0' fill='none' stroke='%231e5b48' stroke-width='4'/%3E%3C/svg%3E">
+</head>
+<body class="reading">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="wordmark" href="/">Sansad <em>Lab</em></a>
+      <nav aria-label="Site"><a href="/">Home</a></nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap narrow mp-page method">
+    <p class="meta">Methodology</p>
+    <h1 class="display-sm">How Sansad Lab works</h1>
+    <p class="lede">Sansad Lab is a working prototype built by one student. It is non-partisan and takes no money from any party. This page explains where everything comes from, and what the site cannot tell you.</p>
+
+    <h2>Where the data comes from</h2>
+    <ul>
+      <li><strong>MPs and their questions</strong> come from the Lok Sabha's own website, <a href="https://sansad.in/ls" target="_blank" rel="noopener">sansad.in</a>. Each night an automated job collects new questions for every sitting MP and the official document with the government's answer.</li>
+      <li><strong>Excerpts</strong> are taken word for word from those official documents and shortened to about 60 words, ending at a sentence where possible. They are never reworded or summarised by AI. Every excerpt links to the full official answer.</li>
+      <li><strong>Party positions</strong> come from each party's 2024 Lok Sabha manifesto, read in full, with the page number for every line.</li>
+      <li><strong>Seat counts, protests and the ledger</strong> carry their own source links next to each figure.</li>
+    </ul>
+
+    <h2>How often it updates</h2>
+    <p>MP and question data refreshes every night. Every data page shows when it was last updated. Parliament only sits for part of the year, so between sessions there is usually nothing new.</p>
+
+    <h2>How issues are tagged</h2>
+    <p>A question belongs to an issue when it is addressed to one of the issue's ministries, or when its subject line contains one of the issue's keywords. Tagging is automatic, so some questions will be missed and a few will be tagged oddly. The full rules:</p>
+    <div id="topic-rules" class="topic-rules"></div>
+
+    <h2>What the site does not show</h2>
+    <ul>
+      <li><strong>How each MP voted.</strong> Most bills in the Lok Sabha pass by voice vote, so no record exists of individual MPs' votes. PRS Legislative Research found recorded divisions on only 12 bills (7%) in the 17th Lok Sabha.</li>
+      <li><strong>Whether an MP is doing a good job.</strong> Asking questions is one part of an MP's work. Ministers do not ask questions at all, and the Speaker presides rather than asks. We show what is on record, not scores or rankings.</li>
+      <li><strong>The official seating plan.</strong> The 3D chamber groups seats by party; it is not where MPs actually sit.</li>
+      <li><strong>Rajya Sabha members</strong>, for now.</li>
+    </ul>
+
+    <h2>Your privacy</h2>
+    <p>There are no accounts. When you follow an MP or an issue, that list is saved only in your own browser. Nothing about you is stored on our servers. If you clear your browser data, your follows go with it.</p>
+
+    <h2>Found a mistake?</h2>
+    <p>Please <a href="https://github.com/AravMaley/sansad-lab/issues" target="_blank" rel="noopener">report it on GitHub</a>, with a link to the page. The code and data are open.</p>
+  </main>
+
+  <script type="module">
+    import { TOPICS } from "/js/topics-data.js";
+    import { el } from "/js/util.js";
+    document.getElementById("topic-rules").append(el("dl", {}, TOPICS.flatMap((t) => [
+      el("dt", {}, t.label),
+      el("dd", {}, "Ministries: ", t.ministries.map((m) => m.toLowerCase()).join("; "), ". Keywords: ",
+        el("code", {}, t.keywords.replace(/\\b|\(|\)/g, "").split("|").join(", "))),
+    ])));
+  </script>
+</body>
+</html>
