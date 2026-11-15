@@ -34,6 +34,10 @@ export function createStore({ url, serviceKey, fetchImpl = fetch }) {
     linkMembers: (rows) => upsert("question_members", rows),
     upsertSessions: (rows) => upsert("sessions", rows),
     setMeta: (key, value) => upsert("meta", [{ key, value }]),
+    async getMeta(key) {
+      const res = await call("meta", `meta?select=value&key=eq.${encodeURIComponent(key)}`, { headers: headers() });
+      return (await res.json())[0]?.value ?? null;
+    },
     async knownQuestionIds(ids) {
       const known = new Set();
       for (let i = 0; i < ids.length; i += ID_CHUNK) {
