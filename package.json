@@ -12,7 +12,8 @@
     "serve": "cd web && python -m http.server 8000"
   },
   "dependencies": {
-    "motion": "^14.7.1"
+    "motion": "^14.7.1",
+    "three": "^0.187.0"
   },
   "devDependencies": {
     "esbuild": "^0.25.0",

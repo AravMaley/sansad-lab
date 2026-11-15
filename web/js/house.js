@@ -1,11 +1,12 @@
 import { loadJSON, el, svg, sourceLink } from "./util.js";
+import { use3D, detect } from "./capability.js";
 
 const ALLIANCE_VAR = { NDA: "--nda", INDIA: "--india", OTH: "--oth" };
 const TINTS = [100, 72, 52, 86, 62]; // cycled so neighbouring parties differ
 
 // Parliament-chart layout: concentric rows, seats per row proportional to radius,
 // then every seat sorted left-to-right by angle so parties form wedges.
-function layoutSeats(total, rows = 12, inner = 0.4) {
+export function layoutSeats(total, rows = 12, inner = 0.4) {
   const radii = Array.from({ length: rows }, (_, i) => inner + ((1 - inner) * i) / (rows - 1));
   const sumR = radii.reduce((a, b) => a + b, 0);
   const counts = radii.map((r) => Math.round((total * r) / sumR));
@@ -23,6 +24,22 @@ function layoutSeats(total, rows = 12, inner = 0.4) {
   const dot = Math.min((1 - inner) / (rows - 1), (Math.PI * sumR) / total) * 0.4;
   return { seats, dot };
 }
+
+// Hex version of colorFor for WebGL, which cannot read CSS colour-mix().
+function hexFor(party, rankInAlliance) {
+  const css = getComputedStyle(document.documentElement);
+  const base = css.getPropertyValue(ALLIANCE_VAR[party.alliance]).trim();
+  const paper = css.getPropertyValue("--paper").trim();
+  const t = TINTS[rankInAlliance % TINTS.length] / 100;
+  const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
+  const [a, b] = [rgb(base), rgb(paper)];
+  return "#" + a.map((v, i) => Math.round(v * t + b[i] * (1 - t)).toString(16).padStart(2, "0")).join("");
+}
+
+// Resolves with the 3D chamber's controls once it is on screen, or null when
+// the SVG chamber is kept (no WebGL, reduced motion, save-data, or an error).
+let resolveChamber;
+export const chamberReady = new Promise((r) => (resolveChamber = r));
 
 function colorFor(party, rankInAlliance) {
   const pct = TINTS[rankInAlliance % TINTS.length];
@@ -72,12 +89,24 @@ export async function initHouse() {
   chart.append(root);
   chart.classList.add("animate");
 
+  // Seat list in drawing order, for the 3D chamber.
+  const seatList = [];
+  {
+    let k = 0;
+    parties.forEach((p) => {
+      const hex = hexFor(p, ranks[p.short]);
+      for (let n = 0; n < p.seats; n++, k++) seatList.push({ ...seats[k], party: p.idx, color: hex, mpsno: null });
+    });
+  }
+
   // Highlight
   let active = null;
+  let chamber = null;
   const chips = [];
   function select(idx) {
     if (active !== null) circlesByParty[active].forEach((c) => c.classList.remove("on"));
     active = idx === active ? null : idx;
+    chamber?.highlight(active === null ? null : (seat) => seat.party === active);
     chips.forEach((ch) => ch.setAttribute("aria-pressed", String(Number(ch.dataset.p) === active)));
     if (active === null) {
       delete chart.dataset.active;
@@ -93,6 +122,25 @@ export async function initHouse() {
       p.vote_pct !== null ? ` · ${p.vote_pct}% of votes` : ""
     );
   }
+  // Upgrade to the 3D chamber after first paint, when the device can take it.
+  if (use3D(detect())) {
+    const start = () =>
+      import("./chamber3d.js")
+        .then(({ mountChamber }) => {
+          chamber = mountChamber(chart, {
+            seats: seatList,
+            accent: "#ffcf6e",
+            stage: getComputedStyle(document.documentElement).getPropertyValue("--paper").trim() || "#0e1a16",
+            onHover: (i) => { if (i !== null && seatList[i].party !== active) select(seatList[i].party); },
+            onSelect: (i) => select(seatList[i].party),
+          });
+          chamber.seats = seatList;
+          resolveChamber(chamber);
+        })
+        .catch((e) => { console.warn("3D chamber unavailable", e); resolveChamber(null); });
+    (window.requestIdleCallback ?? ((f) => setTimeout(f, 200)))(start);
+  } else resolveChamber(null);
+
   root.addEventListener("click", (e) => {
     const idx = e.target.dataset?.p;
     if (idx !== undefined) select(Number(idx));

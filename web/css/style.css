@@ -515,3 +515,41 @@ button { font: inherit; color: inherit; }
 @media (prefers-reduced-motion: reduce) { .p-frame img { transform: none; } }
 .p-head h3 { margin-top: 2px; }
 .p-place { font-variant-numeric: tabular-nums; }
+
+/* ---------- v2 · The stage (home page) ----------
+   The home page sits on a deep green-black stage with cream type and a
+   marigold accent; reading pages keep the paper theme. */
+:root { --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace; --saffron: #f28c28; --marigold: #ffcf6e; }
+:root.stage {
+  --paper: #0e1a16; --paper-2: #13231d; --card: #152a23; --ink: #f5f1e8; --ink-2: #a9b3a6;
+  --rule: #26392f; --green: #6cc3a0; --maroon: #e08a78; --nda: #e8964f; --india: #6ea8d8; --oth: #8f9488;
+  color-scheme: dark;
+}
+:root.stage body {
+  background:
+    radial-gradient(1200px 600px at 50% -10%, color-mix(in oklab, var(--green) 14%, transparent), transparent 70%),
+    var(--paper);
+}
+:root.stage .accent { color: var(--marigold); }
+:root.stage :focus-visible { outline-color: var(--marigold); }
+:root.stage .room-entrance .display { font-size: clamp(2.8rem, 8vw, 5.6rem); line-height: .98; }
+.meta, .ab-labels strong, .facts dt, .num { font-variant-numeric: tabular-nums; }
+.mono { font-family: var(--mono); font-size: .8125rem; letter-spacing: .02em; }
+
+/* 3D chamber: the canvas sits under the SVG's seat count, the SVG seats fade out. */
+.hemicycle { position: relative; }
+.chamber-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; border-radius: 18px; touch-action: pan-y; }
+.hemicycle[data-chamber="3d"] { aspect-ratio: 16 / 9; margin-inline: calc(50% - min(50vw, 640px)); }
+@media (max-width: 640px) { .hemicycle[data-chamber="3d"] { aspect-ratio: 4 / 3.4; margin-inline: -16px; } .chamber-canvas { border-radius: 0; } }
+.hemicycle[data-chamber="3d"] svg { position: absolute; width: 40%; inset: auto 30% 5% 30%; z-index: 1; pointer-events: none; }
+.hemicycle[data-chamber="3d"] svg circle { display: none; }
+.hemicycle[data-chamber="3d"] .total { fill: var(--ink); paint-order: stroke; stroke: var(--paper); stroke-width: 3px; }
+.hemicycle[data-chamber="3d"]::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 0 0 1px var(--rule), inset 0 -80px 80px -40px var(--paper);
+}
+
+/* Working-prototype label */
+.proto { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border: 1px solid var(--rule); border-radius: 999px;
+  font: 500 .75rem/1.4 var(--sans); color: var(--ink-2); text-decoration: none; white-space: nowrap; }
+.proto::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--marigold); }
