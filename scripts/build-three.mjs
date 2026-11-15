@@ -16,6 +16,7 @@ await writeFile(entry, `export {
   WebGLRenderer, Scene, PerspectiveCamera, InstancedMesh, BoxGeometry, CylinderGeometry,
   MeshStandardMaterial, MeshBasicMaterial, AmbientLight, DirectionalLight, HemisphereLight,
   Color, Object3D, Raycaster, Vector2, Vector3, Fog, Mesh, RingGeometry, DoubleSide, SRGBColorSpace,
+  SphereGeometry, PlaneGeometry, CircleGeometry, CanvasTexture, AdditiveBlending,
 } from "three";
 `);
 
