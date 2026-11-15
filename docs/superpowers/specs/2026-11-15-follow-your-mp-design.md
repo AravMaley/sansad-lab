@@ -127,7 +127,7 @@ The matcher, "You Be the MP" scenarios, the protest timeline and the ledger stay
 
 ```
 sansad.in JSON + .docx  ──>  GitHub Actions (nightly)  ──>  Supabase Postgres
-                              fetch, parse, summarise          │
+                              fetch, parse, excerpt            │
                                                                v
               Browser  <──  Vercel: static site (web/)  +  /api serverless functions
 ```
