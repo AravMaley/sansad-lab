@@ -622,3 +622,34 @@ button { font: inherit; color: inherit; }
 .t-breakdown { display: grid; gap: 24px; margin-top: 36px; }
 @media (min-width: 720px) { .t-breakdown { grid-template-columns: 1fr 1fr; } }
 .t-bars .hbar-btn { cursor: default; }
+
+/* ---------- v2 · Manifesto reader (paper cards) ---------- */
+.paper { background: var(--card); border: 1px solid var(--rule); border-radius: 16px;
+  box-shadow: 0 1px 0 var(--rule), 0 18px 40px -28px rgba(0, 0, 0, .45); }
+.mf-top { display: grid; gap: 12px; margin-top: 32px; }
+@media (min-width: 760px) { .mf-top { grid-template-columns: auto 1fr; align-items: center; } }
+.mf-top .bill-tabs { margin: 0; display: flex; flex-wrap: wrap; }
+.mf-top .bill-tabs [aria-selected="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.mf-controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 20px 0; }
+.mf-controls .note { margin: 0; }
+.mf-picks { display: flex; flex-wrap: wrap; gap: 8px; }
+.mf-picks input { accent-color: var(--green); margin: 0 6px 0 0; }
+.mf-body { display: grid; gap: 20px; }
+.mf-statement { padding: 22px; }
+.mf-statement h3 { margin: 4px 0 16px; }
+.mf-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.mf-pos { display: grid; gap: 8px; align-content: start; }
+.mf-pos-head { display: flex; gap: 8px; align-items: center; margin: 0; }
+.mf-pos .note { margin: 0; }
+.tag.yes { border-color: var(--green); color: var(--green); }
+.tag.silent { border-style: dashed; }
+.src-line { margin: 0; }
+.mf-compare { display: grid; gap: 14px; }
+@media (min-width: 760px) { .mf-compare { grid-template-columns: repeat(var(--cols), 1fr); } }
+.mf-col { padding: 20px; display: grid; gap: 16px; align-content: start; }
+.mf-col h3 { margin: 0; }
+.mf-cell { display: grid; gap: 8px; padding-top: 14px; border-top: 1px solid var(--rule); }
+.mf-q { margin: 0; font-weight: 600; font-size: .9375rem; }
+.mf-method { margin-top: 36px; }
+.mf-excluded { margin-top: 16px; color: var(--ink-2); }
+.mf-excluded summary { cursor: pointer; color: var(--ink); }
