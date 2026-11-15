@@ -5,13 +5,13 @@ Understand India's Parliament by doing. Live at https://sansad-lab-web.vercel.ap
 ## What's on the site
 
 1. **The House** — the 18th Lok Sabha as a 3D chamber (three.js, with an SVG fallback for low-power devices and reduced motion).
-1. **Your MP** — pick your state and constituency to see every question your MP asked in this Lok Sabha, with word-for-word excerpts of the government's answer and a link to the official document.
-1. **Issues** — 15 issues (exams, jobs, farming, women's safety…) with every question on each, search across all questions, follows without an account, RSS feeds, share cards and a calendar file for the next session.
-1. **Manifestos** — the 2024 manifestos side by side, by topic or by party, with page citations.
-2. **Manifesto Matcher** — 12 statements, five parties, every stance read from the party's own 2024 manifesto with a page citation. Where a manifesto is silent, a separate "what they actually did" panel records votes, Parliament answers and state schemes.
-3. **You Be the MP** — vote on six laws, then see the real record: the farm laws, women's reservation, the Citizenship Amendment Act, the data protection law, a national Uniform Civil Code (never introduced), and the 2025 income tax rewrite.
-4. **The Street** — a timeline of 12 protest movements from Chipko to the electoral-rolls protests now running, each with an honest verdict on whether it got what it asked for.
-5. **The Ledger** — PRS figures on committee scrutiny, sittings and session productivity.
+2. **Your MP** — pick your state and constituency to see every question your MP asked in this Lok Sabha, with word-for-word excerpts of the government's answer and a link to the official document.
+3. **Issues** — 15 issues (exams, jobs, farming, women's safety…) with every question on each, search across all questions, follows without an account, RSS feeds, share cards and a calendar file for the next session.
+4. **Manifestos** — the 2024 manifestos side by side, by topic or by party, with page citations.
+5. **Manifesto Matcher** — 12 statements, five parties, every stance read from the party's own 2024 manifesto with a page citation. Where a manifesto is silent, a separate "what they actually did" panel records votes, Parliament answers and state schemes.
+6. **You Be the MP** — vote on six laws, then see the real record: the farm laws, women's reservation, the Citizenship Amendment Act, the data protection law, a national Uniform Civil Code (never introduced), and the 2025 income tax rewrite.
+7. **The Street** — a timeline of 12 protest movements from Chipko to the electoral-rolls protests now running, each with an honest verdict on whether it got what it asked for.
+8. **The Ledger** — PRS figures on committee scrutiny, sittings and session productivity.
 
 Every figure links to its source.
 
