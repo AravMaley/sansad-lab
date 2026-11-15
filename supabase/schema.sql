@@ -153,5 +153,13 @@ returns table (kind text, key text, n bigint) language sql stable security invok
   group by t
 $$;
 
--- The read functions are callable by the service role only (it is granted
--- everything by default in Supabase), so no grants are needed here.
+-- Server-side access. With "Automatically expose new tables" off, Supabase does
+-- not grant its service role anything either, so grant it here. Only code
+-- holding the service key (GitHub Actions, Vercel functions) uses this role.
+grant usage on schema public to service_role;
+grant all on all tables in schema public to service_role;
+grant all on all sequences in schema public to service_role;
+grant execute on all functions in schema public to service_role;
+alter default privileges in schema public grant all on tables to service_role;
+alter default privileges in schema public grant all on sequences to service_role;
+alter default privileges in schema public grant execute on functions to service_role;
