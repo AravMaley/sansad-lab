@@ -1,0 +1,7 @@
+{
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/mp/:id", "destination": "/mp.html" },
+    { "source": "/topic/:slug", "destination": "/topic.html" }
+  ]
+}
