@@ -28,7 +28,7 @@ export async function initIssues() {
     try {
       const d = await api("search", { q });
       status.textContent = d.total ? `${formatCount(d.total)} questions mention “${q}”. Showing the newest.` : `No questions mention “${q}”.`;
-      results.replaceChildren(...d.items.slice(0, 10).map((i) => feedItem(i)));
+      results.replaceChildren(...d.items.slice(0, 10).map((i) => feedItem(i, { query: q })));
     } catch { status.textContent = "Search is temporarily unavailable."; }
   } }, input, el("button", { class: "btn btn-primary", type: "submit" }, "Search"));
 

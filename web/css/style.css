@@ -667,3 +667,6 @@ button { font: inherit; color: inherit; }
 .topic-rules dd { margin: 4px 0 0; color: var(--ink-2); font-size: .9375rem; text-transform: none; }
 .topic-rules code { font-family: var(--mono); font-size: .8125rem; }
 @media (max-width: 720px) { .bar nav { overflow-x: auto; scrollbar-width: none; } .bar nav .proto { display: none; } }
+
+/* Search hits */
+mark.hit { background: color-mix(in srgb, var(--marigold, #ffcf6e) 55%, transparent); color: inherit; border-radius: 3px; padding: 0 .12em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
