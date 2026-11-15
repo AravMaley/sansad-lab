@@ -1,7 +1,7 @@
 # Sansad Lab v2: Follow your MP, in a 3D chamber
 
 Date: 2026-11-15
-Status: draft for review
+Status: approved 2026-11-15 (no paid services)
 
 ## 1. Purpose
 
@@ -53,7 +53,7 @@ The member records include personal phone numbers, home addresses, personal emai
 
 - Name, photo, party, constituency, state, number of terms.
 - Counts: questions asked this Lok Sabha, and by ministry (a small bar list).
-- A feed of their questions, newest first. Each item shows the subject, ministry, date, a plain-English summary of what was asked and what the government answered, and a link to the official document.
+- A feed of their questions, newest first. Each item shows the subject, ministry, date, a cleaned-up "Asked" and "Answer" excerpt taken word for word from the official document (see 5.1), and a link to the official document.
 - Filter the feed by ministry; search within it.
 - Joint questions (several MPs asking together) appear on each asking MP's page.
 - **Empty or thin pages** carry a clear note: Sansad Lab is a working prototype; this MP may have asked no questions, may be a minister (ministers do not ask questions), or the data may not have been found yet. Never imply an MP is inactive from missing data.
@@ -62,8 +62,8 @@ The member records include personal phone numbers, home addresses, personal emai
 
 - A fixed list of about 15 topics a young voter recognises (exams and education, jobs, farming, health, railways, women's safety, climate and environment, roads, internet and telecom, water, prices and inflation, defence, sport, startups, housing).
 - Each topic is defined as a set of ministries plus keywords on the subject line, so tagging needs no manual work.
-- A topic page shows recent questions on it across all MPs, with the same summaries, and which states and parties raise it most.
-- Free-text search across all question subjects and summaries.
+- A topic page shows recent questions on it across all MPs, with the same excerpts, and which states and parties raise it most.
+- Free-text search across all question subjects and text.
 
 ### 3.4 Follow without accounts (replacing email alerts)
 
@@ -91,8 +91,8 @@ The matcher, "You Be the MP" scenarios, the protest timeline and the ledger stay
 ### 3.7 Trust
 
 - A site-wide "Working prototype" label.
-- A methodology page: where the data comes from, how often it refreshes, how topics are tagged, that summaries are AI-written from the official answer and may contain errors, and how to report one.
-- Every summary is labelled "AI summary" and sits next to a link to the official document.
+- A methodology page: where the data comes from, how often it refreshes, how topics are tagged, that excerpts are shortened from the official text (never reworded), and how to report an error.
+- Every excerpt sits next to a link to the full official document.
 - A "last updated" timestamp on every data page.
 
 ## 4. Design: the Living Chamber
@@ -137,7 +137,12 @@ sansad.in JSON + .docx  ──>  GitHub Actions (nightly)  ──>  Supabase Pos
 1. Fetch all members; keep only whitelisted fields (mpsno, name, party, state, constituency, photo URL, terms, status).
 2. Fetch questions newest first, page by page, stopping at the first page already fully stored. The first run backfills all of the 18th Lok Sabha (about 3,500 requests; spread over several runs if a run's time limit is hit).
 3. For each new question, download the `.docx`, extract the text, and split it into question and answer.
-4. Write a plain-English summary of each question and answer with Claude Haiku 5.5, using the batch API. Estimated cost for the full backfill is about $5–10, then cents per session.
+4. Build excerpts without any AI, so the project runs free:
+   - strip boilerplate (headers, "Will the Minister of … be pleased to state", the minister's name line);
+   - when an answer says "a statement is laid on the table", take the statement instead;
+   - keep the question's lettered parts;
+   - cut each excerpt at about 60 words on a sentence boundary.
+   Excerpts are never reworded. AI summaries are a possible later addition; the schema leaves room for one beside each excerpt.
 5. Tag topics by ministry and keyword rules.
 6. Be polite to sansad.in: one request at a time, a short pause between requests, a clear user-agent naming the project.
 7. On failure, the job leaves existing data untouched and the GitHub Actions run fails visibly; the site keeps serving the last good data.
@@ -145,10 +150,10 @@ sansad.in JSON + .docx  ──>  GitHub Actions (nightly)  ──>  Supabase Pos
 ### 5.2 Database (Supabase, free tier)
 
 - `members`: the whitelisted member fields.
-- `questions`: number, date, session, type, ministry, subject, document URLs, question text, answer text, summary, summary model, topic tags.
+- `questions`: number, date, session, type, ministry, subject, document URLs, question text, answer text, question excerpt, answer excerpt, topic tags.
 - `question_members`: links questions to the MPs who asked them.
 - `sessions`: session numbers and dates.
-- Full-text search on subject and summary using Postgres built-in search.
+- Full-text search on subject, question text and answer text using Postgres built-in search.
 - Nightly writes keep the free project from pausing for inactivity.
 
 ### 5.3 API (Vercel serverless functions)
@@ -172,20 +177,19 @@ sansad.in JSON + .docx  ──>  GitHub Actions (nightly)  ──>  Supabase Pos
 ## 6. Accounts and keys you will need
 
 - **Supabase:** a free project (you create it; I set up the schema).
-- **Anthropic API key:** for the summaries, stored as a GitHub Actions secret. Without it the site still works and shows the first lines of the official answer instead of a summary.
-- No other paid services.
+- No paid services or API keys. Everything runs on free tiers: Supabase, Vercel Hobby, and GitHub Actions on a public repo.
 
 ## 7. Error handling
 
 - sansad.in down or changed: the nightly job fails; the site keeps the last good data and shows its "last updated" date.
 - A `.docx` that fails to parse: store the question with no text; the item shows the subject and the official link only.
-- A summary that fails: show the first lines of the answer instead.
+- An excerpt that cannot be built (unusual layout): show the subject and the official link only.
 - WebGL unavailable or slow: the SVG chamber.
 - API down: MP and topic pages show a clear "data temporarily unavailable" message; the manifesto reader, matcher, scenarios and timeline still work from static files.
 
 ## 8. Testing
 
-- Unit tests for the `.docx` parser (using saved sample files), topic tagging, the member field whitelist, and "since" counting.
+- Unit tests for the `.docx` parser and excerpt builder (using saved sample files), topic tagging, the member field whitelist, and "since" counting.
 - An integration test of ingestion against a few saved API responses (no live calls in tests).
 - API tests against a local Postgres.
 - Manual checks: the 3D chamber on a real mid-range Android phone; reduced-motion and no-WebGL fallbacks; a minister's page and a page with no questions.
@@ -207,7 +211,8 @@ sansad.in JSON + .docx  ──>  GitHub Actions (nightly)  ──>  Supabase Pos
 | Risk | Mitigation |
 |---|---|
 | sansad.in endpoints are undocumented and may change or block automated requests | Polite fetching; failures keep last good data; the OpenSansad dataset (about 150k questions, CC BY 4.0) as a fallback for history |
-| An AI summary misstates an answer | Labelled as AI, always next to the official link; correction route on the methodology page |
+| An excerpt cuts off something important | Excerpts are verbatim and always link to the full document; correction route on the methodology page |
+| GitHub Actions is free only for public repos | Keep the repo public |
 | Perceived political bias | Only factual, sourced records; no scores or rankings of MPs; topic rules published |
 | Supabase free tier pauses or fills up | Nightly writes prevent pausing; text for 35k questions is well under 500 MB (to be confirmed after backfill) |
 | 3D is slow on cheap phones | Lazy loading, fallbacks, and a real-device test before launch |
