@@ -91,13 +91,22 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
     process.exit(1);
   }
   const http = createHttp();
-  const result = await ingest({
-    api: sansad(http),
-    http,
-    store: createStore({ url: SUPABASE_URL, serviceKey: SUPABASE_SERVICE_KEY }),
-    budgetMs: Number(arg("budget-min") ?? 50) * 60_000,
-    only: arg("only"),
-    log: console.log,
-  });
-  console.log(JSON.stringify(result));
+  try {
+    const result = await ingest({
+      api: sansad(http),
+      http,
+      store: createStore({ url: SUPABASE_URL.replace(/\/+$/, "").replace(/\/rest\/v1$/, ""), serviceKey: SUPABASE_SERVICE_KEY }),
+      budgetMs: Number(arg("budget-min") ?? 50) * 60_000,
+      only: arg("only"),
+      log: console.log,
+    });
+    console.log(JSON.stringify(result));
+    if (process.env.GITHUB_ACTIONS) console.log(`::notice title=Ingest result::${JSON.stringify(result)}`);
+  } catch (e) {
+    // Annotations are readable without logging in, unlike the job log.
+    const msg = String(e?.message ?? e).replace(/\s+/g, " ").slice(0, 900);
+    console.error(e);
+    if (process.env.GITHUB_ACTIONS) console.log(`::error title=Ingest failed::${msg}`);
+    process.exit(1);
+  }
 }
