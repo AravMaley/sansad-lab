@@ -72,6 +72,11 @@ drop policy if exists read_all on question_members; create policy read_all on qu
 drop policy if exists read_all on sessions;         create policy read_all on sessions         for select to anon using (true);
 drop policy if exists read_all on meta;             create policy read_all on meta             for select to anon using (true);
 
+-- Explicit permissions for the public (anon) role. Keep "Automatically expose
+-- new tables" OFF in Supabase so nothing becomes public unless it is listed here.
+grant usage on schema public to anon;
+grant select on members, questions, question_members, sessions, meta to anon;
+
 -- Feed rows share one shape: the question plus who asked it, plus a total.
 create or replace function feed_row(q questions)
 returns jsonb language sql stable security invoker as $$
@@ -146,3 +151,13 @@ returns table (kind text, key text, n bigint) language sql stable security invok
   where t = any (p_slugs) and q.ingested_at > p_since
   group by t
 $$;
+
+-- The read functions run as the caller (security invoker), so anon needs to
+-- be allowed to run them and the helper they call.
+grant execute on function feed_row(questions) to anon;
+grant execute on function mp_feed(int, text, text, int, int) to anon;
+grant execute on function mp_ministry_counts(int) to anon;
+grant execute on function topic_feed(text, int, int) to anon;
+grant execute on function topic_breakdown(text) to anon;
+grant execute on function search_questions(text, int, int) to anon;
+grant execute on function since_counts(int[], text[], timestamptz) to anon;
