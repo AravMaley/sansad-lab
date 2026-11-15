@@ -2,7 +2,7 @@
 import { el, fmtDate } from "./util.js";
 import { api } from "./api.js";
 import { feedItem } from "./feed.js";
-import { emptyStateMessage, statusLabel, formatCount } from "./mpview.js";
+import { emptyStateMessage, statusLabel, formatCount, totalLine, ministryLabel } from "./mpview.js";
 
 const mpsno = Number(location.pathname.match(/\/mp\/(\d+)/)?.[1] ?? new URLSearchParams(location.search).get("id"));
 const $ = (id) => document.getElementById(id);
@@ -19,7 +19,7 @@ function renderHead(member, total) {
       el("h1", { class: "display-sm" }, member.name),
       el("p", { class: "mp-sub" }, member.party ?? "", member.terms ? ` · ${member.terms === 1 ? "first term" : `${member.terms} terms`}` : "",
         label ? el("span", { class: "tag" }, label) : null),
-      el("p", { class: "mp-total" }, el("strong", { class: "num" }, formatCount(total)), total === 1 ? " question asked" : " questions asked", " in the 18th Lok Sabha"),
+      totalLine(total) ? el("p", { class: "mp-total" }, totalLine(total)) : null,
       el("p", { class: "mp-links" },
         el("a", { href: `/api/rss/mp/${mpsno}` }, "RSS feed"),
         // Follow and share buttons are added by follow.js when available.
@@ -35,7 +35,7 @@ function renderCounts(counts) {
     top.length ? el("h2", { class: "meta" }, "Most asked about") : "",
     ...top.map((c) =>
       el("button", { class: "hbar-btn", type: "button", onclick: () => setMinistry(c.ministry) },
-        el("span", { class: "hbar-label" }, c.ministry.toLowerCase()),
+        el("span", { class: "hbar-label" }, ministryLabel(c.ministry)),
         el("span", { class: "hbar-track" }, el("span", { class: "hbar-fill", style: `width:${(c.n / max) * 100}%` })),
         el("span", { class: "hbar-n num" }, c.n))),
   );
@@ -44,7 +44,7 @@ function renderCounts(counts) {
 function renderControls(counts) {
   const sel = el("select", { class: "select", "aria-label": "Filter by ministry", onchange: (e) => setMinistry(e.target.value) },
     el("option", { value: "" }, "All ministries"),
-    counts.map((c) => el("option", { value: c.ministry, selected: c.ministry === filters.ministry }, c.ministry.toLowerCase())));
+    counts.map((c) => el("option", { value: c.ministry ?? "", selected: c.ministry === filters.ministry }, ministryLabel(c.ministry))));
   const input = el("input", { class: "input", type: "search", placeholder: "Search this MP's questions", "aria-label": "Search this MP's questions", value: filters.q });
   let t;
   input.addEventListener("input", () => { clearTimeout(t); t = setTimeout(() => { filters.q = input.value.trim(); load(true); }, 350); });

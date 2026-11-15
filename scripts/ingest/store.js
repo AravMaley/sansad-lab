@@ -38,6 +38,16 @@ export function createStore({ url, serviceKey, fetchImpl = fetch }) {
       const res = await call("meta", `meta?select=value&key=eq.${encodeURIComponent(key)}`, { headers: headers() });
       return (await res.json())[0]?.value ?? null;
     },
+    async linkedQuestionIds(ids, mpsno) {
+      const linked = new Set();
+      for (let i = 0; i < ids.length; i += ID_CHUNK) {
+        const list = ids.slice(i, i + ID_CHUNK).map((id) => `"${id}"`).join(",");
+        const res = await call("question_members",
+          `question_members?select=question_id&mpsno=eq.${Number(mpsno)}&question_id=in.(${encodeURIComponent(list)})`, { headers: headers() });
+        for (const r of await res.json()) linked.add(r.question_id);
+      }
+      return linked;
+    },
     async knownQuestionIds(ids) {
       const known = new Set();
       for (let i = 0; i < ids.length; i += ID_CHUNK) {

@@ -7,9 +7,14 @@ export class ApiError extends Error {
   }
 }
 
+// Avoids URLSearchParams.size, which older mobile browsers lack.
+export function apiUrl(path, params = {}) {
+  const qs = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== null && v !== undefined && v !== "")).toString();
+  return `/api/${path}${qs ? `?${qs}` : ""}`;
+}
+
 export async function api(path, params = {}) {
-  const qs = new URLSearchParams(Object.entries(params).filter(([, v]) => v !== null && v !== undefined && v !== ""));
-  const res = await fetch(`/api/${path}${qs.size ? `?${qs}` : ""}`);
+  const res = await fetch(apiUrl(path, params));
   let body = null;
   try { body = await res.json(); } catch { /* not JSON */ }
   if (!res.ok) throw new ApiError(res.status, body?.error ?? "Data temporarily unavailable");

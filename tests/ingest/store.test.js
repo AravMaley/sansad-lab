@@ -58,3 +58,10 @@ test("linkMembers and setMeta hit their tables", async () => {
   assert.match(f.calls[1].url, /meta$/);
   assert.deepEqual(JSON.parse(f.calls[1].opts.body), [{ key: "last_updated", value: "2026-11-15T00:00:00Z" }]);
 });
+
+test("linkedQuestionIds filters question_members by MP", async () => {
+  const f = fake([{ question_id: "a" }], 200);
+  const linked = await createStore(opts(f)).linkedQuestionIds(["a", "b"], 7);
+  assert.match(f.calls[0].url, /\/rest\/v1\/question_members\?select=question_id&mpsno=eq\.7&question_id=in\.\(/);
+  assert.deepEqual([...linked], ["a"]);
+});

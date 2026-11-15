@@ -7,7 +7,7 @@ export function feedItem(item, { showAskers = true, currentMp = null } = {}) {
   const others = (item.askedBy ?? []).filter((a) => a.mpsno !== currentMp);
   return el("li", { class: "feed-item" },
     el("p", { class: "feed-meta mono" },
-      fmtDate(item.date), " · ", (item.ministry ?? "").toLowerCase(), " · ", TYPE[item.type] ?? item.type ?? ""),
+      fmtDate(item.date), " · ", (item.ministry ?? "unknown ministry").toLowerCase(), " · ", TYPE[item.type] ?? item.type ?? ""),
     el("h3", { class: "feed-subject" }, item.subject ?? "Untitled question"),
     item.questionExcerpt ? el("p", { class: "feed-q" }, el("span", { class: "feed-label" }, "Asked"), item.questionExcerpt) : null,
     item.answerExcerpt ? el("p", { class: "feed-a" }, el("span", { class: "feed-label" }, "Answer"), item.answerExcerpt) : null,

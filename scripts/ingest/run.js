@@ -45,7 +45,11 @@ export async function ingest({ api, store, http, now = Date.now, budgetMs, only,
       }
 
       const qs = items.map(normaliseQuestion);
-      const known = await store.knownQuestionIds(qs.map((q) => q.id));
+      const ids = qs.map((q) => q.id);
+      // "Linked" (to this MP) decides when we have caught up; "known" (stored
+      // at all, possibly via a co-signer) only saves re-downloading documents.
+      const linkedBefore = await store.linkedQuestionIds(ids, m.mpsno);
+      const known = await store.knownQuestionIds(ids);
       const fresh = qs.filter((q) => !known.has(q.id));
 
       const rows = [];
@@ -55,7 +59,8 @@ export async function ingest({ api, store, http, now = Date.now, budgetMs, only,
       out.newQuestions += rows.length;
       out.linked += qs.length;
 
-      if (!fresh.length && backfilled.has(m.mpsno)) break; // caught up
+      const allLinkedAlready = ids.every((i) => linkedBefore.has(i));
+      if (allLinkedAlready && backfilled.has(m.mpsno)) break; // caught up
     }
     log(`MP ${m.mpsno} done`);
   }

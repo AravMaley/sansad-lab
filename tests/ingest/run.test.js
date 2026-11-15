@@ -15,7 +15,7 @@ const rawQ = (no, doc = `https://doc/${no}.docx`) => ({
 });
 const id = (no) => `18-UNSTARRED-${no}-2026-08-12`;
 
-function setup({ members, pages, known = [], backfilled = [] }) {
+function setup({ members, pages, known = [], backfilled = [], linked = [] }) {
   const fetched = [];
   const api = {
     members: async () => members,
@@ -28,12 +28,14 @@ function setup({ members, pages, known = [], backfilled = [] }) {
   };
   const db = { questions: new Map(), links: new Set(), meta: { backfilled: JSON.stringify(backfilled) }, members: [] };
   for (const k of known) db.questions.set(k, {});
+  for (const l of linked) db.links.add(l);
   const store = {
     upsertMembers: async (r) => db.members.push(...r),
     upsertSessions: async () => {},
     upsertQuestions: async (rows) => rows.forEach((r) => db.questions.set(r.id, r)),
     linkMembers: async (rows) => rows.forEach((r) => db.links.add(`${r.question_id}|${r.mpsno}`)),
     knownQuestionIds: async (ids) => new Set(ids.filter((i) => db.questions.has(i))),
+    linkedQuestionIds: async (ids, mpsno) => new Set(ids.filter((i) => db.links.has(`${i}|${mpsno}`))),
     setMeta: async (k, v) => (db.meta[k] = v),
     getMeta: async (k) => db.meta[k] ?? null,
   };
@@ -55,7 +57,7 @@ test("a joint question is stored once and linked to both MPs", async () => {
 });
 
 test("a fully known page stops paging for a backfilled MP", async () => {
-  const s = setup({ members: [rawMember(1)], pages: { 1: [[rawQ(1)], [rawQ(2)]] }, known: [id(1)], backfilled: [1] });
+  const s = setup({ members: [rawMember(1)], pages: { 1: [[rawQ(1)], [rawQ(2)]] }, known: [id(1)], backfilled: [1], linked: [`${id(1)}|1`] });
   await ingest({ ...s, budgetMs: 60_000 });
   assert.deepEqual(s.fetched, [[1, 1]]);
 });
@@ -103,4 +105,13 @@ test("only limits the run to one MP", async () => {
   const s = setup({ members: [rawMember(1), rawMember(2)], pages: { 1: [[]], 2: [[]] } });
   await ingest({ ...s, budgetMs: 60_000, only: 2 });
   assert.deepEqual(s.fetched, [[2, 1]]);
+});
+
+test("a backfilled MP keeps paging when known questions are not yet linked to them", async () => {
+  // Question 1 was stored earlier via a co-signer, so it exists but is not linked to MP 1.
+  const s = setup({ members: [rawMember(1)], pages: { 1: [[rawQ(1)], [rawQ(2)]] }, known: [id(1)], backfilled: [1] });
+  await ingest({ ...s, budgetMs: 60_000 });
+  assert.deepEqual(s.fetched.slice(0, 2), [[1, 1], [1, 2]]);
+  assert.ok(s.db.links.has(`${id(1)}|1`) && s.db.links.has(`${id(2)}|1`));
+  assert.equal(s.db.questions.size, 2);
 });
