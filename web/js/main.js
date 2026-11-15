@@ -1,6 +1,7 @@
 import { fail } from "./util.js";
 import { initHouse, chamberReady } from "./house.js";
 import { initFindMP } from "./findmp.js";
+import { initIssues } from "./issues.js";
 import { initMatcher } from "./matcher.js";
 import { initMP } from "./mp.js";
 import { initLedger } from "./ledger.js";
@@ -11,6 +12,7 @@ import { initTimeline } from "./timeline.js";
 const sections = [
   [initHouse, "hemicycle"],
   [() => initFindMP({ chamberReady }), "findmp"],
+  [initIssues, "issues-body"],
   [initMatcher, "matcher"],
   [initMP, "bill"],
   [initTimeline, "timeline-body"],
