@@ -1,5 +1,6 @@
 import { fail } from "./util.js";
-import { initHouse } from "./house.js";
+import { initHouse, chamberReady } from "./house.js";
+import { initFindMP } from "./findmp.js";
 import { initMatcher } from "./matcher.js";
 import { initMP } from "./mp.js";
 import { initLedger } from "./ledger.js";
@@ -9,6 +10,7 @@ import { initTimeline } from "./timeline.js";
 // Motion is optional: if it fails to load, content is already visible.
 const sections = [
   [initHouse, "hemicycle"],
+  [() => initFindMP({ chamberReady }), "findmp"],
   [initMatcher, "matcher"],
   [initMP, "bill"],
   [initTimeline, "timeline-body"],

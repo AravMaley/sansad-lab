@@ -95,7 +95,7 @@ export async function initHouse() {
     let k = 0;
     parties.forEach((p) => {
       const hex = hexFor(p, ranks[p.short]);
-      for (let n = 0; n < p.seats; n++, k++) seatList.push({ ...seats[k], party: p.idx, color: hex, mpsno: null });
+      for (let n = 0; n < p.seats; n++, k++) seatList.push({ ...seats[k], party: p.idx, short: p.short, color: hex, mpsno: null });
     });
   }
 

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Your MP · Sansad Lab</title>
+  <meta name="description" content="Every question this MP asked in the 18th Lok Sabha, with excerpts of the government's answers.">
+  <meta name="theme-color" content="#f5f1e8" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M4 24a12 12 0 0 1 24 0' fill='none' stroke='%231e5b48' stroke-width='4'/%3E%3C/svg%3E">
+</head>
+<body class="reading">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="bar">
+    <div class="wrap bar-inner">
+      <a class="wordmark" href="/">Sansad <em>Lab</em></a>
+      <nav aria-label="Site">
+        <a href="/#yourmp">Find your MP</a>
+        <a href="/method" class="proto">Working prototype</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main" class="wrap narrow mp-page">
+    <div id="mp-head" class="mp-head"><p class="note">Loading…</p></div>
+    <section id="mp-counts" class="mp-counts" aria-label="Questions by ministry"></section>
+    <section aria-label="Questions asked">
+      <div id="mp-controls" class="mp-controls"></div>
+      <ol id="mp-feed" class="feed"></ol>
+      <div id="mp-more" class="feed-more"></div>
+    </section>
+    <p id="mp-foot" class="note"></p>
+  </main>
+
+  <script type="module" src="/js/mppage.js"></script>
+</body>
+</html>
