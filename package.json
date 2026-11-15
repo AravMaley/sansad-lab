@@ -5,15 +5,18 @@
   "type": "module",
   "description": "Interactive civic tools for understanding India's Parliament",
   "scripts": {
+    "test": "node --test",
     "build:data": "node scripts/build-data.mjs",
     "build:motion": "node scripts/build-motion.mjs",
     "build": "npm run build:data && npm run build:motion",
     "serve": "cd web && python -m http.server 8000"
   },
   "dependencies": {
-    "motion": "^14.7.1"
+    "motion": "^14.7.1",
+    "three": "^0.187.0"
   },
   "devDependencies": {
-    "esbuild": "^0.25.0"
+    "esbuild": "^0.25.0",
+    "fflate": "^0.8.3"
   }
 }
