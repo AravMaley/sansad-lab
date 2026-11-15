@@ -1,45 +1,29 @@
 import { fail } from "./util.js";
-import { initHouse, chamberReady } from "./house.js";
-import { initFindMP } from "./findmp.js";
-import { initIssues } from "./issues.js";
-import { initMatcher } from "./matcher.js";
-import { initMP } from "./mp.js";
-import { initLedger } from "./ledger.js";
-import { initTimeline } from "./timeline.js";
+import "./site.js";
 
-// Each section loads its own data, so one failure doesn't blank the page.
-// Motion is optional: if it fails to load, content is already visible.
+// Each page holds some of these sections. Each loads its own data, so one
+// failure doesn't blank the page. Modules load only for sections present.
 const sections = [
-  [initHouse, "hemicycle"],
-  [() => initFindMP({ chamberReady }), "findmp"],
-  [initIssues, "issues-body"],
-  [initMatcher, "matcher"],
-  [initMP, "bill"],
-  [initTimeline, "timeline-body"],
-  [initLedger, "ledger-body"],
+  ["crowd", () => import("./house.js").then((m) => m.initHouse())],
+  ["findmp", () => import("./findmp.js").then((m) => m.initFindMP())],
+  ["issues-body", () => import("./issues.js").then((m) => m.initIssues())],
+  ["matcher", () => import("./matcher.js").then((m) => m.initMatcher())],
+  ["bill", () => import("./mp.js").then((m) => m.initMP())],
+  ["timeline-body", () => import("./timeline.js").then((m) => m.initTimeline())],
+  ["ledger-body", () => import("./ledger.js").then((m) => m.initLedger())],
 ];
 
-await Promise.all(sections.map(([init, id]) =>
-  init().catch((e) => fail(document.getElementById(id), e))
-));
+await Promise.all(sections
+  .filter(([id]) => document.getElementById(id))
+  .map(([id, init]) => init().catch((e) => fail(document.getElementById(id), e))));
 
 try {
   const { reveal, countUpAll } = await import("./motion.js");
   reveal(".room .meta, .room > .wrap > .display, .room > .wrap > .lede");
   reveal(".facts div", { each: 0.07 });
-  reveal(".panel", { y: 18, each: 0.1 });
+  reveal(".panel, .door", { y: 18, each: 0.1 });
   reveal(".record", { each: 0.05 });
   countUpAll(".facts dt, .ab-labels strong, .record .big, .hbar .val");
 } catch {
   /* Motion unavailable — the page works without it. */
 }
-
-// Mark the nav link for the section in view.
-const links = [...document.querySelectorAll(".bar nav a")];
-const observer = new IntersectionObserver((entries) => {
-  for (const entry of entries) {
-    if (!entry.isIntersecting) continue;
-    links.forEach((a) => a.setAttribute("aria-current", String(a.hash === "#" + entry.target.id)));
-  }
-}, { rootMargin: "-45% 0px -50% 0px" });
-document.querySelectorAll("main > section").forEach((s) => observer.observe(s));

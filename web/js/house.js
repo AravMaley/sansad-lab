@@ -1,153 +1,60 @@
-import { loadJSON, el, svg, sourceLink } from "./util.js";
-import { use3D, detect } from "./capability.js";
-
-const ALLIANCE_VAR = { NDA: "--nda", INDIA: "--india", OTH: "--oth" };
-const TINTS = [100, 72, 52, 86, 62]; // cycled so neighbouring parties differ
-
-// Parliament-chart layout: concentric rows, seats per row proportional to radius,
-// then every seat sorted left-to-right by angle so parties form wedges.
-export function layoutSeats(total, rows = 12, inner = 0.4) {
-  const radii = Array.from({ length: rows }, (_, i) => inner + ((1 - inner) * i) / (rows - 1));
-  const sumR = radii.reduce((a, b) => a + b, 0);
-  const counts = radii.map((r) => Math.round((total * r) / sumR));
-  counts[rows - 1] += total - counts.reduce((a, b) => a + b, 0);
-
-  const seats = [];
-  radii.forEach((r, i) => {
-    const n = counts[i];
-    for (let j = 0; j < n; j++) {
-      const angle = Math.PI * (1 - j / (n - 1)); // π (left) → 0 (right)
-      seats.push({ angle, r });
-    }
-  });
-  seats.sort((a, b) => b.angle - a.angle || a.r - b.r);
-  const dot = Math.min((1 - inner) / (rows - 1), (Math.PI * sumR) / total) * 0.4;
-  return { seats, dot };
-}
-
-// Hex version of colorFor for WebGL, which cannot read CSS colour-mix().
-function hexFor(party, rankInAlliance) {
-  const css = getComputedStyle(document.documentElement);
-  const base = css.getPropertyValue(ALLIANCE_VAR[party.alliance]).trim();
-  const paper = css.getPropertyValue("--paper").trim();
-  const t = TINTS[rankInAlliance % TINTS.length] / 100;
-  const rgb = (h) => [1, 3, 5].map((i) => parseInt(h.slice(i, i + 2), 16));
-  const [a, b] = [rgb(base), rgb(paper)];
-  return "#" + a.map((v, i) => Math.round(v * t + b[i] * (1 - t)).toString(16).padStart(2, "0")).join("");
-}
-
-// Resolves with the 3D chamber's controls once it is on screen, or null when
-// the SVG chamber is kept (no WebGL, reduced motion, save-data, or an error).
-let resolveChamber;
-export const chamberReady = new Promise((r) => (resolveChamber = r));
-
-function colorFor(party, rankInAlliance) {
-  const pct = TINTS[rankInAlliance % TINTS.length];
-  const base = `var(${ALLIANCE_VAR[party.alliance]})`;
-  return pct === 100 ? base : `color-mix(in oklab, ${base} ${pct}%, var(--paper))`;
-}
+// Home page: the crowd of 543 dots, the alliance bar, party chips and facts.
+import { el, sourceLink } from "./util.js";
+import { loadParties, ALLIANCE_VAR } from "./parties.js";
+import { dotsReady } from "./site.js";
 
 export async function initHouse() {
-  const data = await loadJSON("data/lok-sabha-18.json");
-  const chart = document.getElementById("hemicycle");
+  const { data, parties } = await loadParties();
+  const crowd = document.getElementById("crowd");
   const caption = document.getElementById("seat-caption");
-
-  // Colour each party by alliance, largest party in full colour.
-  const ranks = {};
-  ["NDA", "INDIA", "OTH"].forEach((a) => {
-    data.parties.filter((p) => p.alliance === a)
-      .sort((x, y) => y.seats - x.seats)
-      .forEach((p, i) => { ranks[p.short] = i; });
-  });
-  const parties = data.parties.map((p, i) => ({ ...p, idx: i, color: colorFor(p, ranks[p.short]) }));
-
-  // Draw
-  const S = 100;
-  const { seats, dot } = layoutSeats(data.total);
-  const root = svg("svg", { viewBox: `${-S - 4} ${-S - 4} ${2 * S + 8} ${S + 8}`, "aria-hidden": "true" });
-  const circlesByParty = parties.map(() => []);
-  let cursor = 0;
-  parties.forEach((p) => {
-    for (let k = 0; k < p.seats; k++, cursor++) {
-      const { angle, r } = seats[cursor];
-      const c = svg("circle", {
-        cx: (Math.cos(angle) * r * S).toFixed(2),
-        cy: (-Math.sin(angle) * r * S).toFixed(2),
-        r: (dot * S).toFixed(2),
-        style: `fill:${p.color}; animation-delay:${Math.round((1 - angle / Math.PI) * 600)}ms`,
-      });
-      c.dataset.p = p.idx;
-      circlesByParty[p.idx].push(c);
-      root.append(c);
-    }
-  });
-  const total = svg("text", { x: 0, y: -10, "text-anchor": "middle", class: "total", "font-size": 22 });
-  total.textContent = data.total;
-  const sub = svg("text", { x: 0, y: 2, "text-anchor": "middle", class: "total-sub", "font-size": 4.2 });
-  sub.textContent = "SEATS · MAJORITY " + data.majority;
-  root.append(total, sub);
-  chart.append(root);
-  chart.classList.add("animate");
-
-  // Seat list in drawing order, for the 3D chamber.
-  const seatList = [];
-  {
-    let k = 0;
-    parties.forEach((p) => {
-      const hex = hexFor(p, ranks[p.short]);
-      for (let n = 0; n < p.seats; n++, k++) seatList.push({ ...seats[k], party: p.idx, short: p.short, color: hex, mpsno: null });
-    });
-  }
-
-  // Highlight
-  let active = null;
-  let chamber = null;
   const chips = [];
-  function select(idx) {
-    if (active !== null) circlesByParty[active].forEach((c) => c.classList.remove("on"));
-    active = idx === active ? null : idx;
-    chamber?.highlight(active === null ? null : (seat) => seat.party === active);
-    chips.forEach((ch) => ch.setAttribute("aria-pressed", String(Number(ch.dataset.p) === active)));
-    if (active === null) {
-      delete chart.dataset.active;
-      caption.innerHTML = "&nbsp;";
-      return;
-    }
-    const p = parties[active];
-    circlesByParty[active].forEach((c) => c.classList.add("on"));
-    chart.dataset.active = "";
+  let active = null;
+  let dots = null;
+
+  function describe(idx) {
+    if (idx === null) { caption.textContent = "Each dot is one seat. Point at one, or pick a party."; return; }
+    const p = parties[idx];
     const alliance = data.alliances.find((a) => a.id === p.alliance).name;
     caption.replaceChildren(
+      el("span", { class: "sw", style: `background:${p.hex}` }),
       el("strong", {}, p.name), ` · ${p.seats} seat${p.seats > 1 ? "s" : ""} · ${alliance}`,
-      p.vote_pct !== null ? ` · ${p.vote_pct}% of votes` : ""
-    );
+      p.vote_pct !== null ? ` · ${p.vote_pct}% of votes` : "");
   }
-  // Upgrade to the 3D chamber after first paint, when the device can take it.
-  if (use3D(detect())) {
-    const start = () =>
-      import("./chamber3d.js")
-        .then(({ mountChamber }) => {
-          chamber = mountChamber(chart, {
-            seats: seatList,
-            accent: "#ffcf6e",
-            stage: getComputedStyle(document.documentElement).getPropertyValue("--paper").trim() || "#0e1a16",
-            onHover: (i) => { if (i !== null && seatList[i].party !== active) select(seatList[i].party); },
-            onSelect: (i) => select(seatList[i].party),
-          });
-          chamber.seats = seatList;
-          resolveChamber(chamber);
-        })
-        .catch((e) => { console.warn("3D chamber unavailable", e); resolveChamber(null); });
-    (window.requestIdleCallback ?? ((f) => setTimeout(f, 200)))(start);
-  } else resolveChamber(null);
+  function show(idx) {
+    dots?.highlight(idx === null ? null : (i) => (dots.owners[i] === idx ? 1 : 0));
+    describe(idx);
+  }
+  function select(idx) {
+    active = idx === active ? null : idx;
+    chips.forEach((ch) => ch.setAttribute("aria-pressed", String(Number(ch.dataset.p) === active)));
+    show(active);
+  }
+  describe(null);
 
-  root.addEventListener("click", (e) => {
-    const idx = e.target.dataset?.p;
-    if (idx !== undefined) select(Number(idx));
-  });
-  root.addEventListener("mouseover", (e) => {
-    const idx = e.target.dataset?.p;
-    if (idx !== undefined && Number(idx) !== active && matchMedia("(hover: hover)").matches) select(Number(idx));
+  dotsReady.then((d) => {
+    if (!d) { crowd.classList.add("no-dots"); return; }
+    dots = d;
+    // Label each alliance under its group of dots.
+    const labels = el("div", { class: "crowd-labels", "aria-hidden": "true" });
+    crowd.append(labels);
+    dots.crowd(crowd, (groups) => labels.replaceChildren(...groups.map((g) =>
+      el("span", { class: "crowd-label", style: `left:${g.cx}px; top:${g.cy + g.r + 10}px` },
+        el("strong", {}, g.seats), " ", data.alliances.find((a) => a.id === g.alliance)?.name ?? g.alliance))));
+    let hovered = null;
+    crowd.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      const i = dots.pick(e.clientX, e.clientY);
+      const idx = i === null ? null : dots.owners[i];
+      crowd.style.cursor = idx === null ? "" : "pointer";
+      if (idx === hovered) return;
+      hovered = idx;
+      show(idx ?? active);
+    });
+    crowd.addEventListener("pointerleave", () => { hovered = null; show(active); });
+    crowd.addEventListener("click", (e) => {
+      const i = dots.pick(e.clientX, e.clientY);
+      select(i === null ? null : dots.owners[i]);
+    });
   });
 
   // Alliance bar with the majority line
@@ -161,17 +68,17 @@ export async function initHouse() {
     el("div", { class: "ab-labels" },
       el("div", {}, el("strong", {}, byId.INDIA.seats), "INDIA bloc"),
       el("div", { class: "mid" }, el("strong", {}, byId.OTH.seats), "Unaligned"),
-      el("div", { class: "right" }, el("strong", {}, byId.NDA.seats), "NDA · majority line at 272")
+      el("div", { class: "right" }, el("strong", {}, byId.NDA.seats), `NDA · majority line at ${data.majority}`)
     )
   );
 
-  // Legend: the biggest parties first, the rest behind a toggle.
+  // Party chips: the biggest parties first, the rest behind a toggle.
   const legend = document.getElementById("party-legend");
   const sorted = [...parties].sort((a, b) => b.seats - a.seats);
   const SHOWN = 10;
   sorted.forEach((p, i) => {
     const chip = el("button", { class: "chip", type: "button", "aria-pressed": "false", hidden: i >= SHOWN, onclick: () => select(p.idx) },
-      el("span", { class: "sw", style: `background:${p.color}` }), p.short, el("span", { class: "n" }, p.seats));
+      el("span", { class: "sw", style: `background:${p.hex}` }), p.short, el("span", { class: "n" }, p.seats));
     chip.dataset.p = p.idx;
     chips.push(chip);
     legend.append(chip);

@@ -2,6 +2,8 @@
 import { el, fmtDate } from "./util.js";
 import { api } from "./api.js";
 import { feedItem } from "./feed.js";
+import { dotsReady } from "./site.js";
+import { loadParties, partyIndex } from "./parties.js";
 import { emptyStateMessage, statusLabel, formatCount, totalLine, ministryLabel } from "./mpview.js";
 
 const mpsno = Number(location.pathname.match(/\/mp\/(\d+)/)?.[1] ?? new URLSearchParams(location.search).get("id"));
@@ -9,7 +11,18 @@ const $ = (id) => document.getElementById(id);
 const filters = { ministry: "", q: "" };
 let page = 0;
 
+// Light this MP's party in the dot field, and one dot for the MP.
+async function lightDots(member) {
+  const [dots, { parties }] = await Promise.all([dotsReady, loadParties()]);
+  if (!dots) return;
+  const idx = partyIndex(parties, member.party_short);
+  const mine = dots.owners.map((o, i) => (o === idx ? i : -1)).filter((i) => i >= 0);
+  const spot = mine.length ? mine[member.mpsno % mine.length] : member.mpsno % dots.owners.length;
+  dots.highlight((i) => (i === spot ? 2 : dots.owners[i] === idx ? 1 : 0));
+}
+
 function renderHead(member, total) {
+  lightDots(member).catch(() => {});
   document.title = `${member.name} · Sansad Lab`;
   const label = statusLabel(member);
   $("mp-head").replaceChildren(
@@ -74,7 +87,7 @@ async function load(reset = false) {
     const empty = !filters.ministry && !filters.q ? emptyStateMessage(data.member, data.total) : null;
     if (empty) $("mp-feed").replaceChildren(el("li", { class: "empty" }, empty));
     else if (!data.items.length && page === 0) $("mp-feed").replaceChildren(el("li", { class: "empty" }, "No questions match. Try another ministry or search."));
-    $("mp-feed").append(...data.items.map((i) => feedItem(i, { currentMp: mpsno })));
+    $("mp-feed").append(...data.items.map((i) => feedItem(i, { currentMp: mpsno, query: filters.q })));
     const shown = $("mp-feed").querySelectorAll(".feed-item").length;
     more.replaceChildren(shown < data.total
       ? el("button", { class: "btn", type: "button", onclick: () => { page++; load(); } }, `Load more (${formatCount(data.total - shown)} left)`)
@@ -88,5 +101,5 @@ async function load(reset = false) {
   }
 }
 
-if (!Number.isInteger(mpsno) || mpsno <= 0) $("mp-head").replaceChildren(el("p", { class: "empty" }, "No MP chosen. ", el("a", { href: "/#yourmp" }, "Find your MP")));
+if (!Number.isInteger(mpsno) || mpsno <= 0) $("mp-head").replaceChildren(el("p", { class: "empty" }, "No MP chosen. ", el("a", { href: "/mps" }, "Find your MP")));
 else load(true);

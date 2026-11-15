@@ -5,6 +5,16 @@ import { feedItem } from "./feed.js";
 import { formatCount } from "./mpview.js";
 import { createFollows, followButton, shareButton } from "./follow.js";
 import { downloadShareCard } from "./sharecard.js";
+import { dotsReady } from "./site.js";
+import { loadParties, partyIndex } from "./parties.js";
+
+// Light the parties raising this issue in the dot field.
+async function lightDots(rows) {
+  const [dots, { parties }] = await Promise.all([dotsReady, loadParties()]);
+  if (!dots || !rows.length) return;
+  const lit = new Set(rows.slice(0, 6).map((r) => partyIndex(parties, r.name)).filter((i) => i !== null));
+  if (lit.size) dots.highlight((i) => (lit.has(dots.owners[i]) ? 1 : 0));
+}
 
 const slug = location.pathname.match(/\/topic\/([a-z-]+)/)?.[1] ?? new URLSearchParams(location.search).get("slug");
 const $ = (id) => document.getElementById(id);
@@ -38,6 +48,7 @@ async function load() {
           el("button", { class: "btn btn-quiet", type: "button", onclick: () => downloadShareCard({
             kicker: "In Parliament", title: d.topic.label, items: d.items.slice(0, 3).map((i) => i.subject), filename: `sansad-lab-${d.topic.slug}.png` }) }, "Save share card"),
           el("a", { href: `/api/rss/topic/${d.topic.slug}` }, "RSS feed")));
+      lightDots(d.breakdown.parties).catch(() => {});
       $("t-breakdown").replaceChildren(
         d.breakdown.states.length ? bars("States raising it most", d.breakdown.states) : "",
         d.breakdown.parties.length ? bars("Parties raising it most", d.breakdown.parties) : "");
@@ -54,5 +65,5 @@ async function load() {
   }
 }
 
-if (!slug) $("t-head").replaceChildren(el("p", { class: "empty" }, "No issue chosen. ", el("a", { href: "/#issues" }, "See all issues")));
+if (!slug) $("t-head").replaceChildren(el("p", { class: "empty" }, "No issue chosen. ", el("a", { href: "/issues" }, "See all issues")));
 else load();

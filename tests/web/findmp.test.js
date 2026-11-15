@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { groupByState, assignSeats } from "../../web/js/findmp.js";
+import { groupByState, searchMembers } from "../../web/js/findmp.js";
 import { emptyStateMessage, statusLabel, formatCount } from "../../web/js/mpview.js";
 
 const m = (mpsno, state, constituency, party_short = "BJP", status = "Sitting") =>
@@ -18,16 +18,27 @@ test("groupByState skips records without a state or constituency", () => {
   assert.deepEqual(groupByState([{ mpsno: 9, state: null, constituency: "X" }]), []);
 });
 
-test("assignSeats fills each party's seats with its sitting members", () => {
-  const seats = [{ short: "BJP" }, { short: "BJP" }, { short: "INC" }];
-  const members = [m(5, "S", "B"), m(4, "S", "A"), m(7, "S", "C", "INC"), m(8, "S", "D", "INC", "Died")];
-  const out = assignSeats(seats, members);
-  assert.deepEqual(out.map((s) => s.mpsno), [4, 5, 7]);
+test("searchMembers matches any part of a name, ignoring case and dots", () => {
+  const list = [
+    { mpsno: 1, name: "Shri Rahul Gandhi", status: "Sitting" },
+    { mpsno: 2, name: "Smt. Supriya Sule", status: "Sitting" },
+    { mpsno: 3, name: "Dr. Shashi Tharoor", status: "Sitting" },
+    { mpsno: 4, name: "Rahul Kaswan", status: "Died" },
+  ];
+  assert.deepEqual(searchMembers(list, "rahul").map((x) => x.mpsno), [1, 4]);
+  assert.deepEqual(searchMembers(list, "tharo").map((x) => x.mpsno), [3]);
+  assert.deepEqual(searchMembers(list, "supriya sule").map((x) => x.mpsno), [2]);
+  assert.deepEqual(searchMembers(list, "r"), [], "needs 2+ characters");
+  assert.deepEqual(searchMembers(list, "  "), []);
 });
 
-test("assignSeats leaves seats empty when parties do not match", () => {
-  const out = assignSeats([{ short: "XYZ" }], [m(1, "S", "A", "BJP")]);
-  assert.equal(out[0].mpsno, null);
+test("searchMembers prefers names that start with the query and caps results", () => {
+  const list = Array.from({ length: 30 }, (_, i) => ({ mpsno: i, name: `Kumar ${i}`, status: "Sitting" }))
+    .concat({ mpsno: 99, name: "Arun Kumar", status: "Sitting" });
+  const out = searchMembers(list, "kumar");
+  assert.equal(out.length, 8);
+  assert.equal(out[0].mpsno, 0);
+  assert.ok(!out.some((x) => x.mpsno === 99));
 });
 
 test("emptyStateMessage only appears when there are no questions", () => {

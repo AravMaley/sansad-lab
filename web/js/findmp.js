@@ -1,5 +1,4 @@
-// "Find your MP": pick a state, then a constituency; the MP's seat lights up
-// in the 3D chamber and their page opens.
+// "Find your MP": pick a state, then a constituency, or search by name.
 import { el } from "./util.js";
 import { api } from "./api.js";
 
@@ -16,19 +15,24 @@ export function groupByState(members) {
     .map(([state, cs]) => ({ state, constituencies: cs.sort((a, b) => byName(a.name, b.name)) }));
 }
 
-// Seats are grouped by party, not the official seating plan: each party's
-// seats are filled with its sitting members in constituency order.
-export function assignSeats(seats, members) {
-  const pools = new Map();
-  for (const m of [...members].filter((x) => x.status === "Sitting").sort((a, b) => (a.constituency ?? "").localeCompare(b.constituency ?? ""))) {
-    const k = (m.party_short ?? "").toUpperCase();
-    if (!pools.has(k)) pools.set(k, []);
-    pools.get(k).push(m.mpsno);
-  }
-  return seats.map((s) => ({ ...s, mpsno: pools.get((s.short ?? "").toUpperCase())?.shift() ?? null }));
+// Name search: every word typed must appear in the name. Names that start
+// with the query come first. Honorifics and dots are ignored.
+const norm = (s) => (s ?? "").toLowerCase().replace(/[.,]/g, " ").replace(/\s+/g, " ").trim();
+const HONORIFIC = /^(shri|smt|sushri|dr|prof|adv|col|capt|kumari|km)\s+/g;
+export function searchMembers(members, query, limit = 8) {
+  const q = norm(query);
+  if (q.length < 2) return [];
+  const words = q.split(" ");
+  const bare = (n) => { let s = norm(n), prev; do { prev = s; s = s.replace(HONORIFIC, ""); } while (s !== prev); return s; };
+  return members
+    .map((m) => ({ m, name: bare(m.name) }))
+    .filter(({ name }) => words.every((w) => name.includes(w)))
+    .sort((a, b) => Number(b.name.startsWith(q)) - Number(a.name.startsWith(q)) || a.name.localeCompare(b.name, "en-IN", { numeric: true }))
+    .slice(0, limit)
+    .map(({ m }) => m);
 }
 
-export async function initFindMP({ chamberReady }) {
+export async function initFindMP() {
   const root = document.getElementById("findmp");
   const { members, lastUpdated } = await api("members");
   const groups = groupByState(members);
@@ -51,28 +55,26 @@ export async function initFindMP({ chamberReady }) {
   });
   constSel.addEventListener("change", () => { go.disabled = !constSel.value; });
 
-  let chamber = null;
-  chamberReady.then((c) => {
-    if (!c) return;
-    chamber = c;
-    c.seats.splice(0, c.seats.length, ...assignSeats(c.seats, members));
-  });
+  go.addEventListener("click", () => { location.href = `/mp/${Number(constSel.value)}`; });
 
-  go.addEventListener("click", () => {
-    const mpsno = Number(constSel.value);
-    const url = `/mp/${mpsno}`;
-    if (chamber && chamber.seats.some((s) => s.mpsno === mpsno)) {
-      chamber.focusSeat(mpsno);
-      document.getElementById("house").scrollIntoView({ behavior: "smooth" });
-      note.textContent = "Finding your seat…";
-      setTimeout(() => (location.href = url), 1400);
-    } else location.href = url;
+  // Or search by name.
+  const nameInput = el("input", { id: "fm-name", class: "input", type: "search", autocomplete: "off",
+    placeholder: "Or type a name, e.g. Supriya Sule", "aria-label": "Search MPs by name", "aria-controls": "fm-hits" });
+  const hits = el("ul", { id: "fm-hits", class: "fm-hits", "aria-live": "polite" });
+  nameInput.addEventListener("input", () => {
+    const q = nameInput.value;
+    const found = searchMembers(members, q);
+    hits.replaceChildren(...found.map((m) => el("li", {},
+      el("a", { href: `/mp/${m.mpsno}` }, el("strong", {}, m.name),
+        el("span", { class: "note" }, ` ${[m.party_short, m.constituency, m.state].filter(Boolean).join(" · ")}${m.status === "Sitting" ? "" : " · former MP"}`)))));
+    if (!found.length && q.trim().length >= 2) hits.append(el("li", { class: "note" }, `No MP named “${q.trim()}”.`));
   });
 
   root.replaceChildren(
     el("div", { class: "fm-row" },
       el("label", { class: "sr-only", for: "fm-state" }, "State"), stateSel,
       el("label", { class: "sr-only", for: "fm-const" }, "Constituency"), constSel, go),
+    el("div", { class: "fm-name" }, nameInput, hits),
     note,
     el("p", { class: "note" }, `${members.length} members of the 18th Lok Sabha. `,
       lastUpdated ? `Updated ${new Date(lastUpdated).toLocaleDateString("en-IN", { day: "numeric", month: "short", year: "numeric" })}.` : ""),

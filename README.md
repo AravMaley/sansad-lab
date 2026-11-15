@@ -4,7 +4,7 @@ Understand India's Parliament by doing. Live at https://sansad-lab-web.vercel.ap
 
 ## What's on the site
 
-1. **The House** — the 18th Lok Sabha as a 3D chamber (three.js, with an SVG fallback for low-power devices and reduced motion).
+1. **The House** — the 18th Lok Sabha as 543 dots, one per seat, gathered by alliance. The same dots drift behind every page and light up the MP or parties you are reading about (Canvas 2D, about 30 fps, paused when hidden, still for reduced motion).
 2. **Your MP** — pick your state and constituency to see every question your MP asked in this Lok Sabha, with word-for-word excerpts of the government's answer and a link to the official document.
 3. **Issues** — 15 issues (exams, jobs, farming, women's safety…) with every question on each, search across all questions, follows without an account, RSS feeds, share cards and a calendar file for the next session.
 4. **Manifestos** — the 2024 manifestos side by side, by topic or by party, with page citations.

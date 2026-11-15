@@ -2,6 +2,7 @@
 // compare up to three parties side by side, and search. Pure helpers are
 // exported for tests; initManifestos() renders the page.
 import { el, loadJSON } from "./util.js";
+import { highlight } from "./highlight.js";
 
 export function stanceLabel(pos) {
   if (!pos) return { text: "Not mentioned", cls: "silent" };
@@ -44,19 +45,19 @@ export function searchStatements(data, q) {
 
 // ---------- page ----------
 
-function positionCard(e) {
+function positionCard(e, q = null) {
   return el("article", { class: "mf-pos" },
     el("p", { class: "mf-pos-head" }, el("strong", {}, e.party.short), el("span", { class: `tag ${e.label.cls}` }, e.label.text)),
-    e.quote ? el("blockquote", { class: "quote" + (e.stance === 0 ? " is-silent" : "") }, `“${e.quote}”`) : el("p", { class: "note" }, "No commitment in the manifesto."),
+    e.quote ? el("blockquote", { class: "quote" + (e.stance === 0 ? " is-silent" : "") }, ["“", highlight(e.quote, q, { mode: "phrase" }), "”"]) : el("p", { class: "note" }, "No commitment in the manifesto."),
     e.note ? el("p", { class: "note" }, e.note) : null,
     el("p", { class: "src-line" }, el("a", { class: "src", href: e.source, target: "_blank", rel: "noopener" }, `${e.party.manifesto ?? "Manifesto"}${e.page ? `, p. ${e.page}` : ""} ↗`)));
 }
 
-function statementBlock(s, entries) {
+function statementBlock(s, entries, q = null) {
   return el("section", { class: "mf-statement paper" },
-    el("p", { class: "meta" }, s.topic),
-    el("h3", {}, s.text),
-    el("div", { class: "mf-grid" }, entries.map(positionCard)));
+    el("p", { class: "meta" }, highlight(s.topic, q, { mode: "phrase" })),
+    el("h3", {}, highlight(s.text, q, { mode: "phrase" })),
+    el("div", { class: "mf-grid" }, entries.map((e) => positionCard(e, q))));
 }
 
 export async function initManifestos() {
@@ -87,7 +88,7 @@ export async function initManifestos() {
       controls.replaceChildren();
       body.replaceChildren(
         el("p", { class: "note" }, hits.length ? `${hits.length} statement${hits.length > 1 ? "s" : ""} match “${state.q.trim()}”.` : `Nothing matches “${state.q.trim()}”.`),
-        ...hits.map((s) => statementBlock(s, data.parties.map((p) => entry(p, s)))));
+        ...hits.map((s) => statementBlock(s, data.parties.map((p) => entry(p, s)), state.q.trim())));
       return;
     }
     if (state.view === "topic") {
@@ -121,7 +122,7 @@ export async function initManifestos() {
   root.replaceChildren(
     el("div", { class: "mf-top" }, tabs, search),
     controls, body,
-    el("aside", { class: "mf-method note" }, data.method, " ", el("a", { href: "/#match" }, "Try the Manifesto Matcher →")),
+    el("aside", { class: "mf-method note" }, data.method, " ", el("a", { href: "/bills#match" }, "Try the Manifesto Matcher →")),
     data.excluded ? el("details", { class: "mf-excluded" }, el("summary", {}, data.excluded.heading), el("p", {}, data.excluded.lede),
       el("ul", {}, (data.excluded.missing ?? []).map((m) => el("li", {}, el("strong", {}, m.party), " — ", m.why)))) : null,
   );
