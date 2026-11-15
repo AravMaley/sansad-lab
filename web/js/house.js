@@ -185,6 +185,6 @@ export async function initHouse() {
     ...data.facts.map((f) => el("div", {}, el("dt", {}, f.value), el("dd", {}, f.label, " ", sourceLink(f.source))))
   );
   document.getElementById("house-since").append(
-    data.since, " ", sourceLink(data.since_source), " · Seat data: ", sourceLink(data.source, "ECI via Wikipedia")
+    data.since, " ", sourceLink(data.since_source), " · Seat data: ", sourceLink(data.source, "Election Commission of India")
   );
 }

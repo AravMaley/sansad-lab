@@ -3,9 +3,6 @@ on:
   schedule:
     - cron: "30 20 * * *" # 02:00 IST
   workflow_dispatch:
-  push: # runs on redesign until merged to main, where schedule and manual runs work
-    branches: [redesign]
-    paths: ["scripts/ingest/**", ".github/workflows/ingest.yml"]
 concurrency: ingest
 jobs:
   ingest:
