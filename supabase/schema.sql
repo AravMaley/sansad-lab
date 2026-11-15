@@ -1,5 +1,7 @@
 -- Sansad Lab database. Run once in the Supabase SQL editor.
--- Public (anon) access is read-only; ingestion writes with the service key.
+-- Nothing is readable or writable by the public. Only server-side code holds
+-- the service key: the nightly ingestion (GitHub Actions) and the read API
+-- (Vercel functions). The browser never talks to Supabase directly.
 
 create table if not exists members (
   mpsno        int primary key,
@@ -66,16 +68,15 @@ alter table question_members enable row level security;
 alter table sessions         enable row level security;
 alter table meta             enable row level security;
 
-drop policy if exists read_all on members;          create policy read_all on members          for select to anon using (true);
-drop policy if exists read_all on questions;        create policy read_all on questions        for select to anon using (true);
-drop policy if exists read_all on question_members; create policy read_all on question_members for select to anon using (true);
-drop policy if exists read_all on sessions;         create policy read_all on sessions         for select to anon using (true);
-drop policy if exists read_all on meta;             create policy read_all on meta             for select to anon using (true);
-
--- Explicit permissions for the public (anon) role. Keep "Automatically expose
--- new tables" OFF in Supabase so nothing becomes public unless it is listed here.
-grant usage on schema public to anon;
-grant select on members, questions, question_members, sessions, meta to anon;
+-- Close the public (anon) role completely. With no policies and no grants,
+-- row-level security denies everything to anon. Supabase's default privileges
+-- can grant anon access to new tables, so revoke those too.
+revoke all on all tables in schema public from anon, authenticated;
+revoke all on all functions in schema public from anon, authenticated;
+revoke all on all sequences in schema public from anon, authenticated;
+alter default privileges in schema public revoke all on tables from anon, authenticated;
+alter default privileges in schema public revoke all on functions from anon, authenticated;
+alter default privileges in schema public revoke all on sequences from anon, authenticated;
 
 -- Feed rows share one shape: the question plus who asked it, plus a total.
 create or replace function feed_row(q questions)
@@ -152,12 +153,5 @@ returns table (kind text, key text, n bigint) language sql stable security invok
   group by t
 $$;
 
--- The read functions run as the caller (security invoker), so anon needs to
--- be allowed to run them and the helper they call.
-grant execute on function feed_row(questions) to anon;
-grant execute on function mp_feed(int, text, text, int, int) to anon;
-grant execute on function mp_ministry_counts(int) to anon;
-grant execute on function topic_feed(text, int, int) to anon;
-grant execute on function topic_breakdown(text) to anon;
-grant execute on function search_questions(text, int, int) to anon;
-grant execute on function since_counts(int[], text[], timestamptz) to anon;
+-- The read functions are callable by the service role only (it is granted
+-- everything by default in Supabase), so no grants are needed here.

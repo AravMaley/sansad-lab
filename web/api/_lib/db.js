@@ -1,9 +1,11 @@
-// Read-only access to Supabase through its REST API, with the anon key.
+// Server-side read access to Supabase through its REST API. Uses the service
+// key, which lives only in Vercel's environment variables and is never sent to
+// the browser. The database itself denies the public role everything.
 
 function cfg() {
   const url = process.env.SUPABASE_URL;
-  const key = process.env.SUPABASE_ANON_KEY;
-  if (!url || !key) throw new Error("SUPABASE_URL and SUPABASE_ANON_KEY must be set");
+  const key = process.env.SUPABASE_SERVICE_KEY;
+  if (!url || !key) throw new Error("SUPABASE_URL and SUPABASE_SERVICE_KEY must be set");
   return { url, headers: { apikey: key, Authorization: `Bearer ${key}`, "Content-Type": "application/json" } };
 }
 

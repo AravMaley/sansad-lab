@@ -20,7 +20,7 @@
 - A party being silent on a topic is shown as "not mentioned", never "opposes".
 - Every page shows the "Working prototype" label; data pages show "Last updated".
 - Polite fetching from sansad.in: one request at a time, at least 500 ms between requests, user agent `SansadLab/1.0 (+https://github.com/AravMaley/sansad-lab)`.
-- The Supabase service key exists only as a GitHub Actions secret; the site and API use the anon key with read-only row-level security.
+- The Supabase service key is server-side only: a GitHub Actions secret for ingestion and a Vercel environment variable for the API. The database grants the public role nothing; the browser never talks to Supabase.
 - 3D: one canvas, device pixel ratio capped at 1.5, no post-processing, three.js loaded after first paint, SVG chamber when no WebGL, `prefers-reduced-motion: reduce`, or `navigator.connection.saveData`.
 - Commits carry only the repo owner's git identity, with no Claude or Anthropic attribution lines.
 - Tests use `node --test`; no live network calls in tests (fixtures only).
@@ -156,7 +156,7 @@ Rules (from spec 5.1): the question body starts at the first line matching `/^\*
 - [ ] **Step 1: Write failing tests** with a fake `fetchImpl` recording requests: `upsertQuestions` of 1,200 rows makes 3 POSTs to `/rest/v1/questions` with the merge-duplicates header and both `apikey` and `Authorization: Bearer` set; `knownQuestionIds` issues `GET /rest/v1/questions?select=id&id=in.(...)` and returns a `Set`; a non-2xx response throws an error containing the status and table name.
 - [ ] **Step 2: Run** → FAIL. **Step 3: Implement `store.js`; write `schema.sql`.**
 - [ ] **Step 4: Run** → PASS.
-- [ ] **Step 5: Owner action**: create a free Supabase project, run `supabase/schema.sql` in its SQL editor, and store `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` as GitHub Actions secrets and `SUPABASE_URL` + `SUPABASE_ANON_KEY` as Vercel environment variables. Verify in the SQL editor: `select * from mp_feed(5814, null, null, 5, 0);` runs (empty is fine).
+- [ ] **Step 5: Owner action**: create a free Supabase project, run `supabase/schema.sql` in its SQL editor, and store `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` as GitHub Actions secrets and `SUPABASE_URL` + `SUPABASE_SERVICE_KEY` as Vercel environment variables (server-side only; never the anon key). Verify in the SQL editor: `select * from mp_feed(5814, null, null, 5, 0);` runs (empty is fine).
 - [ ] **Step 6: Commit** `Add database schema and Supabase store`.
 
 ### Task 6: Ingestion orchestrator

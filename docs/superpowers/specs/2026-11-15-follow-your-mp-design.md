@@ -165,7 +165,7 @@ sansad.in JSON + .docx  ──>  GitHub Actions (nightly)  ──>  Supabase Pos
 - `GET /api/rss/mp/:mpsno` and `/api/rss/topic/:slug`.
 - `GET /api/sessions` — calendar data.
 - Responses cached at Vercel's edge for an hour.
-- The Supabase key used by the API is read-only; the write key exists only in GitHub Actions secrets.
+- The database is closed to the public: no anon access and no policies. The API reads through Vercel functions using a server-only service key, stored as a Vercel environment variable and never sent to the browser. The write path uses the same key only inside GitHub Actions.
 
 ### 5.4 Front end
 

@@ -7,7 +7,7 @@ import mp from "../../web/api/mp/[mpsno].js";
 import topic from "../../web/api/topic/[slug].js";
 
 process.env.SUPABASE_URL = "https://db.example";
-process.env.SUPABASE_ANON_KEY = "anon";
+process.env.SUPABASE_SERVICE_KEY = "service";
 
 let calls;
 function stubFetch(responder) {
