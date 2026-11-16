@@ -5,7 +5,7 @@
 //   node scripts/ingest/run.js [--budget-min=50] [--only=5814]
 //   env: SUPABASE_URL, SUPABASE_SERVICE_KEY
 import { pathToFileURL } from "node:url";
-import { createHttp } from "./http.js";
+import { createHttp, withRetry } from "./http.js";
 import { sansad } from "./sansad.js";
 import { normaliseMember, normaliseQuestion } from "./members.js";
 import { docxToText } from "./docx.js";
@@ -29,7 +29,10 @@ export async function ingest({ api, store, http, now = Date.now, budgetMs, only,
   // does not mean "caught up": an earlier run may have stopped mid-history.
   const backfilled = new Set(JSON.parse((await store.getMeta("backfilled")) ?? "[]"));
 
+  out.failedMps = [];
+  let failuresInARow = 0;
   outer: for (const m of targets) {
+   try {
     for (let page = 1; page <= MAX_PAGES_PER_MP; page++) {
       if (now() - start > budgetMs) {
         out.stoppedEarly = true;
@@ -62,7 +65,16 @@ export async function ingest({ api, store, http, now = Date.now, budgetMs, only,
       const allLinkedAlready = ids.every((i) => linkedBefore.has(i));
       if (allLinkedAlready && backfilled.has(m.mpsno)) break; // caught up
     }
+    failuresInARow = 0;
     log(`MP ${m.mpsno} done`);
+   } catch (e) {
+    // One flaky request shouldn't end the night's run. This MP is not marked
+    // backfilled, so the next run picks it up again. Many failures in a row
+    // means a real outage, so stop and report it.
+    out.failedMps.push(m.mpsno);
+    log(`MP ${m.mpsno} skipped: ${e?.message ?? e}`);
+    if (++failuresInARow >= 5) throw new Error(`5 MPs in a row failed; last error: ${e?.message ?? e}`);
+   }
   }
 
   await store.setMeta("last_updated", new Date().toISOString());
@@ -100,7 +112,7 @@ if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) {
     const result = await ingest({
       api: sansad(http),
       http,
-      store: createStore({ url: SUPABASE_URL.replace(/\/+$/, "").replace(/\/rest\/v1$/, ""), serviceKey: SUPABASE_SERVICE_KEY }),
+      store: createStore({ url: SUPABASE_URL.replace(/\/+$/, "").replace(/\/rest\/v1$/, ""), serviceKey: SUPABASE_SERVICE_KEY, fetchImpl: withRetry(fetch) }),
       budgetMs: Number(arg("budget-min") ?? 50) * 60_000,
       only: arg("only"),
       log: console.log,

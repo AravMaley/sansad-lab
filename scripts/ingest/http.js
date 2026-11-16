@@ -5,7 +5,29 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 export const USER_AGENT = "SansadLab/1.0 (+https://github.com/AravMaley/sansad-lab)";
 
-export function createHttp({ fetchImpl = fetch, delayMs = 500, retries = 2, userAgent = USER_AGENT } = {}) {
+// A dropped connection ("fetch failed") throws instead of returning a status.
+// Name the cause and the URL, so the error annotation says what broke.
+function describe(e, url) {
+  const cause = e?.cause?.code ?? e?.cause?.message;
+  return new Error(`${e?.message ?? e}${cause ? ` (${cause})` : ""} for ${url}`, { cause: e });
+}
+
+// Wraps fetch so thrown network errors are retried with a growing pause.
+// Used for the database client; sansad.in requests go through createHttp.
+export function withRetry(fetchImpl = fetch, { tries = 4, waitMs = 3000 } = {}) {
+  return async (url, opts) => {
+    for (let attempt = 1; ; attempt++) {
+      try {
+        return await fetchImpl(url, opts);
+      } catch (e) {
+        if (attempt >= tries) throw describe(e, String(url).split("?")[0]);
+        await sleep(waitMs * attempt);
+      }
+    }
+  };
+}
+
+export function createHttp({ fetchImpl = fetch, delayMs = 500, retries = 2, retryWaitMs = 5000, userAgent = USER_AGENT } = {}) {
   let last = 0;
   let queue = Promise.resolve();
 
@@ -16,7 +38,14 @@ export function createHttp({ fetchImpl = fetch, delayMs = 500, retries = 2, user
         const wait = last + delayMs - Date.now();
         if (wait > 0) await sleep(wait);
         last = Date.now();
-        const res = await fetchImpl(url, { headers: { "User-Agent": userAgent, Accept: "*/*" } });
+        let res;
+        try {
+          res = await fetchImpl(url, { headers: { "User-Agent": userAgent, Accept: "*/*" } });
+        } catch (e) {
+          if (attempt >= retries) throw describe(e, url);
+          await sleep(retryWaitMs * (attempt + 1));
+          continue;
+        }
         if (res.status >= 500 && attempt < retries) continue;
         return res;
       }

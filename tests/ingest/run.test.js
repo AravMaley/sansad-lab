@@ -115,3 +115,24 @@ test("a backfilled MP keeps paging when known questions are not yet linked to th
   assert.ok(s.db.links.has(`${id(1)}|1`) && s.db.links.has(`${id(2)}|1`));
   assert.equal(s.db.questions.size, 2);
 });
+
+test("a network failure on one MP skips that MP and the run carries on", async () => {
+  const s = setup({ members: [rawMember(1), rawMember(2)], pages: { 2: [[rawQ(5)]] } });
+  const orig = s.api.questionsForMember;
+  s.api.questionsForMember = async (mpsno, page) => {
+    if (mpsno === 1) throw new TypeError("fetch failed");
+    return orig(mpsno, page);
+  };
+  const r = await ingest({ ...s, budgetMs: 60_000, log: () => {} });
+  assert.ok(s.db.questions.has(id(5)));
+  assert.deepEqual(r.failedMps, [1]);
+  assert.ok(s.db.meta.last_updated);
+  assert.ok(!JSON.parse(s.db.meta.backfilled).includes(1));
+});
+
+test("many MPs failing in a row stops the run as a real outage", async () => {
+  const members = [1, 2, 3, 4, 5, 6, 7].map((n) => rawMember(n));
+  const s = setup({ members, pages: {} });
+  s.api.questionsForMember = async () => { throw new TypeError("fetch failed"); };
+  await assert.rejects(ingest({ ...s, budgetMs: 60_000, log: () => {} }), /5 MPs in a row/);
+});
