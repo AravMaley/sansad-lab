@@ -97,3 +97,50 @@ test("mp returns member, counts, items and total", async () => {
 test("topic returns 404 for an unknown slug", async () => {
   assert.equal((await call(topic, { slug: "nope" })).status, 404);
 });
+
+import photo from "../../web/api/photo/[mpsno].js";
+
+// Photo proxy: sansad.in sends "Cross-Origin-Resource-Policy: same-site", so a
+// browser refuses to show its photos on our site. We fetch them server-side.
+function stubPhoto({ photoUrl = "https://sansad.in/getFile/dms/fetch/abc?source=dsp2", type = "image/jpeg", ok = true, bytes = [1, 2, 3] } = {}) {
+  calls = [];
+  globalThis.fetch = async (url) => {
+    calls.push({ url: String(url) });
+    if (String(url).startsWith("https://db.example")) {
+      return { ok: true, status: 200, json: async () => (photoUrl === undefined ? [] : [{ photo_url: photoUrl }]) };
+    }
+    return { ok, status: ok ? 200 : 403, headers: { get: (k) => (k.toLowerCase() === "content-type" ? type : null) }, arrayBuffer: async () => new Uint8Array(bytes).buffer };
+  };
+}
+
+test("photo serves an MP's picture from our own domain with long caching", async () => {
+  stubPhoto();
+  const r = await call(photo, { mpsno: "5814" });
+  assert.equal(r.status, 200);
+  assert.equal(r.headers["content-type"], "image/jpeg");
+  assert.match(r.headers["cache-control"], /s-maxage=\d{6,}/);
+  assert.equal(Buffer.from(r.body).length, 3);
+  assert.ok(calls.some((c) => c.url.startsWith("https://sansad.in/")));
+});
+
+test("photo refuses ids that are not numbers and MPs without a photo", async () => {
+  stubPhoto();
+  assert.equal((await call(photo, { mpsno: "abc" })).status, 400);
+  stubPhoto({ photoUrl: null });
+  assert.equal((await call(photo, { mpsno: "1" })).status, 404);
+});
+
+test("photo only fetches from sansad.in, never an arbitrary address", async () => {
+  stubPhoto({ photoUrl: "https://evil.example/x.jpg" });
+  assert.equal((await call(photo, { mpsno: "1" })).status, 404);
+  assert.ok(!calls.some((c) => c.url.includes("evil.example")));
+  stubPhoto({ photoUrl: "http://sansad.in/x.jpg" });
+  assert.equal((await call(photo, { mpsno: "1" })).status, 404);
+});
+
+test("photo does not pass through non-images or failed downloads", async () => {
+  stubPhoto({ type: "text/html" });
+  assert.equal((await call(photo, { mpsno: "1" })).status, 404);
+  stubPhoto({ ok: false });
+  assert.equal((await call(photo, { mpsno: "1" })).status, 404);
+});

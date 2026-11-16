@@ -19,8 +19,9 @@ export function statusLabel(member) {
 export function emptyStateMessage(member, total) {
   if (total > 0) return null;
   return (
-    "We have no questions on record for this MP yet. Sansad Lab is a working prototype: " +
-    "ministers do not ask questions, the Speaker presides rather than asks, some MPs ask few, " +
-    "and our data may not have caught up. This is not a measure of their work."
+    "No questions on record for this MP yet. " +
+    "Sansad Lab is a working prototype, so our data may not have caught up. " +
+    "Some MPs also ask few questions, and ministers do not ask questions at all. " +
+    "This is not a measure of anyone's work."
   );
 }

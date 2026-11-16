@@ -27,7 +27,7 @@ function renderHead(member, total) {
   document.title = `${member.name} · Sansad Lab`;
   const label = statusLabel(member);
   $("mp-head").replaceChildren(
-    member.photo_url ? el("img", { class: "mp-photo", src: member.photo_url, alt: "", width: 96, height: 96, loading: "lazy" }) : null,
+    member.photo_url ? el("img", { class: "mp-photo", src: `/api/photo/${member.mpsno}`, alt: "", width: 96, height: 96, loading: "lazy", onerror: (e) => { e.target.style.visibility = "hidden"; } }) : null,
     el("div", {},
       el("p", { class: "meta" }, `${member.constituency} · ${member.state}`),
       el("h1", { class: "display-sm" }, member.name),
@@ -86,7 +86,10 @@ async function load(reset = false) {
       $("mp-foot").textContent = data.lastUpdated ? `Last updated ${fmtDate(data.lastUpdated.slice(0, 10))}. Excerpts are taken word for word from the official answers.` : "";
     }
     const empty = !filters.ministry && !filters.q ? emptyStateMessage(data.member, data.total) : null;
-    if (empty) $("mp-feed").replaceChildren(el("li", { class: "empty" }, empty));
+    if (empty) {
+      const [lead, ...rest] = empty.split(". ");
+      $("mp-feed").replaceChildren(el("li", { class: "empty" }, el("strong", {}, lead + "."), rest.join(". ")));
+    }
     else if (!data.items.length && page === 0) $("mp-feed").replaceChildren(el("li", { class: "empty" }, "No questions match. Try another ministry or search."));
     $("mp-feed").append(...data.items.map((i) => feedItem(i, { currentMp: mpsno, query: filters.q })));
     const shown = $("mp-feed").querySelectorAll(".feed-item").length;
