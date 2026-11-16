@@ -1,7 +1,7 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
-import { createHttp } from "../../scripts/ingest/http.js";
+import { createHttp, withRetry } from "../../scripts/ingest/http.js";
 import { sansad, normaliseSessions } from "../../scripts/ingest/sansad.js";
 import { normaliseMember, normaliseQuestion } from "../../scripts/ingest/members.js";
 
@@ -97,4 +97,24 @@ test("members pages through every page", async () => {
   const all = await api.members();
   assert.equal(f.calls.length, 2);
   assert.equal(all.length, 10);
+});
+
+test("http retries a dropped connection, then succeeds", async () => {
+  let n = 0;
+  const impl = async () => { if (n++ < 2) throw new TypeError("fetch failed"); return new Response('{"ok":1}', { status: 200 }); };
+  const http = createHttp({ fetchImpl: impl, delayMs: 1, retryWaitMs: 1, userAgent: UA });
+  assert.deepEqual(await http.getJson("https://x/flaky"), { ok: 1 });
+  assert.equal(n, 3);
+});
+
+test("http gives up after its retries and reports the cause", async () => {
+  const impl = async () => { throw new TypeError("fetch failed", { cause: { code: "ECONNRESET" } }); };
+  const http = createHttp({ fetchImpl: impl, delayMs: 1, retryWaitMs: 1, retries: 2, userAgent: UA });
+  await assert.rejects(http.getJson("https://x/down"), /ECONNRESET.*https:\/\/x\/down/);
+});
+
+test("withRetry retries a thrown fetch for the database client", async () => {
+  let n = 0;
+  const f = withRetry(async () => { if (n++ < 1) throw new TypeError("fetch failed"); return "ok"; }, { tries: 3, waitMs: 1 });
+  assert.equal(await f("u"), "ok");
 });
