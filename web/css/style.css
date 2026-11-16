@@ -181,7 +181,9 @@ button { font: inherit; color: inherit; }
 .q-answers .btn[data-v="1"]:hover { border-color: var(--green); }
 .q-answers .btn[data-v="-1"]:hover { border-color: var(--maroon); }
 .q-answers .btn.picked { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-.q-foot { display: flex; justify-content: space-between; margin-top: 16px; }
+.q-foot { display: flex; justify-content: space-between; align-items: center; gap: 8px; flex-wrap: wrap; margin-top: 16px; }
+.results-top { display: flex; flex-wrap: wrap; align-items: center; gap: 4px 12px; color: var(--ink-2); margin: 0 0 16px; }
+.reset-link { color: var(--marigold); min-height: 36px; }
 .kbd-hint { font-size: var(--t-meta); color: var(--ink-2); }
 @media (hover: none) { .kbd-hint { display: none; } }
 
@@ -459,9 +461,12 @@ button { font: inherit; color: inherit; }
 .record p { margin: 0; }
 
 /* Footer */
-.colophon { border-top: 1px solid var(--rule); padding: var(--gap) 0; background: var(--paper-2); }
-.colophon p { color: var(--ink-2); max-width: 60ch; }
-.colophon .display-sm { color: var(--ink); font-size: clamp(1.6rem, 4vw, 2.25rem); }
+.colophon { border-top: 1px solid var(--rule); padding: clamp(24px, 4vw, 40px) 0;
+  background: color-mix(in srgb, var(--paper-2) 55%, transparent);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.colophon p { color: var(--ink-2); max-width: 70ch; margin: 0 0 8px; font-size: .9375rem; }
+.colophon p:last-child { margin-bottom: 0; }
+.colophon .display-sm { color: var(--ink); font-size: clamp(1.15rem, 2.4vw, 1.4rem); margin-bottom: 6px; }
 
 .loading, .error { color: var(--ink-2); font-style: italic; }
 
@@ -610,7 +615,8 @@ button { font: inherit; color: inherit; }
 .mf-body { display: grid; gap: 20px; }
 .mf-statement { padding: 22px; }
 .mf-statement h3 { margin: 4px 0 16px; }
-.mf-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+.mf-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.mf-grid:has(> .mf-pos:only-child) { grid-template-columns: minmax(0, 70ch); }
 .mf-pos { display: grid; gap: 8px; align-content: start; }
 .mf-pos-head { display: flex; gap: 8px; align-items: center; margin: 0; }
 .mf-pos .note { margin: 0; }
