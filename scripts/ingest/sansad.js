@@ -14,9 +14,11 @@ export function sansad(http, lokNo = 18) {
       }
       return all;
     },
+    // This endpoint ignores "page" and always returns page 1; "pageNo" is the
+    // parameter that moves through the results.
     async questionsForMember(mpsno, page = 1) {
       const r = await http.getJson(
-        `${BASE}/api_ls/question/qetFilteredQuestionsAns?loksabhaNo=${lokNo}&page=${page}&size=10&locale=en&memberCode=${mpsno}`,
+        `${BASE}/api_ls/question/qetFilteredQuestionsAns?loksabhaNo=${lokNo}&pageNo=${page}&size=10&locale=en&memberCode=${mpsno}`,
       );
       const block = Array.isArray(r) ? r[0] : r;
       return { total: block?.totalRecordSize ?? 0, items: block?.listOfQuestions ?? [] };

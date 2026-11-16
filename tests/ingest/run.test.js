@@ -136,3 +136,19 @@ test("many MPs failing in a row stops the run as a real outage", async () => {
   s.api.questionsForMember = async () => { throw new TypeError("fetch failed"); };
   await assert.rejects(ingest({ ...s, budgetMs: 60_000, log: () => {} }), /5 MPs in a row/);
 });
+
+test("a page identical to the previous one stops that MP instead of looping to the page cap", async () => {
+  const s = setup({ members: [rawMember(1), rawMember(2)], pages: { 2: [[rawQ(9)]] } });
+  const same = [rawQ(1), rawQ(2)];
+  const orig = s.api.questionsForMember;
+  s.api.questionsForMember = async (mpsno, page) => {
+    if (mpsno !== 1) return orig(mpsno, page);
+    s.fetched.push([1, page]);
+    return { total: 99, items: same };
+  };
+  const r = await ingest({ ...s, budgetMs: 60_000, log: () => {} });
+  assert.equal(s.fetched.filter(([m]) => m === 1).length, 2);
+  assert.deepEqual(r.stalledMps, [1]);
+  assert.ok(s.db.questions.has(id(9)), "the next MP is still loaded");
+  assert.ok(!JSON.parse(s.db.meta.backfilled).includes(1), "a stalled MP is not marked complete");
+});
