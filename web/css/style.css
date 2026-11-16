@@ -575,7 +575,9 @@ button { font: inherit; color: inherit; }
 .feed-a .feed-label { background: color-mix(in oklab, var(--green) 18%, var(--paper-2)); color: var(--green); }
 .feed-foot { margin: 10px 0 0; font-size: .875rem; color: var(--ink-2); }
 .feed-more { margin: 24px 0; text-align: center; }
-.empty { padding: 24px; border: 1px dashed var(--rule); border-radius: var(--radius); color: var(--ink-2); list-style: none; }
+.empty { padding: clamp(20px, 4vw, 28px); border: 1px solid var(--rule); border-radius: var(--radius); background: var(--card);
+  color: var(--ink-2); list-style: none; line-height: 1.65; max-width: 62ch; }
+.empty strong { display: block; color: var(--ink); font-size: 1.125rem; font-weight: 600; margin-bottom: 6px; }
 
 /* ---------- v2 · Issues, search, follows ---------- */
 .topic-grid { display: grid; gap: 12px; margin-top: 32px; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }

@@ -43,11 +43,7 @@
     </div>
   </footer>
 
-  <script type="module">
-    import { initManifestos } from "/js/manifestos.js";
-    import { fail } from "/js/util.js";
-    initManifestos().catch((e) => fail(document.getElementById("mf"), e));
-  </script>
+  <script type="module" src="/js/page-manifestos.js"></script>
   <script type="module" src="/js/site.js"></script>
 </body>
 </html>

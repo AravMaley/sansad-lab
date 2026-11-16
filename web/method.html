@@ -71,15 +71,7 @@
     </div>
   </footer>
 
-  <script type="module">
-    import { TOPICS } from "/js/topics-data.js";
-    import { el } from "/js/util.js";
-    document.getElementById("topic-rules").append(el("dl", {}, TOPICS.flatMap((t) => [
-      el("dt", {}, t.label),
-      el("dd", {}, "Ministries: ", t.ministries.map((m) => m.toLowerCase()).join("; "), ". Keywords: ",
-        el("code", {}, t.keywords.replace(/\\b|\(|\)/g, "").split("|").join(", "))),
-    ])));
-  </script>
+  <script type="module" src="/js/page-method.js"></script>
   <script type="module" src="/js/site.js"></script>
 </body>
 </html>
