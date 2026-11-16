@@ -533,7 +533,9 @@ button { font: inherit; color: inherit; }
 }
 .select:focus-visible, .input:focus-visible { outline: 2px solid var(--marigold); outline-offset: 2px; }
 .fm-row { display: grid; gap: 12px; margin-top: 28px; }
-@media (min-width: 720px) { .fm-row { grid-template-columns: 1fr 1fr auto; } }
+@media (min-width: 720px) { .fm-row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto; } }
+.fm-row .select { min-width: 0; width: 100%; }
+.fm-row .btn { white-space: nowrap; padding-inline: 22px; }
 .findmp .note { margin-top: 12px; }
 
 .reading .bar nav { gap: 16px; align-items: center; }
