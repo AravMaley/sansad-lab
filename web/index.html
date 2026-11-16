@@ -6,13 +6,7 @@
   <title>Sansad Lab</title>
   <meta name="description" content="Understand India's Parliament: follow your MP, follow the issues you care about, read the manifestos and the record.">
   <meta name="theme-color" content="#0e1a16">
-  <script>
-    // Old one-page links (/#yourmp, /#match …) now live on their own pages.
-    (function () {
-      var to = { yourmp: "/mps", issues: "/issues", match: "/bills#match", vote: "/bills#vote", street: "/timeline", ledger: "/timeline#ledger" }[location.hash.slice(1)];
-      if (to) location.replace(to);
-    })();
-  </script>
+  <script src="/js/legacy-links.js"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
