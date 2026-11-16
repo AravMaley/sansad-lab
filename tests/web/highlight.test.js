@@ -34,3 +34,20 @@ test("empty or symbol-only query, or empty text, returns the text unmarked", () 
 test("regex characters in a phrase query are treated literally", () => {
   assert.deepEqual(hits(splitMatches("a (b) c", "(b)", { mode: "phrase" })), ["(b)"]);
 });
+
+test("phrase mode tolerates extra spaces in the query", () => {
+  assert.deepEqual(hits(splitMatches("free power for farmers", "free  power", { mode: "phrase" })), ["free power"]);
+});
+
+test("prefix mode ignores one-letter words so 'a' doesn't light up everything", () => {
+  assert.deepEqual(hits(splitMatches("a bank and an army", "a bank")), ["bank"]);
+});
+
+test("prefix matches mid-sentence after punctuation and at the start", () => {
+  assert.deepEqual(hits(splitMatches("(NEET) and NEET-PG", "neet")), ["NEET", "NEET"]);
+});
+
+test("highlight pattern avoids lookbehind, which older Safari cannot parse", async () => {
+  const src = await import("node:fs").then((fs) => fs.readFileSync(new URL("../../web/js/highlight.js", import.meta.url), "utf8"));
+  assert.ok(!src.includes("(?<!") && !src.includes("(?<="));
+});

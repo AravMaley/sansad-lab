@@ -27,9 +27,15 @@ export function mountDots({ parties, owners }) {
 
   function resize() {
     dpr = Math.min(2, window.devicePixelRatio || 1);
+    const prevW = W, prevH = H;
     W = innerWidth; H = innerHeight;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
-    field = fieldLayout(n, W, H + 40);
+    // Size the canvas in px to match what we draw: 100vh on phones is taller
+    // than innerHeight while the browser toolbar shows, which stretched dots.
+    canvas.style.width = W + "px"; canvas.style.height = H + "px";
+    // A phone toolbar showing or hiding only nudges the height; keep the
+    // background field still instead of sliding every dot.
+    if (!field.length || W !== prevW || Math.abs(H - prevH) > 120) field = fieldLayout(n, W, H + 160);
     if (crowdEl) {
       const r = crowdEl.getBoundingClientRect();
       const out = crowdLayout(parties, owners, { x: 0, y: 0, w: r.width, h: r.height });
@@ -119,7 +125,7 @@ export function mountDots({ parties, owners }) {
   document.addEventListener("visibilitychange", () => wake());
   if (matchMedia("(hover: hover)").matches) {
     addEventListener("pointermove", (e) => { pointer = { x: e.clientX, y: e.clientY }; wake(); }, { passive: true });
-    document.addEventListener("pointerleave", () => { pointer = null; wake(); });
+    document.documentElement.addEventListener("pointerleave", () => { pointer = null; wake(); });
   }
   resize();
   // Start scattered across the screen, so the home page opens with the

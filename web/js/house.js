@@ -10,9 +10,10 @@ export async function initHouse() {
   const chips = [];
   let active = null;
   let dots = null;
+  let idleText = "Each dot is one seat. Point at one, or pick a party.";
 
   function describe(idx) {
-    if (idx === null) { caption.textContent = "Each dot is one seat. Point at one, or pick a party."; return; }
+    if (idx === null) { caption.textContent = idleText; return; }
     const p = parties[idx];
     const alliance = data.alliances.find((a) => a.id === p.alliance).name;
     caption.replaceChildren(
@@ -32,7 +33,12 @@ export async function initHouse() {
   describe(null);
 
   dotsReady.then((d) => {
-    if (!d) { crowd.classList.add("no-dots"); return; }
+    if (!d) {
+      crowd.classList.add("no-dots");
+      idleText = "Pick a party to see its seats.";
+      describe(active);
+      return;
+    }
     dots = d;
     // Label each alliance under its group of dots.
     const labels = el("div", { class: "crowd-labels", "aria-hidden": "true" });

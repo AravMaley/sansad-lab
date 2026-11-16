@@ -647,7 +647,7 @@ mark.hit { background: color-mix(in srgb, var(--marigold, #ffcf6e) 55%, transpar
 /* ---------- v3 · The dot field ----------
    One fixed canvas behind every page: 543 dots, one per seat. Content sits
    above it; cards keep their own background so text never sits on dots. */
-.dots { position: fixed; inset: 0; width: 100vw; height: 100vh; z-index: 0; pointer-events: none; }
+.dots { position: fixed; top: 0; left: 0; z-index: 0; pointer-events: none; }
 main, .colophon { position: relative; z-index: 1; }
 .bar { z-index: 5; }
 

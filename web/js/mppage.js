@@ -16,6 +16,7 @@ async function lightDots(member) {
   const [dots, { parties }] = await Promise.all([dotsReady, loadParties()]);
   if (!dots) return;
   const idx = partyIndex(parties, member.party_short);
+  if (idx === null) return; // party not in the seat list: don't light a stranger's dot
   const mine = dots.owners.map((o, i) => (o === idx ? i : -1)).filter((i) => i >= 0);
   const spot = mine.length ? mine[member.mpsno % mine.length] : member.mpsno % dots.owners.length;
   dots.highlight((i) => (i === spot ? 2 : dots.owners[i] === idx ? 1 : 0));
