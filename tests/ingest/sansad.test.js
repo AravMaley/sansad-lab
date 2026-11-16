@@ -84,7 +84,10 @@ test("questionsForMember uses memberCode and returns total and items", async () 
   const api = sansad(createHttp({ fetchImpl: f.impl, delayMs: 1, userAgent: UA }));
   const r = await api.questionsForMember(5814, 2);
   assert.match(f.calls[0].url, /memberCode=5814/);
-  assert.match(f.calls[0].url, /page=2/);
+  // sansad.in ignores "page" here and always returns page 1; "pageNo" is the
+  // parameter that actually moves through the results.
+  assert.match(f.calls[0].url, /[?&]pageNo=2(&|$)/);
+  assert.doesNotMatch(f.calls[0].url, /[?&]page=/);
   assert.equal(r.total, 4);
   assert.equal(r.items.length, 4);
 });

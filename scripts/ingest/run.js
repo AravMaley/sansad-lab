@@ -30,9 +30,11 @@ export async function ingest({ api, store, http, now = Date.now, budgetMs, only,
   const backfilled = new Set(JSON.parse((await store.getMeta("backfilled")) ?? "[]"));
 
   out.failedMps = [];
+  out.stalledMps = [];
   let failuresInARow = 0;
   outer: for (const m of targets) {
    try {
+    let previousPage = null;
     for (let page = 1; page <= MAX_PAGES_PER_MP; page++) {
       if (now() - start > budgetMs) {
         out.stoppedEarly = true;
@@ -49,6 +51,15 @@ export async function ingest({ api, store, http, now = Date.now, budgetMs, only,
 
       const qs = items.map(normaliseQuestion);
       const ids = qs.map((q) => q.id);
+      // The same page twice means paging is not advancing. Stop this MP instead
+      // of looping to the page cap, and leave it unmarked so it is retried.
+      const pageKey = ids.join("|");
+      if (pageKey === previousPage) {
+        out.stalledMps.push(m.mpsno);
+        log(`MP ${m.mpsno} stalled: page ${page} repeats page ${page - 1}`);
+        break;
+      }
+      previousPage = pageKey;
       // "Linked" (to this MP) decides when we have caught up; "known" (stored
       // at all, possibly via a co-signer) only saves re-downloading documents.
       const linkedBefore = await store.linkedQuestionIds(ids, m.mpsno);
