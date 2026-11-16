@@ -44,7 +44,7 @@
       "who": "Jayaprakash Narayan, with Morarji Desai, Charan Singh, Vajpayee, Advani, George Fernandes and the socialist and Jana Sangh networks. After June 1975 the resistance was mostly underground — the mass expression came at the ballot box.",
       "demanded": "First the resignation of corrupt state governments; after June 1975, an end to the Emergency, release of detainees, press freedom and fresh elections.",
       "verdict": "won",
-      "changed": "The government fell. In March 1977 the Janata alliance won 298 seats and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and the right to move the courts to enforce Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
+      "changed": "The government fell. In March 1977 the Janata Party, fighting on the Bharatiya Lok Dal symbol, won 295 seats (298 with its allies) and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and the right to move the courts to enforce Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
       "parliament": "Maximal. Parliament's own term was extended; the 38th, 39th and 42nd Amendments were passed with the opposition in jail; the 44th reversed them.",
       "toll": "The Shah Commission counted 110,806 detentions; Amnesty International estimated 140,000. Some 8.3 million sterilisations were performed in 1976–77, most of them coerced. About 150,000 structures were demolished in Delhi alone.",
       "detail": "Power to the Delhi newspaper offices was cut within three hours of the proclamation. The Times of India responded with a mock obituary: “Democracy, beloved husband of Truth, loving father of Liberty… expired on June 26.”",
@@ -59,6 +59,10 @@
       },
       "imageWhy": "No free photograph of the Emergency itself — the censorship, the detentions, Turkman Gate — exists on Wikimedia Commons.",
       "sources": [
+        {
+          "label": "India Votes: Lok Sabha election, 1977",
+          "url": "https://www.indiavotes.com/lok-sabha/1977/"
+        },
         {
           "label": "Shah Commission of Inquiry, final report",
           "url": "https://archive.org/details/ShahCommissionOfInquiry3rdFinalReport"
@@ -171,8 +175,12 @@
           "url": "https://indiankanoon.org/doc/1363234/"
         },
         {
-          "label": "Frontline: the Mandal agitation",
-          "url": "https://www.pressreader.com/india/frontline/20220826/282162179995065"
+          "label": "Frontline: India at 75, the 1990 anti-Mandal agitation",
+          "url": "https://frontline.thehindu.com/politics/india-at-75-epochal-moments-1990-anti-mandal-agitation-and-identity-politics/article65730863.ece"
+        },
+        {
+          "label": "India Today, 31 October 1990: Mandal report and the youth",
+          "url": "https://www.indiatoday.in/magazine/special-report/story/19901031-mandal-report-touches-a-peculiar-chord-among-youth-813187-1990-10-30"
         },
         {
           "label": "ThePrint: 30 years since the Mandal recommendations",
@@ -309,7 +317,7 @@
       "verdict": "lost",
       "changed": "Nothing in the law changed. The Act was never repealed, amended or stayed. Its rules were notified in March 2024 and the Supreme Court refused to stay those too; about 237 petitions, the oldest from December 2019, were still pending in late 2026. What the movement did achieve was negative: no nationwide register has been attempted, and six state assemblies passed resolutions against the Act — symbolic, since citizenship is a Union subject. Kerala became the first state to sue the Union directly under Article 131.",
       "parliament": "The protest was about an Act of Parliament, and both Houses had divided on it — 311 to 80 in the Lok Sabha, 125 to 105 in the Rajya Sabha. You can vote on this one yourself in the section above.",
-      "toll": "At least 27 people had died by 27 December 2019, the great majority in Uttar Pradesh; no independent final count exists. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
+      "toll": "At least 27 people had died by 27 December 2019, the great majority in Uttar Pradesh; The Hindu's later count is at least 31 deaths related to the violence. No official final count exists. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
       "detail": "Shaheen Bagh lasted 101 days and did not end in a court ruling or a repeal. Police cleared it at 7:30 on the morning of the first day of the COVID lockdown and detained nine people, six of them women. In October 2020 the Supreme Court held that occupying public space indefinitely is not permissible — the protest's clearest legal legacy, and it cuts against protesters.",
       "image": {
         "src": "img/shaheenbagh.jpg",
@@ -328,6 +336,10 @@
         {
           "label": "Supreme Court Observer: the CAA case",
           "url": "https://www.scobserver.in/cases/constitutionality-of-the-citizenship-amendment-act-2019-caa/"
+        },
+        {
+          "label": "The Hindu: how many people died during anti-CAA protests",
+          "url": "https://www.thehindu.com/data/data-how-many-people-died-during-anti-caa-protests/article30494183.ece"
         },
         {
           "label": "Global Voices: death toll reaches 27",
@@ -380,7 +392,7 @@
       "toll": "No protest deaths have been reported. On 10 October 2026 Delhi deployed over 40,000 personnel, shut 43 Metro stations and cut mobile internet in the centre of the city. Detention figures for that day range from about 2,000 (Reuters, citing the Home Ministry) to over 5,000 (The Hindu); Amnesty International puts the nationwide figure far higher. At least 30 journalists were detained, and three women journalists alleged sexual harassment by police. The government rejected a UN statement on the detentions as interference in India's internal affairs.",
       "detail": "Blocked from reaching the Election Commission in late October, protesters sat down in the road near Bangla Sahib Gurdwara and convened what they called a People's Parliament. Over a hundred were detained.",
       "balance": "The Election Commission says the revision removes duplicate, deceased and ineligible entries, that deletion from a draft roll is not final, and that appeal routes exist. It says all three revision orders were approved unanimously by all three Commissioners. The BJP has made its own counter-allegations of roll manipulation in opposition-held seats.",
-      "caution": "The figure of about 130 million deletions now circulating internationally traces to a single newspaper report of October 2026. The verifiable components are smaller and separately sourced: 47 lakh net in Bihar, 61.8 lakh in West Bengal, about 2.04 crore in Uttar Pradesh.",
+      "caution": "Election Commission data reported by The Hindu and Deccan Herald put deletions so far, across the country, at about 13.3 crore: roughly 9.5 crore (71%) absent, shifted or other, 2.7 crore deaths and 1.01 crore multiple entries. State figures include 47 lakh net in Bihar, 61.8 lakh in West Bengal and about 2.04 crore in Uttar Pradesh.",
       "image": {
         "src": "img/cjp.jpg",
         "alt": "Students at Jantar Mantar, Delhi, on 20 July 2026, before the march on Parliament",
@@ -399,6 +411,14 @@
         {
           "label": "Supreme Court judgment summary",
           "url": "https://www.scobserver.in/reports/challenge-to-the-ecis-revision-of-electoral-rolls-in-bihar-judgement-summary/"
+        },
+        {
+          "label": "The Hindu: of those deleted in SIR so far, over 71% absent, shifted or others",
+          "url": "https://www.thehindu.com/news/national/of-those-deleted-in-sir-so-far-over-71-in-absent-shifted-or-others-category/article71524969.ece"
+        },
+        {
+          "label": "Deccan Herald: 13.3 crore names wiped out of draft voter lists so far",
+          "url": "https://www.deccanherald.com/india/sir-133-crore-names-wiped-out-of-draft-voter-lists-so-far-triggering-opposition-backlash-4164836"
         },
         {
           "label": "Human Rights Watch, October 2026",
