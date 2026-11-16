@@ -50,6 +50,12 @@ export async function initMatcher() {
     render();
   }
 
+  function reset() {
+    answers = {}; store.set("answers", answers); i = 0; render();
+    root.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+  const resetLink = () => el("button", { class: "btn btn-quiet reset-link", type: "button", onclick: reset }, "↺ Reset my answers");
+
   function renderQuestion() {
     const st = data.statements[i];
     const picked = answers[st.id];
@@ -68,6 +74,7 @@ export async function initMatcher() {
         ),
         el("div", { class: "q-foot" },
           el("button", { class: "btn btn-quiet", type: "button", disabled: i === 0, onclick: () => { i--; render(); } }, "← Back"),
+          Object.keys(answers).length ? resetLink() : null,
           el("span", { class: "kbd-hint" }, "Keys 1 · 2 · 3")
         )
       )
@@ -110,6 +117,7 @@ export async function initMatcher() {
     const youTag = (v) => (v === 1 ? "You agree" : v === -1 ? "You disagree" : "You’re not sure");
 
     root.replaceChildren(
+      el("p", { class: "results-top" }, "Your matches, based on your ", String(answered), " answers. ", resetLink()),
       el("div", { class: "score-list" },
         scores.map((s, idx) => el("div", { class: "score-row" + (idx === 0 ? " is-top" : "") },
           el("div", { class: "score-head" },
@@ -162,7 +170,7 @@ export async function initMatcher() {
           el("p", { class: "note" }, "A “what they actually did” panel appears where a manifesto is silent. It records votes, Parliament answers and state schemes, and is never scored."))
       ),
 
-      el("button", { class: "btn", type: "button", onclick: () => { answers = {}; store.set("answers", answers); i = 0; render(); } }, "Start again")
+      el("button", { class: "btn", type: "button", onclick: reset }, "↺ Reset my answers and start again")
     );
   }
 

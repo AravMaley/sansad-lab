@@ -1,105 +1,66 @@
-import { loadJSON, el, svg, sourceLink } from "./util.js";
-
-const ALLIANCE_VAR = { NDA: "--nda", INDIA: "--india", OTH: "--oth" };
-const TINTS = [100, 72, 52, 86, 62]; // cycled so neighbouring parties differ
-
-// Parliament-chart layout: concentric rows, seats per row proportional to radius,
-// then every seat sorted left-to-right by angle so parties form wedges.
-function layoutSeats(total, rows = 12, inner = 0.4) {
-  const radii = Array.from({ length: rows }, (_, i) => inner + ((1 - inner) * i) / (rows - 1));
-  const sumR = radii.reduce((a, b) => a + b, 0);
-  const counts = radii.map((r) => Math.round((total * r) / sumR));
-  counts[rows - 1] += total - counts.reduce((a, b) => a + b, 0);
-
-  const seats = [];
-  radii.forEach((r, i) => {
-    const n = counts[i];
-    for (let j = 0; j < n; j++) {
-      const angle = Math.PI * (1 - j / (n - 1)); // π (left) → 0 (right)
-      seats.push({ angle, r });
-    }
-  });
-  seats.sort((a, b) => b.angle - a.angle || a.r - b.r);
-  const dot = Math.min((1 - inner) / (rows - 1), (Math.PI * sumR) / total) * 0.4;
-  return { seats, dot };
-}
-
-function colorFor(party, rankInAlliance) {
-  const pct = TINTS[rankInAlliance % TINTS.length];
-  const base = `var(${ALLIANCE_VAR[party.alliance]})`;
-  return pct === 100 ? base : `color-mix(in oklab, ${base} ${pct}%, var(--paper))`;
-}
+// Home page: the crowd of 543 dots, the alliance bar, party chips and facts.
+import { el, sourceLink } from "./util.js";
+import { loadParties, ALLIANCE_VAR } from "./parties.js";
+import { dotsReady } from "./site.js";
 
 export async function initHouse() {
-  const data = await loadJSON("data/lok-sabha-18.json");
-  const chart = document.getElementById("hemicycle");
+  const { data, parties } = await loadParties();
+  const crowd = document.getElementById("crowd");
   const caption = document.getElementById("seat-caption");
-
-  // Colour each party by alliance, largest party in full colour.
-  const ranks = {};
-  ["NDA", "INDIA", "OTH"].forEach((a) => {
-    data.parties.filter((p) => p.alliance === a)
-      .sort((x, y) => y.seats - x.seats)
-      .forEach((p, i) => { ranks[p.short] = i; });
-  });
-  const parties = data.parties.map((p, i) => ({ ...p, idx: i, color: colorFor(p, ranks[p.short]) }));
-
-  // Draw
-  const S = 100;
-  const { seats, dot } = layoutSeats(data.total);
-  const root = svg("svg", { viewBox: `${-S - 4} ${-S - 4} ${2 * S + 8} ${S + 8}`, "aria-hidden": "true" });
-  const circlesByParty = parties.map(() => []);
-  let cursor = 0;
-  parties.forEach((p) => {
-    for (let k = 0; k < p.seats; k++, cursor++) {
-      const { angle, r } = seats[cursor];
-      const c = svg("circle", {
-        cx: (Math.cos(angle) * r * S).toFixed(2),
-        cy: (-Math.sin(angle) * r * S).toFixed(2),
-        r: (dot * S).toFixed(2),
-        style: `fill:${p.color}; animation-delay:${Math.round((1 - angle / Math.PI) * 600)}ms`,
-      });
-      c.dataset.p = p.idx;
-      circlesByParty[p.idx].push(c);
-      root.append(c);
-    }
-  });
-  const total = svg("text", { x: 0, y: -10, "text-anchor": "middle", class: "total", "font-size": 22 });
-  total.textContent = data.total;
-  const sub = svg("text", { x: 0, y: 2, "text-anchor": "middle", class: "total-sub", "font-size": 4.2 });
-  sub.textContent = "SEATS · MAJORITY " + data.majority;
-  root.append(total, sub);
-  chart.append(root);
-  chart.classList.add("animate");
-
-  // Highlight
-  let active = null;
   const chips = [];
-  function select(idx) {
-    if (active !== null) circlesByParty[active].forEach((c) => c.classList.remove("on"));
-    active = idx === active ? null : idx;
-    chips.forEach((ch) => ch.setAttribute("aria-pressed", String(Number(ch.dataset.p) === active)));
-    if (active === null) {
-      delete chart.dataset.active;
-      caption.innerHTML = "&nbsp;";
-      return;
-    }
-    const p = parties[active];
-    circlesByParty[active].forEach((c) => c.classList.add("on"));
-    chart.dataset.active = "";
+  let active = null;
+  let dots = null;
+  let idleText = "Each dot is one seat. Point at one, or pick a party.";
+
+  function describe(idx) {
+    if (idx === null) { caption.textContent = idleText; return; }
+    const p = parties[idx];
     const alliance = data.alliances.find((a) => a.id === p.alliance).name;
     caption.replaceChildren(
+      el("span", { class: "sw", style: `background:${p.hex}` }),
       el("strong", {}, p.name), ` · ${p.seats} seat${p.seats > 1 ? "s" : ""} · ${alliance}`,
-      p.vote_pct !== null ? ` · ${p.vote_pct}% of votes` : ""
-    );
+      p.vote_pct !== null ? ` · ${p.vote_pct}% of votes` : "");
   }
-  root.addEventListener("click", (e) => {
-    const idx = e.target.dataset?.p;
-    if (idx !== undefined) select(Number(idx));
-  });
-  root.addEventListener("mouseover", (e) => {
-    const idx = e.target.dataset?.p;
-    if (idx !== undefined && Number(idx) !== active && matchMedia("(hover: hover)").matches) select(Number(idx));
+  function show(idx) {
+    dots?.highlight(idx === null ? null : (i) => (dots.owners[i] === idx ? 1 : 0));
+    describe(idx);
+  }
+  function select(idx) {
+    active = idx === active ? null : idx;
+    chips.forEach((ch) => ch.setAttribute("aria-pressed", String(Number(ch.dataset.p) === active)));
+    show(active);
+  }
+  describe(null);
+
+  dotsReady.then((d) => {
+    if (!d) {
+      crowd.classList.add("no-dots");
+      idleText = "Pick a party to see its seats.";
+      describe(active);
+      return;
+    }
+    dots = d;
+    // Label each alliance under its group of dots.
+    const labels = el("div", { class: "crowd-labels", "aria-hidden": "true" });
+    crowd.append(labels);
+    dots.crowd(crowd, (groups) => labels.replaceChildren(...groups.map((g) =>
+      el("span", { class: "crowd-label", style: `left:${g.cx}px; top:${g.cy + g.r + 10}px` },
+        el("strong", {}, g.seats), " ", data.alliances.find((a) => a.id === g.alliance)?.name ?? g.alliance))));
+    let hovered = null;
+    crowd.addEventListener("pointermove", (e) => {
+      if (e.pointerType !== "mouse") return;
+      const i = dots.pick(e.clientX, e.clientY);
+      const idx = i === null ? null : dots.owners[i];
+      crowd.style.cursor = idx === null ? "" : "pointer";
+      if (idx === hovered) return;
+      hovered = idx;
+      show(idx ?? active);
+    });
+    crowd.addEventListener("pointerleave", () => { hovered = null; show(active); });
+    crowd.addEventListener("click", (e) => {
+      const i = dots.pick(e.clientX, e.clientY);
+      select(i === null ? null : dots.owners[i]);
+    });
   });
 
   // Alliance bar with the majority line
@@ -113,17 +74,17 @@ export async function initHouse() {
     el("div", { class: "ab-labels" },
       el("div", {}, el("strong", {}, byId.INDIA.seats), "INDIA bloc"),
       el("div", { class: "mid" }, el("strong", {}, byId.OTH.seats), "Unaligned"),
-      el("div", { class: "right" }, el("strong", {}, byId.NDA.seats), "NDA · majority line at 272")
+      el("div", { class: "right" }, el("strong", {}, byId.NDA.seats), `NDA · majority line at ${data.majority}`)
     )
   );
 
-  // Legend: the biggest parties first, the rest behind a toggle.
+  // Party chips: the biggest parties first, the rest behind a toggle.
   const legend = document.getElementById("party-legend");
   const sorted = [...parties].sort((a, b) => b.seats - a.seats);
   const SHOWN = 10;
   sorted.forEach((p, i) => {
     const chip = el("button", { class: "chip", type: "button", "aria-pressed": "false", hidden: i >= SHOWN, onclick: () => select(p.idx) },
-      el("span", { class: "sw", style: `background:${p.color}` }), p.short, el("span", { class: "n" }, p.seats));
+      el("span", { class: "sw", style: `background:${p.hex}` }), p.short, el("span", { class: "n" }, p.seats));
     chip.dataset.p = p.idx;
     chips.push(chip);
     legend.append(chip);
@@ -137,6 +98,6 @@ export async function initHouse() {
     ...data.facts.map((f) => el("div", {}, el("dt", {}, f.value), el("dd", {}, f.label, " ", sourceLink(f.source))))
   );
   document.getElementById("house-since").append(
-    data.since, " ", sourceLink(data.since_source), " · Seat data: ", sourceLink(data.source, "ECI via Wikipedia")
+    data.since, " ", sourceLink(data.since_source), " · Seat data: ", sourceLink(data.source, "Election Commission of India")
   );
 }

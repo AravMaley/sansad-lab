@@ -14,7 +14,7 @@ export function el(tag, attrs = {}, ...children) {
     else if (k.startsWith("on")) node.addEventListener(k.slice(2), v);
     else node.setAttribute(k, v === true ? "" : v);
   }
-  node.append(...children.flat().filter((c) => c !== null && c !== undefined && c !== false));
+  node.append(...children.flat(Infinity).filter((c) => c !== null && c !== undefined && c !== false));
   return node;
 }
 
@@ -26,7 +26,10 @@ export function svg(tag, attrs = {}) {
 }
 
 const dateFmt = new Intl.DateTimeFormat("en-IN", { day: "numeric", month: "short", year: "numeric" });
-export const fmtDate = (iso) => dateFmt.format(new Date(iso + "T00:00:00"));
+export const fmtDate = (iso) => {
+  const d = iso ? new Date(String(iso).slice(0, 10) + "T00:00:00") : null;
+  return d && !Number.isNaN(d.getTime()) ? dateFmt.format(d) : "";
+};
 
 export function sourceLink(url, label = "Source") {
   return el("a", { class: "src", href: url, target: "_blank", rel: "noopener" }, label + " ↗");

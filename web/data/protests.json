@@ -25,8 +25,8 @@
       "imageWhy": "Authentic 1970s Chipko photographs are held by news agencies. The freely licensed images search results return are mostly modern re-enactments, and captioning one as 1974 would be false.",
       "sources": [
         {
-          "label": "Chipko movement",
-          "url": "https://en.wikipedia.org/wiki/Chipko_movement"
+          "label": "The Tribune: Gaura Devi and the Chipko–Reni andolan",
+          "url": "https://www.tribuneindia.com/news/in-depth/gaura-devi-and-the-chipko-reni-andolan"
         },
         {
           "label": "Down To Earth: an unfinished mission",
@@ -44,7 +44,7 @@
       "who": "Jayaprakash Narayan, with Morarji Desai, Charan Singh, Vajpayee, Advani, George Fernandes and the socialist and Jana Sangh networks. After June 1975 the resistance was mostly underground — the mass expression came at the ballot box.",
       "demanded": "First the resignation of corrupt state governments; after June 1975, an end to the Emergency, release of detainees, press freedom and fresh elections.",
       "verdict": "won",
-      "changed": "The government fell. In March 1977 the Janata alliance won 298 seats and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
+      "changed": "The government fell. In March 1977 the Janata Party, fighting on the Bharatiya Lok Dal symbol, won 295 seats (298 with its allies) and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and the right to move the courts to enforce Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
       "parliament": "Maximal. Parliament's own term was extended; the 38th, 39th and 42nd Amendments were passed with the opposition in jail; the 44th reversed them.",
       "toll": "The Shah Commission counted 110,806 detentions; Amnesty International estimated 140,000. Some 8.3 million sterilisations were performed in 1976–77, most of them coerced. About 150,000 structures were demolished in Delhi alone.",
       "detail": "Power to the Delhi newspaper offices was cut within three hours of the proclamation. The Times of India responded with a mock obituary: “Democracy, beloved husband of Truth, loving father of Liberty… expired on June 26.”",
@@ -60,12 +60,20 @@
       "imageWhy": "No free photograph of the Emergency itself — the censorship, the detentions, Turkman Gate — exists on Wikimedia Commons.",
       "sources": [
         {
-          "label": "The Emergency (India)",
-          "url": "https://en.wikipedia.org/wiki/The_Emergency_(India)"
+          "label": "India Votes: Lok Sabha election, 1977",
+          "url": "https://www.indiavotes.com/lok-sabha/1977/"
         },
         {
-          "label": "Shah Commission",
-          "url": "https://en.wikipedia.org/wiki/Shah_Commission"
+          "label": "Shah Commission of Inquiry, final report",
+          "url": "https://archive.org/details/ShahCommissionOfInquiry3rdFinalReport"
+        },
+        {
+          "label": "Constitution (Forty-fourth Amendment) Act, 1978 (text)",
+          "url": "https://www.constitution.org/1-Constitution/cons/india/tamnd44.htm"
+        },
+        {
+          "label": "Supreme Court Observer: preventive detention and the Emergency",
+          "url": "https://www.scobserver.in/journal/the-constitutional-sanction-for-preventive-detention-reeks-of-a-fear-of-freedom/"
         }
       ]
     },
@@ -94,8 +102,8 @@
       },
       "sources": [
         {
-          "label": "Assam movement",
-          "url": "https://en.wikipedia.org/wiki/Assam_movement"
+          "label": "Assam Accord, Government of Assam",
+          "url": "https://assamaccord.assam.gov.in/about-us/history"
         },
         {
           "label": "Supreme Court upholds Section 6A",
@@ -105,7 +113,7 @@
     },
     {
       "id": "narmada",
-      "name": "Narmada Bachao Andolan",
+      "name": "Supreme Court judgment, 18 October 2000",
       "years": "1985–",
       "sortDate": "1985-01-01",
       "place": "The Narmada valley across Madhya Pradesh, Maharashtra and Gujarat",
@@ -121,11 +129,15 @@
       "sources": [
         {
           "label": "Narmada Bachao Andolan",
-          "url": "https://en.wikipedia.org/wiki/Narmada_Bachao_Andolan"
+          "url": "https://indiankanoon.org/doc/1938608/"
         },
         {
           "label": "World Bank project timeline",
           "url": "https://timeline.worldbank.org/en/timeline/eventdetail/1911"
+        },
+        {
+          "label": "Christian Science Monitor: Patkar refuses to leave as waters rise (1999)",
+          "url": "https://csmonitor.com/1999/0805/p1s2.html"
         }
       ]
     },
@@ -141,7 +153,7 @@
       "verdict": "lost",
       "changed": "The quota stands and has been in force since 1993. The Supreme Court upheld it 6:3 in Indra Sawhney in November 1992, adding three limits that still shape Indian reservation law: a 50% ceiling, exclusion of the “creamy layer”, and no reservation in promotions. The government did fall on 7 November 1990, but the immediate cause was the BJP withdrawing support over the Rath Yatra, not Mandal alone.",
       "parliament": "The best case on this timeline of Parliament answering back to a court. Over the following decade the 77th, 81st, 82nd and 85th Amendments each undid a specific holding of Indra Sawhney, and in 2019 the 103rd Amendment breached the 50% ceiling with a 10% EWS quota.",
-      "toll": "Roughly 160 to 200 self-immolation attempts and about 60 or more deaths; no official count was ever published. Many of the dead were teenagers — the named victims include a 15-year-old in Haryana and a 15-year-old in Chandigarh.",
+      "toll": "Nearly 200 self-immolation attempts and more than 60 deaths by most accounts (some put the toll higher); no official count was ever published.",
       "detail": "Rajiv Goswami, the student whose burning body became the image of the agitation, survived with about 70% burns and was later elected president of the Delhi University students' union. He died in 2004 of complications from those burns, fourteen years after the fire.",
       "image": {
         "src": "img/mandal.jpg",
@@ -155,12 +167,24 @@
       "imageWhy": "There is no free photograph of the 1990 protests on Wikimedia Commons. The famous news images are not freely licensed, and at least one 1990 protest photograph circulates online with a false caption.",
       "sources": [
         {
-          "label": "Mandal Commission protests of 1990",
-          "url": "https://en.wikipedia.org/wiki/Mandal_Commission_protests_of_1990"
+          "label": "Report of the Backward Classes Commission (1980)",
+          "url": "https://ruralindiaonline.org/en/library/resource/report-of-the-backward-classes-commission-volumes-i-and-ii/"
         },
         {
-          "label": "Indra Sawhney v. Union of India",
-          "url": "https://en.wikipedia.org/wiki/Indra_Sawhney_and_Others_v._Union_of_India"
+          "label": "Indra Sawhney v. Union of India (1992)",
+          "url": "https://indiankanoon.org/doc/1363234/"
+        },
+        {
+          "label": "Frontline: India at 75, the 1990 anti-Mandal agitation",
+          "url": "https://frontline.thehindu.com/politics/india-at-75-epochal-moments-1990-anti-mandal-agitation-and-identity-politics/article65730863.ece"
+        },
+        {
+          "label": "India Today, 31 October 1990: Mandal report and the youth",
+          "url": "https://www.indiatoday.in/magazine/special-report/story/19901031-mandal-report-touches-a-peculiar-chord-among-youth-813187-1990-10-30"
+        },
+        {
+          "label": "ThePrint: 30 years since the Mandal recommendations",
+          "url": "https://theprint.in/theprint-essential/30-years-since-mandal-commission-recommendations-how-it-began-and-its-impact-today/477260"
         }
       ]
     },
@@ -181,8 +205,8 @@
       "imageWhy": "No freely licensed photograph of the Beawar dharna was found.",
       "sources": [
         {
-          "label": "Mazdoor Kisan Shakti Sangathan",
-          "url": "https://en.wikipedia.org/wiki/Mazdoor_Kisan_Shakti_Sangathan"
+          "label": "MKSS: about us",
+          "url": "https://mkssindia.org/pages/aboutus.html"
         },
         {
           "label": "The Week: the RTI movement",
@@ -208,8 +232,8 @@
       "imageWhy": "No freely licensed photograph of the Million March or the Osmania University protests was confirmed.",
       "sources": [
         {
-          "label": "Telangana movement",
-          "url": "https://en.wikipedia.org/wiki/Telangana_movement"
+          "label": "Andhra Pradesh Reorganisation Act, 2014 (India Code)",
+          "url": "https://www.indiacode.nic.in/handle/123456789/2123"
         }
       ]
     },
@@ -238,12 +262,12 @@
       },
       "sources": [
         {
-          "label": "2011 Indian anti-corruption movement",
-          "url": "https://en.wikipedia.org/wiki/2011_Indian_anti-corruption_movement"
+          "label": "PRS: the Lokpal Act",
+          "url": "https://prsindia.org/articles-by-prs-team/lokpal-act"
         },
         {
-          "label": "Lokpal and Lokayuktas Act, 2013",
-          "url": "https://en.wikipedia.org/wiki/Lokpal_and_Lokayuktas_Act,_2013"
+          "label": "Lokpal and Lokayuktas Act, 2013 (India Code)",
+          "url": "https://indiacode.nic.in/handle/123456789/2122"
         }
       ]
     },
@@ -272,8 +296,8 @@
       },
       "sources": [
         {
-          "label": "2012 Delhi gang rape and murder",
-          "url": "https://en.wikipedia.org/wiki/2012_Delhi_gang_rape_and_murder"
+          "label": "PRS: Justice Verma Committee report summary",
+          "url": "https://prsindia.org/policy/report-summaries/justice-verma-committee-report-summary"
         },
         {
           "label": "Criminal Law (Amendment) Act, 2013",
@@ -293,7 +317,7 @@
       "verdict": "lost",
       "changed": "Nothing in the law changed. The Act was never repealed, amended or stayed. Its rules were notified in March 2024 and the Supreme Court refused to stay those too; about 237 petitions, the oldest from December 2019, were still pending in late 2026. What the movement did achieve was negative: no nationwide register has been attempted, and six state assemblies passed resolutions against the Act — symbolic, since citizenship is a Union subject. Kerala became the first state to sue the Union directly under Article 131.",
       "parliament": "The protest was about an Act of Parliament, and both Houses had divided on it — 311 to 80 in the Lok Sabha, 125 to 105 in the Rajya Sabha. You can vote on this one yourself in the section above.",
-      "toll": "At least 27, and by some counts more than 60, people died, the great majority in Uttar Pradesh. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
+      "toll": "At least 27 people had died by 27 December 2019, the great majority in Uttar Pradesh; The Hindu's later count is at least 31 deaths related to the violence. No official final count exists. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
       "detail": "Shaheen Bagh lasted 101 days and did not end in a court ruling or a repeal. Police cleared it at 7:30 on the morning of the first day of the COVID lockdown and detained nine people, six of them women. In October 2020 the Supreme Court held that occupying public space indefinitely is not permissible — the protest's clearest legal legacy, and it cuts against protesters.",
       "image": {
         "src": "img/shaheenbagh.jpg",
@@ -306,12 +330,24 @@
       },
       "sources": [
         {
-          "label": "Citizenship Amendment Act protests",
-          "url": "https://en.wikipedia.org/wiki/Citizenship_Amendment_Act_protests"
+          "label": "PRS: Citizenship (Amendment) Bill, 2019",
+          "url": "https://prsindia.org/billtrack/the-citizenship-amendment-bill-2019"
         },
         {
           "label": "Supreme Court Observer: the CAA case",
           "url": "https://www.scobserver.in/cases/constitutionality-of-the-citizenship-amendment-act-2019-caa/"
+        },
+        {
+          "label": "The Hindu: how many people died during anti-CAA protests",
+          "url": "https://www.thehindu.com/data/data-how-many-people-died-during-anti-caa-protests/article30494183.ece"
+        },
+        {
+          "label": "Global Voices: death toll reaches 27",
+          "url": "https://globalvoices.org/2019/12/28/death-toll-reaches-27-in-indias-citizenship-protests/"
+        },
+        {
+          "label": "Business Standard: Kerala first state to move the Supreme Court",
+          "url": "https://business-standard.com/amp/article/current-affairs/kerala-govt-moves-supreme-court-challenging-citizenship-amendment-act-120011400355_1.html"
         }
       ]
     },
@@ -356,7 +392,7 @@
       "toll": "No protest deaths have been reported. On 10 October 2026 Delhi deployed over 40,000 personnel, shut 43 Metro stations and cut mobile internet in the centre of the city. Detention figures for that day range from about 2,000 (Reuters, citing the Home Ministry) to over 5,000 (The Hindu); Amnesty International puts the nationwide figure far higher. At least 30 journalists were detained, and three women journalists alleged sexual harassment by police. The government rejected a UN statement on the detentions as interference in India's internal affairs.",
       "detail": "Blocked from reaching the Election Commission in late October, protesters sat down in the road near Bangla Sahib Gurdwara and convened what they called a People's Parliament. Over a hundred were detained.",
       "balance": "The Election Commission says the revision removes duplicate, deceased and ineligible entries, that deletion from a draft roll is not final, and that appeal routes exist. It says all three revision orders were approved unanimously by all three Commissioners. The BJP has made its own counter-allegations of roll manipulation in opposition-held seats.",
-      "caution": "The figure of about 130 million deletions now circulating internationally traces to a single newspaper report of October 2026. The verifiable components are smaller and separately sourced: 47 lakh net in Bihar, 61.8 lakh in West Bengal, about 2.04 crore in Uttar Pradesh.",
+      "caution": "Election Commission data reported by The Hindu and Deccan Herald put deletions so far, across the country, at about 13.3 crore: roughly 9.5 crore (71%) absent, shifted or other, 2.7 crore deaths and 1.01 crore multiple entries. State figures include 47 lakh net in Bihar, 61.8 lakh in West Bengal and about 2.04 crore in Uttar Pradesh.",
       "image": {
         "src": "img/cjp.jpg",
         "alt": "Students at Jantar Mantar, Delhi, on 20 July 2026, before the march on Parliament",
@@ -369,12 +405,20 @@
       "imageWhy": "This photograph is from the movement's earlier phase, over exam paper leaks, which forced the Education Minister's resignation in July 2026. No freely licensed photograph of the electoral-rolls protests exists.",
       "sources": [
         {
-          "label": "Special Intensive Revision",
-          "url": "https://en.wikipedia.org/wiki/Special_Intensive_Revision"
+          "label": "Supreme Court judgment, 27 May 2026",
+          "url": "https://api.sci.gov.in/supremecourt/2025/35785/35785_2025_1_1501_71617_Judgement_27-May-2026.pdf"
         },
         {
           "label": "Supreme Court judgment summary",
           "url": "https://www.scobserver.in/reports/challenge-to-the-ecis-revision-of-electoral-rolls-in-bihar-judgement-summary/"
+        },
+        {
+          "label": "The Hindu: of those deleted in SIR so far, over 71% absent, shifted or others",
+          "url": "https://www.thehindu.com/news/national/of-those-deleted-in-sir-so-far-over-71-in-absent-shifted-or-others-category/article71524969.ece"
+        },
+        {
+          "label": "Deccan Herald: 13.3 crore names wiped out of draft voter lists so far",
+          "url": "https://www.deccanherald.com/india/sir-133-crore-names-wiped-out-of-draft-voter-lists-so-far-triggering-opposition-backlash-4164836"
         },
         {
           "label": "Human Rights Watch, October 2026",

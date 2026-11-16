@@ -373,7 +373,7 @@ time", with no date given; not restored as of October 2026. Confidence: HIGH.**
   The Court declined to rule on the conversion of the State into UTs in light of the **Solicitor
   General's assurance** that statehood would be restored (Ladakh excepted).
 - Sources:
-  - https://en.wikipedia.org/wiki/Restoration_of_the_statehood_of_Jammu_and_Kashmir_and_Ladakh
+  - https://www.scobserver.in/reports/abrogation-of-article-370-judgement-summary/
   - https://www.nationalheraldindia.com/national/supreme-court-upholds-the-abrogation-of-article-370-orders-restoration-of-jk-statehood
   - https://www.lekhanews.in/judgment/in-re-article-370-of-the-constitution-2023/
 
@@ -439,7 +439,7 @@ legal right" — no such explicit rejection was found.**
   - https://www.deccanherald.com/business/union-budget/union-budget-2024-government-to-launch-scheme-to-provide-internship-opportunities-to-1-crore-youth-over-5-years-3117799
   - https://news.careers360.com/union-budget-2024-speech-employment-fresher-jobs-paid-internship-scheme-guidelines-10000-2000-crore-highlights
   - https://www.tribuneindia.com/news/business/pm-internship-scheme-not-meant-for-jobs-but-for-exposure-fm-replies-in-parliament/amp (RS, 4 Feb 2025)
-  - https://en.wikipedia.org/wiki/Prime_Minister_Internship_Scheme
+  - https://www.pib.gov.in/PressReleasePage.aspx?PRID=2061909&utm_=&reg=48&lang=2
   - https://www.outlookbusiness.com/news/prime-ministers-internship-scheme-secures-50000-opportunities-for-youth-from-over-130-companies
 
 ### The existing statutory framework (context)
@@ -520,8 +520,8 @@ Confidence: HIGH.**
 
 ### State level — Uttarakhand UCC, 7 February 2024 `VOTE` (ambiguous — handle carefully)
 
-- The Uttarakhand Assembly passed the UCC Bill on **7 February 2024 by voice vote**; Wikipedia's infobox
-  records **70 for, 0 against, 0 abstentions**. The opposition's demand to refer the bill to a
+- The Uttarakhand Assembly passed the UCC Bill on **7 February 2024 by voice vote**;
+  one secondary summary records **70 for, 0 against, 0 abstentions** [source needed — not found in any news report checked; reports say voice vote, e.g. [India TV](https://www.indiatvnews.com/news/india/uniform-civil-code-bill-passed-by-voice-vote-uttarakhand-assembly-pushkar-singh-dhami-discussion-on-ucc-reactions-bjp-congress-latest-updates-2024-02-07-915753), [Business Today](https://www.businesstoday.in/india/story/uttarakhand-assembly-passes-uniform-civil-code-bill-416578-2024-02-07); do not publish a tally]. The opposition's demand to refer the bill to a
   **select/standing committee** (citing insufficient time to study it, and objecting to provisions such
   as compulsory registration of live-in relationships) was **rejected**.
 - **Do not state that Congress MLAs voted for it.** The sources do not break the voice vote down by
@@ -529,7 +529,7 @@ Confidence: HIGH.**
   to a committee; the bill passed by voice vote with no recorded opposition.* Presidential assent
   **13 March 2024**.
 - Sources:
-  - https://en.wikipedia.org/wiki/Uniform_Civil_Code_of_Uttarakhand_Act,_2024
+  - https://www.loc.gov/item/global-legal-monitor/2024-03-21/india-legislative-assembly-of-uttarakhand-enacts-uniform-civil-code/
   - https://www.loc.gov/item/global-legal-monitor/2024-03-21/india-legislative-assembly-of-uttarakhand-enacts-uniform-civil-code/
   - https://www.deccanherald.com/india/uttarakhand/uttarakhand-becomes-first-state-to-pass-uniform-civil-code-bill-2884458
 
@@ -755,7 +755,7 @@ constitutional amendment bill under the Modi government.**
   - https://prsindia.org/billtrack/the-constitution-131st-amendment-bill-2026 (PRS — primary-grade)
   - https://prsindia.org/billtrack/the-delimitation-bill-2026
   - https://www.livelaw.in/top-stories/lok-sabha-rejects-constitution-131st-bill-2026-on-delimitation-530736
-  - https://en.wikipedia.org/wiki/Constitution_(131st_Amendment)_Bill,_2026
+  - https://lawbeat.in/top-stories/womens-reservation-push-stalls-as-lok-sabha-rejects-131st-constitution-amendment-bill-1582102
   - https://inc.in/congress-sandesh/national/the-delimitation-bill-2026 (INC party source)
   - https://www.aninews.in/news/national/general-news/their-agenda-to-link-delimitation-with-womens-reservation-failed-congress-mp-kc-venugopal-on-constitution-131st-amendment-bill20260418141707/
   - https://m.thewire.in/article/politics/major-setback-modi-govts-constitution-amendment-bill-delimitation-fails-in-lok-sabha
@@ -850,7 +850,7 @@ constitutional amendment bill under the Modi government.**
 24. **Several scheme pages** cited for Karnataka/Telangana/MP are commercial aggregator blogs
     (bankbazaar, cleartax, egovtschemes, govtschemes.in) with inconsistent dates. Replace with official
     state-government or mainstream-press sources before publishing.
-25. **Wikipedia** is cited in several places as a convenience index. Treat as a pointer to its
+25. **Secondary summaries** are cited in a few places as a convenience index. Treat them as a pointer to their
     references, not as a source.
 
 ## Even-handedness checks for the site copy

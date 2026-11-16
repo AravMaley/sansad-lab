@@ -2,8 +2,8 @@
   "snapshot": "Result declared 4 June 2024",
   "total": 543,
   "majority": 272,
-  "source": "https://en.wikipedia.org/wiki/2024_Indian_general_election",
-  "source_note": "Party-wise results as published by the Election Commission of India, via Wikipedia’s results table; checked against PRS.",
+  "source": "https://results.eci.gov.in/PcResultGenJune2024/index.htm",
+  "source_note": "Party-wise results as published by the Election Commission of India; checked against PRS.",
   "alliances": [
     { "id": "INDIA", "name": "INDIA bloc", "seats": 234, "vote_pct": 41.48 },
     { "id": "OTH", "name": "Unaligned", "seats": 16, "vote_pct": null },
