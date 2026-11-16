@@ -516,7 +516,7 @@ The **Income-tax Act, 2025 came into force on 1 April 2026**. ([Income Tax India
 ## Subject A
 
 1. **BJP 2024 manifesto, exact UCC wording and page 54.** The official *Sankalp Patra* PDF at bjp.org would not load (socket closed). Secondary outlets reproduce the passage inconsistently — one renders it "Union Civil Code." **Do not publish a verbatim quote or the page-54 citation without opening the official PDF.** This is the single most important gap on Subject A given the brief explicitly asked for p.54.
-2. **Uttarakhand Assembly vote.** Voice vote (Scroll/PTI) vs 70–0 (one secondary summary [source needed]). No Assembly record obtained.
+2. **Uttarakhand Assembly vote.** Voice vote (PTI, India TV, Business Today, LiveLaw) vs 70–0 (one secondary summary, not found in any news report [source needed]). Use voice vote; no Assembly record obtained.
 3. **Uttarakhand presidential assent date.** 11 vs 12 March 2024.
 4. **Uttarakhand live-in non-registration penalty.** Three months vs six months.
 5. **Current status of the Uttarakhand High Court UCC petitions.** Last confirmed step is the state's 78-page affidavit and a listing for 1 April 2025. No judgment found. **Check Nainital HC cause lists / LiveLaw.**

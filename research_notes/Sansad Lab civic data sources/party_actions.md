@@ -521,7 +521,7 @@ Confidence: HIGH.**
 ### State level — Uttarakhand UCC, 7 February 2024 `VOTE` (ambiguous — handle carefully)
 
 - The Uttarakhand Assembly passed the UCC Bill on **7 February 2024 by voice vote**;
-  one secondary summary records **70 for, 0 against, 0 abstentions** [source needed]. The opposition's demand to refer the bill to a
+  one secondary summary records **70 for, 0 against, 0 abstentions** [source needed — not found in any news report checked; reports say voice vote, e.g. [India TV](https://www.indiatvnews.com/news/india/uniform-civil-code-bill-passed-by-voice-vote-uttarakhand-assembly-pushkar-singh-dhami-discussion-on-ucc-reactions-bjp-congress-latest-updates-2024-02-07-915753), [Business Today](https://www.businesstoday.in/india/story/uttarakhand-assembly-passes-uniform-civil-code-bill-416578-2024-02-07); do not publish a tally]. The opposition's demand to refer the bill to a
   **select/standing committee** (citing insufficient time to study it, and objecting to provisions such
   as compulsory registration of live-in relationships) was **rejected**.
 - **Do not state that Congress MLAs voted for it.** The sources do not break the voice vote down by

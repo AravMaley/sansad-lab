@@ -44,7 +44,7 @@
       "who": "Jayaprakash Narayan, with Morarji Desai, Charan Singh, Vajpayee, Advani, George Fernandes and the socialist and Jana Sangh networks. After June 1975 the resistance was mostly underground — the mass expression came at the ballot box.",
       "demanded": "First the resignation of corrupt state governments; after June 1975, an end to the Emergency, release of detainees, press freedom and fresh elections.",
       "verdict": "won",
-      "changed": "The government fell. In March 1977 the Janata alliance won 298 seats and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
+      "changed": "The government fell. In March 1977 the Janata alliance won 298 seats and Congress dropped to 154; Indira Gandhi lost her own seat. The 44th Amendment then undid the worst of it — “internal disturbance” was replaced by “armed rebellion” as grounds for an Emergency, the Cabinet's written advice was made necessary, and the right to move the courts to enforce Articles 20 and 21 can no longer be suspended. No national Emergency has been declared since. The Janata government itself collapsed within three years.",
       "parliament": "Maximal. Parliament's own term was extended; the 38th, 39th and 42nd Amendments were passed with the opposition in jail; the 44th reversed them.",
       "toll": "The Shah Commission counted 110,806 detentions; Amnesty International estimated 140,000. Some 8.3 million sterilisations were performed in 1976–77, most of them coerced. About 150,000 structures were demolished in Delhi alone.",
       "detail": "Power to the Delhi newspaper offices was cut within three hours of the proclamation. The Times of India responded with a mock obituary: “Democracy, beloved husband of Truth, loving father of Liberty… expired on June 26.”",
@@ -62,6 +62,14 @@
         {
           "label": "Shah Commission of Inquiry, final report",
           "url": "https://archive.org/details/ShahCommissionOfInquiry3rdFinalReport"
+        },
+        {
+          "label": "Constitution (Forty-fourth Amendment) Act, 1978 (text)",
+          "url": "https://www.constitution.org/1-Constitution/cons/india/tamnd44.htm"
+        },
+        {
+          "label": "Supreme Court Observer: preventive detention and the Emergency",
+          "url": "https://www.scobserver.in/journal/the-constitutional-sanction-for-preventive-detention-reeks-of-a-fear-of-freedom/"
         }
       ]
     },
@@ -122,6 +130,10 @@
         {
           "label": "World Bank project timeline",
           "url": "https://timeline.worldbank.org/en/timeline/eventdetail/1911"
+        },
+        {
+          "label": "Christian Science Monitor: Patkar refuses to leave as waters rise (1999)",
+          "url": "https://csmonitor.com/1999/0805/p1s2.html"
         }
       ]
     },
@@ -137,7 +149,7 @@
       "verdict": "lost",
       "changed": "The quota stands and has been in force since 1993. The Supreme Court upheld it 6:3 in Indra Sawhney in November 1992, adding three limits that still shape Indian reservation law: a 50% ceiling, exclusion of the “creamy layer”, and no reservation in promotions. The government did fall on 7 November 1990, but the immediate cause was the BJP withdrawing support over the Rath Yatra, not Mandal alone.",
       "parliament": "The best case on this timeline of Parliament answering back to a court. Over the following decade the 77th, 81st, 82nd and 85th Amendments each undid a specific holding of Indra Sawhney, and in 2019 the 103rd Amendment breached the 50% ceiling with a 10% EWS quota.",
-      "toll": "Roughly 160 to 200 self-immolation attempts and about 60 or more deaths; no official count was ever published. Many of the dead were teenagers — the named victims include a 15-year-old in Haryana and a 15-year-old in Chandigarh.",
+      "toll": "Nearly 200 self-immolation attempts and more than 60 deaths by most accounts (some put the toll higher); no official count was ever published.",
       "detail": "Rajiv Goswami, the student whose burning body became the image of the agitation, survived with about 70% burns and was later elected president of the Delhi University students' union. He died in 2004 of complications from those burns, fourteen years after the fire.",
       "image": {
         "src": "img/mandal.jpg",
@@ -157,6 +169,14 @@
         {
           "label": "Indra Sawhney v. Union of India (1992)",
           "url": "https://indiankanoon.org/doc/1363234/"
+        },
+        {
+          "label": "Frontline: the Mandal agitation",
+          "url": "https://www.pressreader.com/india/frontline/20220826/282162179995065"
+        },
+        {
+          "label": "ThePrint: 30 years since the Mandal recommendations",
+          "url": "https://theprint.in/theprint-essential/30-years-since-mandal-commission-recommendations-how-it-began-and-its-impact-today/477260"
         }
       ]
     },
@@ -289,7 +309,7 @@
       "verdict": "lost",
       "changed": "Nothing in the law changed. The Act was never repealed, amended or stayed. Its rules were notified in March 2024 and the Supreme Court refused to stay those too; about 237 petitions, the oldest from December 2019, were still pending in late 2026. What the movement did achieve was negative: no nationwide register has been attempted, and six state assemblies passed resolutions against the Act — symbolic, since citizenship is a Union subject. Kerala became the first state to sue the Union directly under Article 131.",
       "parliament": "The protest was about an Act of Parliament, and both Houses had divided on it — 311 to 80 in the Lok Sabha, 125 to 105 in the Rajya Sabha. You can vote on this one yourself in the section above.",
-      "toll": "At least 27, and by some counts more than 60, people died, the great majority in Uttar Pradesh. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
+      "toll": "At least 27 people had died by 27 December 2019, the great majority in Uttar Pradesh; no independent final count exists. The dispute there is stark: the state government told the Allahabad High Court that 22 were killed, while the Chief Minister told the Assembly that nobody died of police bullets. Separately, the North East Delhi riots of February 2020 killed 53 — about 36 Muslims and 15 Hindus — the worst communal violence in Delhi since 1984.",
       "detail": "Shaheen Bagh lasted 101 days and did not end in a court ruling or a repeal. Police cleared it at 7:30 on the morning of the first day of the COVID lockdown and detained nine people, six of them women. In October 2020 the Supreme Court held that occupying public space indefinitely is not permissible — the protest's clearest legal legacy, and it cuts against protesters.",
       "image": {
         "src": "img/shaheenbagh.jpg",
@@ -308,6 +328,14 @@
         {
           "label": "Supreme Court Observer: the CAA case",
           "url": "https://www.scobserver.in/cases/constitutionality-of-the-citizenship-amendment-act-2019-caa/"
+        },
+        {
+          "label": "Global Voices: death toll reaches 27",
+          "url": "https://globalvoices.org/2019/12/28/death-toll-reaches-27-in-indias-citizenship-protests/"
+        },
+        {
+          "label": "Business Standard: Kerala first state to move the Supreme Court",
+          "url": "https://business-standard.com/amp/article/current-affairs/kerala-govt-moves-supreme-court-challenging-citizenship-amendment-act-120011400355_1.html"
         }
       ]
     },
