@@ -94,6 +94,18 @@ test("mp returns member, counts, items and total", async () => {
   assert.equal(feedCall.body.p_offset, 20);
 });
 
+test("mp with no questions is cached only briefly, so new data shows up soon", async () => {
+  stubFetch((url) => {
+    if (url.includes("/members?")) return [{ mpsno: 7, name: "A", status: "Sitting" }];
+    if (url.includes("/meta?")) return [{ value: "2026-11-15T00:00:00Z" }];
+    return [];
+  });
+  const r = await call(mp, { mpsno: "7" });
+  assert.equal(r.json().total, 0);
+  assert.match(r.headers["cache-control"], /s-maxage=60$/);
+  assert.doesNotMatch(r.headers["cache-control"], /stale-while-revalidate/);
+});
+
 test("topic returns 404 for an unknown slug", async () => {
   assert.equal((await call(topic, { slug: "nope" })).status, 404);
 });

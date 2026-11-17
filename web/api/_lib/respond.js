@@ -1,11 +1,14 @@
 // Small response helpers that work with Vercel's Node runtime and in tests.
 
 const CACHE = "public, s-maxage=3600, stale-while-revalidate=86400";
+// An empty answer may only mean the data has not loaded yet, so it must not
+// linger: keep it for a minute, and never serve it stale.
+export const CACHE_EMPTY = "public, s-maxage=60";
 
-export function send(res, status, body, type = "application/json; charset=utf-8") {
+export function send(res, status, body, type = "application/json; charset=utf-8", cache = CACHE) {
   res.statusCode = status;
   res.setHeader("Content-Type", type);
-  res.setHeader("Cache-Control", status === 200 ? CACHE : "no-store");
+  res.setHeader("Cache-Control", status === 200 ? cache : "no-store");
   res.end(typeof body === "string" ? body : JSON.stringify(body));
 }
 
