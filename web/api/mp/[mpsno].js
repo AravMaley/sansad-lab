@@ -1,6 +1,6 @@
 // GET /api/mp/:mpsno?ministry=&q=&page= → profile, ministry counts and question feed.
 import { rpc, select, lastUpdated, PAGE_SIZE } from "../_lib/db.js";
-import { send, fail, handler, pageOf, str } from "../_lib/respond.js";
+import { send, fail, handler, pageOf, str, CACHE_EMPTY } from "../_lib/respond.js";
 
 export default handler(async (req, res) => {
   const mpsno = Number(str(req.query.mpsno));
@@ -23,5 +23,5 @@ export default handler(async (req, res) => {
     total: Number(feed[0]?.total ?? 0),
     items: feed.map((r) => r.item),
     lastUpdated: updated,
-  });
+  }, undefined, feed.length ? undefined : CACHE_EMPTY);
 });
