@@ -1,72 +1,78 @@
 # Sansad Lab
 
-Understand India's Parliament by doing. Live at https://sansad-lab-web.vercel.app/
+Most people in India can't name a single question their MP asked in Parliament. That information is public. It's on sansad.in, buried in `.docx` files behind a search form that times out half the time. Sansad Lab pulls it out and puts it next to the manifestos, the votes and the protests, so you can check things for yourself.
 
-## What's on the site
+It's live at https://sansad-lab-web.vercel.app/. It's a working prototype built by one student, it takes no money from any party, and every figure on it links to where it came from.
 
-1. **The House** — the 18th Lok Sabha as 543 dots, one per seat, gathered by alliance. The same dots drift behind every page and light up the MP or parties you are reading about (Canvas 2D, about 30 fps, paused when hidden, still for reduced motion).
-2. **Your MP** — pick your state and constituency to see every question your MP asked in this Lok Sabha, with word-for-word excerpts of the government's answer and a link to the official document.
-3. **Issues** — 15 issues (exams, jobs, farming, women's safety…) with every question on each, search across all questions, follows without an account, RSS feeds, share cards and a calendar file for the next session.
-4. **Manifestos** — the 2024 manifestos side by side, by topic or by party, with page citations.
-5. **Manifesto Matcher** — 12 statements, five parties, every stance read from the party's own 2024 manifesto with a page citation. Where a manifesto is silent, a separate "what they actually did" panel records votes, Parliament answers and state schemes.
-6. **You Be the MP** — vote on six laws, then see the real record: the farm laws, women's reservation, the Citizenship Amendment Act, the data protection law, a national Uniform Civil Code (never introduced), and the 2025 income tax rewrite.
-7. **The Street** — a timeline of 12 protest movements from Chipko to the electoral-rolls protests now running, each with an honest verdict on whether it got what it asked for.
-8. **The Ledger** — PRS figures on committee scrutiny, sittings and session productivity.
+## What you can do on it
 
-Every figure links to its source.
+- **Find your MP.** Pick your state and constituency (or type a name) and you get every question they've asked in this Lok Sabha, with the government's answer quoted word for word and a link to the official document.
+- **Follow an issue.** There are 15 of them: exams, jobs, farming, women's safety, railways and so on. Each one lists every question asked about it and which states and parties ask most. You can follow issues and MPs without an account, subscribe by RSS, or save a share card for WhatsApp.
+- **Read the manifestos side by side.** The 2024 manifestos, by topic or by party, with page numbers.
+- **Take the Manifesto Matcher.** Twelve statements and five parties. Every stance comes from the party's own 2024 manifesto with a page citation. Where a manifesto says nothing, a separate panel shows what the party actually did: votes, answers in Parliament, state schemes.
+- **Be the MP.** Vote on six laws, then see how Parliament really voted and what happened next: the farm laws, women's reservation, the CAA, the data protection law, a national UCC (which was never introduced), and the 2025 income tax rewrite.
+- **Walk down The Street.** Twelve protest movements from Chipko to the electoral-rolls protests still going on, each with a plain verdict on whether it got what it asked for.
+- **Check The Ledger.** PRS numbers on how often Parliament sits, how long it works, and how many bills go to committee.
 
-## Why only five parties in the matcher
+Behind all of it are 543 dots, one per seat in the 18th Lok Sabha. On the home page they gather into the House by alliance. On every other page they drift faintly in the background and light up the MP or parties you're reading about. Text always sits on its own translucent panel so the dots never get in the way of reading. On phones the canvas runs at 20 fps and lower resolution, and it stops completely when the tab is hidden or reduced motion is on.
 
-A matcher is only honest if every party is judged from its own document. BJP, INC, TMC, CPI(M) and DMK published 2024 Lok Sabha manifestos and all five were read in full. AAP published none — only ten promises read out at a press conference. NCP (SP) and CPI manifestos could not be obtained anywhere, including web archives. TVK did not contest. Their positions are left out rather than guessed.
+## Why the matcher has only five parties
 
-"Silent" is never scored against a party, so a short manifesto is not penalised.
+A matcher is only fair if every party is judged by its own document. BJP, INC, TMC, CPI(M) and DMK published 2024 Lok Sabha manifestos, and all five were read in full. AAP didn't publish one; it read out ten promises at a press conference. I couldn't find the NCP (SP) or CPI manifestos anywhere, web archives included. TVK didn't contest. Rather than guess their positions, I left them out.
 
-## How the data stays fresh
+A party that says nothing on a topic is never marked down for it, so a short manifesto isn't punished for being short.
 
-A GitHub Actions job (`.github/workflows/ingest.yml`) runs nightly. It reads members and questions from sansad.in's JSON endpoints, extracts the question and answer from each official `.docx`, builds verbatim excerpts, tags issues, and writes to a Supabase Postgres database. The database grants the public role nothing; Vercel functions in `web/api/` read it with a server-only key. Personal details in the member records (phone numbers, addresses, emails, family) are dropped before storage.
+## Where the data comes from
 
-Setup: run `supabase/schema.sql` in the Supabase SQL editor; set `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` as GitHub Actions secrets and as Vercel environment variables. Tests: `npm test`.
+Every night a GitHub Actions job (`.github/workflows/ingest.yml`) reads members and questions from sansad.in's JSON endpoints. It opens each official `.docx`, pulls out the question and the answer, cuts verbatim excerpts, tags the issues and writes it all to a Supabase Postgres database. The public role on that database can't read anything; the Vercel functions in `web/api/` read it with a server-only key. MPs' phone numbers, addresses, emails and family details are dropped before anything is stored.
 
-## Structure
+To set it up yourself, run `supabase/schema.sql` in the Supabase SQL editor, then add `SUPABASE_URL` and `SUPABASE_SERVICE_KEY` as GitHub Actions secrets and as Vercel environment variables. `npm test` runs the tests.
+
+## How the repo is laid out
 
 ```
-web/                 static site (Vercel serves this, no build step)
-  index.html
+web/                 the static site (Vercel serves it as is, no build step)
+  index.html …       one HTML file per page
   css/style.css
   js/                one module per section, plus util.js and motion.js
-  data/              JSON the site loads (bills.json is GENERATED)
+  data/              JSON the site loads (bills.json is generated)
   img/               CC-licensed protest photos, credited in protests.json
-  vendor/motion.js   GENERATED — tree-shaken motion.dev bundle
-laws/                one JSON file per bill scenario (source of truth)
+  vendor/motion.js   generated: a tree-shaken motion.dev bundle
+laws/                one JSON file per bill scenario (the source of truth)
 scripts/             build-data.mjs, build-motion.mjs
 reports/, research_notes/   the research behind every figure
+PRODUCT.md           who the site is for and the rules it follows
 ```
 
-## Editing
+## Changing things
 
-- **Bills:** edit `laws/*.json`, then `npm run build:data`. The script rejects any vote, argument or timeline entry without a `source`.
-- **Motion:** change the import list in `scripts/build-motion.mjs`, then `npm run build:motion`. Currently 18 KB raw / 8 KB gzipped.
-- **Everything else:** edit the JSON in `web/data/` directly.
+- **Bills:** edit `laws/*.json`, then run `npm run build:data`. The script refuses any vote, argument or timeline entry that doesn't have a `source`.
+- **Animation library:** change the import list in `scripts/build-motion.mjs`, then run `npm run build:motion`. It's 18 KB raw, 8 KB gzipped right now.
+- **Anything else:** edit the JSON in `web/data/` directly.
 
-Node lives at `D:\node.exe` on the author's machine and is not on PATH; call it by full path if `node` is not found.
+On my machine Node lives at `D:\node.exe` and isn't on PATH, so if `node` isn't found, call it by its full path.
 
-## Run locally
+## Running it locally
 
 ```
 cd web && python -m http.server 8000
 ```
 
-## Deploy
+The pages load, but the MP and issue pages need the `/api` functions, which only run on Vercel (or under `vercel dev`).
 
-Vercel, Root Directory `web`, no build command. `main` is production; every other branch gets a preview URL.
+## Deploying
 
-## Images
+Vercel, with Root Directory set to `web` and no build command. `main` is production and every other branch gets its own preview URL.
 
-Only freely licensed images are used, each credited with its licence in `web/data/protests.json`. Several movements — Chipko, anti-Mandal, Narmada, the RTI campaign, Telangana — have **no** free photograph, and the cards say so rather than substituting something misleading. Images are re-encoded to roughly 900 KB total.
+## Photos
 
-## To verify before a wider launch
+Every photo is freely licensed and credited, with its licence, in `web/data/protests.json`. Some movements, like Chipko, the anti-Mandal protests, Narmada, the RTI campaign and Telangana, have no free photograph I could find. Their cards say so instead of showing something that would mislead. All the images together come to about 900 KB.
 
-- **BJP manifesto p.54 and p.55** — the UCC and One Nation One Election quotes came from a mirror of the official PDF, and p.55 extracts badly. Open the official file and check both by eye.
-- **Contested dates** — farm-law assent (24 vs 27 Sep 2020; 30 Nov vs 1 Dec 2021) on egazette.gov.in.
-- **Live items** — the electoral-rolls protests and the CAA court case both move. `protests.json` carries a `verifiedOn` date.
-- **Current party positions** — sansad.in. The seat chart shows the June 2024 result.
+## Still to check before a wider launch
+
+- **BJP manifesto p.54 and p.55.** The UCC and One Nation One Election quotes came from a mirror of the official PDF, and p.55 extracts badly. Someone needs to open the official file and check both by eye.
+- **Disputed dates.** The farm laws' assent date (24 or 27 Sep 2020) and repeal date (30 Nov or 1 Dec 2021) should be checked on egazette.gov.in.
+- **Things still moving.** The electoral-rolls protests and the CAA court case both change. `protests.json` has a `verifiedOn` date for each.
+- **Party positions today.** The seat chart shows the June 2024 result; sansad.in has the current numbers.
+
+If you spot something wrong, [open an issue](https://github.com/AravMaley/sansad-lab/issues). I'd rather fix it than leave it up.

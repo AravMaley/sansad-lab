@@ -38,7 +38,6 @@ async function load() {
       document.title = `${d.topic.label} · Sansad Lab`;
       const url = `${location.origin}/topic/${d.topic.slug}`;
       $("t-head").replaceChildren(
-        el("p", { class: "meta" }, "Issue"),
         el("h1", { class: "display-sm" }, d.topic.label),
         el("p", { class: "lede" }, d.topic.blurb),
         el("p", { class: "mp-total" }, el("strong", { class: "num" }, formatCount(d.total)), " questions in the 18th Lok Sabha"),

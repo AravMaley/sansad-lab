@@ -216,7 +216,7 @@ button { font: inherit; color: inherit; }
   content: "+"; grid-column: 2; grid-row: 1; justify-self: end; color: var(--ink-2);
   font-size: 1.25rem; line-height: 1.2;
 }
-.breakdown details[open] summary::after { content: "3"; }
+.breakdown details[open] summary::after { content: "\2212"; }
 .tag { font-size: 0.75rem; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--rule); white-space: nowrap; color: var(--ink-2); }
 .tag.yes { border-color: var(--green); color: var(--green); }
 .tag.no { border-color: var(--maroon); color: var(--maroon); }
@@ -673,7 +673,6 @@ main, .colophon { position: relative; z-index: 1; }
   text-decoration: none; transition: transform .2s var(--ease), border-color .2s;
 }
 .door:hover { transform: translateY(-3px); border-color: var(--marigold); }
-.door-n { color: var(--marigold); }
 .door-t { font-family: var(--serif); font-size: var(--t-title); font-weight: 600; }
 .door-b { color: var(--ink-2); font-size: .9375rem; }
 .door-go { position: absolute; right: 20px; bottom: 16px; color: var(--ink-2); transition: transform .2s var(--ease), color .2s; }
@@ -693,3 +692,86 @@ main, .colophon { position: relative; z-index: 1; }
 .crowd { position: relative; }
 .crowd-label { position: absolute; transform: translateX(-50%); white-space: nowrap; font-size: var(--t-meta); color: var(--ink-2); letter-spacing: .04em; pointer-events: none; }
 .crowd-label strong { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+
+/* ---------- v4 · Reading plates ----------
+   The dot field is atmosphere; text is the content. Every block of text sits
+   on a translucent plate, so dots show in the margins and between sections
+   but never under a sentence. Phones get the plate without blur: a filter
+   over an animating canvas is the most expensive thing on the page. */
+:root {
+  --veil: color-mix(in oklab, var(--paper) 86%, transparent);
+  --veil-rule: color-mix(in oklab, var(--ink) 9%, transparent);
+  --plate-r: 20px;
+}
+main .room > .wrap,
+main.mp-page {
+  width: calc(100% - 16px);
+  background: var(--veil);
+  border: 1px solid var(--veil-rule);
+  border-radius: var(--plate-r);
+  padding-block: clamp(28px, 5vw, 56px);
+}
+main.mp-page { margin-block: clamp(16px, 4vw, 40px); }
+@media (min-width: 640px) {
+  main .room > .wrap, main.mp-page { width: calc(100% - 48px); }
+}
+@media (hover: hover) and (min-width: 900px) {
+  main .room > .wrap, main.mp-page {
+    -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px);
+  }
+}
+/* Plates replace the section rules and tinted floors. */
+.room { border-top: 0; padding: clamp(12px, 3vw, 28px) 0; }
+.room-entrance { padding-top: clamp(16px, 4vw, 40px); }
+:root.stage .room-chamber, :root.stage .room-street, .room-chamber, .room-street { background: none; }
+/* Home: two plates either side of the crowd, which stays open. */
+.home-hero { padding-bottom: 0; }
+.home-hero > .wrap:first-child { margin-bottom: 0; }
+
+/* The background gradient painted once, not tiled under a long page. */
+:root.stage body { background-repeat: no-repeat; background-color: var(--paper); }
+
+/* Header: the nav scrolls sideways on phones instead of widening the page. */
+.wordmark { flex: none; }
+.bar nav { min-width: 0; }
+@media (max-width: 720px) {
+  .bar nav {
+    padding-right: 24px;
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+            mask-image: linear-gradient(to right, #000 calc(100% - 28px), transparent);
+  }
+  .bar nav a { white-space: nowrap; padding-block: 12px; }
+  /* No live blur on phones: a near-solid bar costs nothing. */
+  .bar { background: color-mix(in oklab, var(--paper) 96%, transparent); -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .colophon { -webkit-backdrop-filter: none; backdrop-filter: none; background: var(--paper-2); }
+  .mp-head { grid-template-columns: 1fr; gap: 14px; }
+  .mp-photo { width: 72px; height: 72px; }
+}
+
+/* Long lists: let the browser skip layout and paint for off-screen items. */
+.feed-item, .p-card { content-visibility: auto; contain-intrinsic-size: auto 320px; }
+
+/* Browser surfaces, themed. */
+::selection { background: color-mix(in oklab, var(--marigold) 45%, transparent); color: var(--ink); }
+html { scrollbar-color: color-mix(in oklab, var(--ink-2) 45%, transparent) var(--paper); }
+input, textarea { caret-color: var(--marigold); }
+:root { accent-color: var(--green); }
+
+/* ---------- v5 · Quieter panels and question cards ----------
+   Panels are see-through enough that the seat dots stay visible behind them;
+   the dots are faint enough (20%) that text still reads cleanly on top. */
+:root { --veil: color-mix(in oklab, var(--paper) 42%, transparent); }
+main .room > .wrap, main.mp-page { -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* One question = date line, title, a two-line glimpse of the question,
+   the answer, and a source link. Labels are plain words, not badges. */
+.feed-item { padding: 28px 0; }
+.feed-meta { font-size: var(--t-meta); text-transform: none; letter-spacing: 0; }
+.feed-subject { margin: 4px 0 10px; font-size: 1.1875rem; line-height: 1.35; }
+.feed-label { margin: 0 .45em 0 0; padding: 0; background: none; border-radius: 0; vertical-align: 0;
+  font: 600 var(--t-meta)/1 var(--sans); letter-spacing: 0; text-transform: none; color: var(--ink-2); }
+.feed-a .feed-label { background: none; color: var(--green); }
+.feed-q, .feed-a { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; margin: 6px 0; }
+.feed-q { -webkit-line-clamp: 2; line-clamp: 2; font-size: .9375rem; line-height: 1.55; }
+.feed-a { -webkit-line-clamp: 4; line-clamp: 4; line-height: 1.6; max-width: 65ch; }
+.feed-foot { margin-top: 12px; }
