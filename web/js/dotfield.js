@@ -5,7 +5,10 @@
 // dots: an MP's page lights their party, an issue page the parties asking.
 import { crowdLayout, fieldLayout } from "./dots-layout.js";
 
-const FRAME = 1000 / 30;          // 30 fps cap
+// Phones get a lighter field: 20 fps and at most 1.5x pixels, which keeps
+// the canvas cheap on low-end Android. Larger screens run at 30 fps.
+const SMALL = () => innerWidth < 640;
+const frameMs = () => 1000 / (SMALL() ? 20 : 30);
 const REPEL = 90;                 // px around the pointer
 const motionOK = () => !matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -26,7 +29,7 @@ export function mountDots({ parties, owners }) {
   const animate = motionOK();
 
   function resize() {
-    dpr = Math.min(2, window.devicePixelRatio || 1);
+    dpr = Math.min(SMALL() ? 1.5 : 2, window.devicePixelRatio || 1);
     const prevW = W, prevH = H;
     W = innerWidth; H = innerHeight;
     canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
@@ -55,7 +58,7 @@ export function mountDots({ parties, owners }) {
     raf = 0;
     const now = performance.now();
     if (document.hidden) return;
-    if (now - last < FRAME && animate) { raf = requestAnimationFrame(frame); return; }
+    if (now - last < frameMs() && animate) { raf = requestAnimationFrame(frame); return; }
     last = now;
     const rect = crowdRect();
     const mode = rect ? "crowd" : "field";
@@ -80,8 +83,10 @@ export function mountDots({ parties, owners }) {
         const p = field[i];
         tx = p.x + (animate ? Math.sin(t * 0.35 + i) * 5 : 0);
         ty = ((p.y - drift + H + 40) % (H + 40)) - 20;
-        ta = lv === -1 ? 0.4 : lv === 0 ? 0.12 : lv === 1 ? 0.75 : 1;
-        ts = (W < 640 ? 1.8 : 2.4) * (lv === 2 ? 3 : lv === 1 ? 1.35 : 1);
+        // Background field: kept faint so it never fights the text above it.
+        // Lit dots (an MP's party, parties on an issue) still stand out.
+        ta = lv === -1 ? 0.2 : lv === 0 ? 0.07 : lv === 1 ? 0.5 : 0.9;
+        ts = (W < 640 ? 1.5 : 2) * (lv === 2 ? 3 : lv === 1 ? 1.35 : 1);
       }
       if (pointer && animate) {
         const dx = tx - pointer.x, dy = ty - pointer.y, dist = Math.hypot(dx, dy);
@@ -105,7 +110,7 @@ export function mountDots({ parties, owners }) {
       ctx.fillStyle = color[i];
       ctx.beginPath(); ctx.arc(d.x, d.y, d.s, 0, Math.PI * 2); ctx.fill();
       if (lv === 2) {
-        ctx.globalAlpha = 0.18;
+        ctx.globalAlpha = rect ? 0.18 : 0.1;
         ctx.beginPath(); ctx.arc(d.x, d.y, d.s * 3.2, 0, Math.PI * 2); ctx.fill();
       }
     }
