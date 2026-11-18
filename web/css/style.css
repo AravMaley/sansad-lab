@@ -756,3 +756,22 @@ main.mp-page { margin-block: clamp(16px, 4vw, 40px); }
 html { scrollbar-color: color-mix(in oklab, var(--ink-2) 45%, transparent) var(--paper); }
 input, textarea { caret-color: var(--marigold); }
 :root { accent-color: var(--green); }
+
+/* ---------- v5 · Quieter panels and question cards ----------
+   Panels are see-through enough that the seat dots stay visible behind them;
+   the dots are faint enough (20%) that text still reads cleanly on top. */
+:root { --veil: color-mix(in oklab, var(--paper) 42%, transparent); }
+main .room > .wrap, main.mp-page { -webkit-backdrop-filter: none; backdrop-filter: none; }
+
+/* One question = date line, title, a two-line glimpse of the question,
+   the answer, and a source link. Labels are plain words, not badges. */
+.feed-item { padding: 28px 0; }
+.feed-meta { font-size: var(--t-meta); text-transform: none; letter-spacing: 0; }
+.feed-subject { margin: 4px 0 10px; font-size: 1.1875rem; line-height: 1.35; }
+.feed-label { margin: 0 .45em 0 0; padding: 0; background: none; border-radius: 0; vertical-align: 0;
+  font: 600 var(--t-meta)/1 var(--sans); letter-spacing: 0; text-transform: none; color: var(--ink-2); }
+.feed-a .feed-label { background: none; color: var(--green); }
+.feed-q, .feed-a { display: -webkit-box; -webkit-box-orient: vertical; overflow: hidden; margin: 6px 0; }
+.feed-q { -webkit-line-clamp: 2; line-clamp: 2; font-size: .9375rem; line-height: 1.55; }
+.feed-a { -webkit-line-clamp: 4; line-clamp: 4; line-height: 1.6; max-width: 65ch; }
+.feed-foot { margin-top: 12px; }
